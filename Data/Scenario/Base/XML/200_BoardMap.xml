@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameBoard>
+  <Attributes Title="Base Scenario" Width="0" Height="0" DrawHeight="5" DrawWidth="5" CellSize="150" CellMeters="150" CellMaxUnits="150" />
+  <Nodes />
+</GameBoard>

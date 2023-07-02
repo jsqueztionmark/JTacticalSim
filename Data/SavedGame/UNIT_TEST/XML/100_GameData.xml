@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~~~~~~~~~~~~~~~~ Scenario specific data
+-->
+<GameData>
+  <Factions>
+    <Faction ID="0" Name="USA" Description="United States" />
+    <Faction ID="1" Name="IRAN" Description="Iran" />
+  </Factions>
+  <Countries>
+    <Country ID="0" Name="USA" Description="United States" Color="yellow" BGColor="darkyellow" TextDisplayColor="darkyellow" FlagDisplayTextA="■" FlagDisplayTextB="≡" FlagBGColor="white" FlagColorA="blue" FlagColorB="red" Faction="0" />
+    <Country ID="1" Name="IRAN" Description="Iran" Color="red" BGColor="white" TextDisplayColor="red" FlagDisplayTextA="*" FlagDisplayTextB="≡" FlagBGColor="red" FlagColorA="white" FlagColorB="white" Faction="1" />
+  </Countries>
+  <Players>
+    <Player ID="0" Name="Jeff" Description="" Country="0" IsCurrentPlayer="true" IsAIPlayer="false">
+			<TrackedValues ReinforcementPoints="230" NuclearCharges="1" />
+      <UnplacedReinforcements />
+    </Player>
+    <Player ID="1" Name="Pat" Description="" Country="1" IsCurrentPlayer="false" IsAIPlayer="false">
+			<TrackedValues ReinforcementPoints="204" NuclearCharges="1" />
+      <UnplacedReinforcements />
+    </Player>
+  </Players>
+  <!--Conditions for winning the game for a faction. Winning is an OR proposition-->
+  <FactionVictoryConditions>
+    <VictoryCondition Faction="0" ConditionType="0" Value="2" />
+    <VictoryCondition Faction="1" ConditionType="0" Value="0" />
+    <VictoryCondition Faction="1" ConditionType="1" Value="23" />
+  </FactionVictoryConditions>
+  <!--Unit Assignments-->
+  <UnitAssignments>
+    <UnitAssignment Unit="1" AssignedToUnit="0" />
+    <UnitAssignment Unit="2" AssignedToUnit="0" />
+    <UnitAssignment Unit="3" AssignedToUnit="0" />
+    <UnitAssignment Unit="4" AssignedToUnit="0" />
+    <UnitAssignment Unit="5" AssignedToUnit="0" />
+    <UnitAssignment Unit="7" AssignedToUnit="6" />
+    <UnitAssignment Unit="8" AssignedToUnit="6" />
+    <UnitAssignment Unit="10" AssignedToUnit="5" />
+  </UnitAssignments>
+  <!--Unit Transports-->
+  <UnitTransports>
+    <UnitTransport Unit="10" TransportUnit="15" />
+    <UnitTransport Unit="3" TransportUnit="30" />
+    <UnitTransport Unit="33" TransportUnit="29" />
+  </UnitTransports>
+  <!--Allowed Unit Types-->
+  <AllowedUnitTypes>
+    <UnitType Country="9999" ID="0" />
+    <UnitType Country="9999" ID="1" />
+    <UnitType Country="9999" ID="2" />
+    <UnitType Country="9999" ID="3" />
+    <UnitType Country="9999" ID="4" />
+    <UnitType Country="9999" ID="5" />
+    <UnitType Country="9999" ID="8" />
+    <UnitType Country="9999" ID="9" />
+    <UnitType Country="9999" ID="10" />
+    <UnitType Country="9999" ID="11" />
+    <UnitType Country="9999" ID="12" />
+    <UnitType Country="9999" ID="17" />
+  </AllowedUnitTypes>
+  <!--Allowed Unit Group Types-->
+  <AllowedUnitGroupTypes>
+    <UnitGroupType ID="0" />
+    <UnitGroupType ID="1" />
+    <UnitGroupType ID="2" />
+  </AllowedUnitGroupTypes>
+</GameData>

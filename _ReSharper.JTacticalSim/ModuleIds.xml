@@ -1,0 +1,9 @@
+<Modules>
+  <Module PersistentId="753C9340-0CF8-44C5-80A9-BF4C19BF05AC" ModuleId="JTacticalSim.Component" />
+  <Module PersistentId="C80BBEBA-1397-4574-8F3F-2B66AEE90982" ModuleId="JTacticalSim.Base" />
+  <Module PersistentId="71A250C2-8620-46E3-8394-5FA2FF791B5B" ModuleId="JTacticalSim.API" />
+  <Module PersistentId="C47FFD83-F3CE-4595-8FD4-5500C7EF8297" ModuleId="JTacticalSim.Service" />
+  <Module PersistentId="C90E4B27-E007-42A6-95C2-81BE5384A7F6" ModuleId="JTacticalSim.DataContext" />
+  <Module PersistentId="4FD19D76-B546-4D31-B3BC-417F08CE53CD" ModuleId="JTacticalSim.Console" />
+  <Module PersistentId="C97D4F05-4C8B-4107-871A-E9582875F536" ModuleId="JTacticalSim.Test" />
+</Modules>

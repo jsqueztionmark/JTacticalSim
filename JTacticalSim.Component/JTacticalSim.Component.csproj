@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{753C9340-0CF8-44C5-80A9-BF4C19BF05AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JTacticalSim.Component</RootNamespace>
+    <AssemblyName>JTacticalSim.Component</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - NOXNA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - NOXNA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\JTacticalSim.Component.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JTacticalSim.Media">
+      <HintPath>..\build\JTacticalSim.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\Strategy\AIStrategyComponentContainer.cs" />
+    <Compile Include="AI\Strategy\MissionType.cs" />
+    <Compile Include="AI\Strategy\Tactic.cs" />
+    <Compile Include="AI\Strategy\Mission.cs" />
+    <Compile Include="AI\Strategy\Strategy.cs" />
+    <Compile Include="AI\Battle\Battle.cs" />
+    <Compile Include="AI\Battle\Round.cs" />
+    <Compile Include="AI\Battle\Skirmish.cs" />
+    <Compile Include="AI\Strategy\UnitTaskHandler.cs" />
+    <Compile Include="AI\Strategy\UnitTaskType.cs" />
+    <Compile Include="ComponentStatModifierContainer.cs" />
+    <Compile Include="Data\BasePointValues.cs" />
+    <Compile Include="Data\ComponentSet.cs" />
+    <Compile Include="Data\DemographicType.cs" />
+    <Compile Include="Data\DemographicClass.cs" />
+    <Compile Include="Data\SavedGame.cs" />
+    <Compile Include="Data\Scenario.cs" />
+    <Compile Include="Data\UnitBaseType.cs" />
+    <Compile Include="Data\UnitBranch.cs" />
+    <Compile Include="Data\UnitClass.cs" />
+    <Compile Include="Data\UnitGeogType.cs" />
+    <Compile Include="Data\UnitGroupType.cs" />
+    <Compile Include="AI\Strategy\UnitTask.cs" />
+    <Compile Include="Data\UnitType.cs" />
+    <Compile Include="Data\VictoryConditionType.cs" />
+    <Compile Include="GameBoard\Demographic.cs" />
+    <Compile Include="GameBoard\PathNode.cs" />
+    <Compile Include="GameBoard\UnitStack.cs" />
+    <Compile Include="GameComponentBase.cs" />
+    <Compile Include="GameBoard\Board.cs" />
+    <Compile Include="GameBoard\BoardComponentBase.cs" />
+    <Compile Include="Game\Faction.cs" />
+    <Compile Include="GameBoard\Unit.cs" />
+    <Compile Include="GameBoard\Node.cs" />
+    <Compile Include="GameBoard\Tile.cs" />
+    <Compile Include="Game\Country.cs" />
+    <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\PlayerTurn.cs" />
+    <Compile Include="Game\VictoryCondition.cs" />
+    <Compile Include="InputCommandHandlerBase.cs" />
+    <Compile Include="ParsedCommandArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="World\Coordinate.cs" />
+    <Compile Include="World\CVector.cs" />
+    <Compile Include="World\Float2.cs" />
+    <Compile Include="World\Int2.cs" />
+    <Compile Include="World\PixelPosition.cs" />
+    <Compile Include="World\PixelVectorFloat.cs" />
+    <Compile Include="World\PixelVectorInt.cs" />
+    <Compile Include="World\SubNodeLocation.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\JTacticalSim.Base\JTacticalSim.Base.csproj">
+      <Project>{c80bbeba-1397-4574-8f3f-2b66aee90982}</Project>
+      <Name>JTacticalSim.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JTacticalSim.Utility\JTacticalSim.Utility.csproj">
+      <Project>{74A61E0A-0D59-4353-9B35-8C648D895B23}</Project>
+      <Name>JTacticalSim.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy *.dll ..\..\..\Build</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

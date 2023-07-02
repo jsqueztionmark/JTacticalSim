@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~~~~~~~~~~~~~~~~ Scenario specific data
+	Country Colors:
+	
+		green, white, gray, darkgray, darkyellow, cyan, darkcyan, darkblue, darkgreen, red, blue, yellow, darkred
+-->
+<GameData>
+  <Factions>
+    <Faction ID="0" Name="Defenders" Description="Defending Alliance" />
+    <Faction ID="1" Name="Invaders" Description="Invading Alliance" />
+  </Factions>
+  <Countries>
+    <Country ID="0" Name="USA" Description="United States" Color="white" BGColor="darkyellow" TextDisplayColor="darkyellow" FlagDisplayTextA="■" FlagDisplayTextB="≡" FlagBGColor="white" FlagColorA="blue" FlagColorB="red" Faction="0" />
+    <Country ID="1" Name="US_ENEMY" Description="US Enemy" Color="red" BGColor="white" TextDisplayColor="red" FlagDisplayTextA="(" FlagDisplayTextB="*" FlagBGColor="red" FlagColorA="white" FlagColorB="white" Faction="1" />
+  </Countries>
+  <Players>
+    <Player ID="0" Name="USA" Description="" Country="0" IsCurrentPlayer="true" IsAIPlayer="false">
+			<TrackedValues ReinforcementPoints="100" NuclearCharges="6" />  
+      <UnplacedReinforcements />
+    </Player>
+    <Player ID="1" Name="US_ENEMY" Description="" Country="1" IsCurrentPlayer="false" IsAIPlayer="false">
+			<TrackedValues ReinforcementPoints="100" NuclearCharges="4" />
+      <UnplacedReinforcements />
+    </Player>
+  </Players>
+  <!--Conditions for winning the game for a faction. Winning is an OR proposition-->
+  <FactionVictoryConditions />
+  <!--Unit Assignments-->
+  <UnitAssignments />
+  <!--Unit Transports-->
+  <UnitTransports />
+  <!--Allowed Unit Types-->
+  <AllowedUnitTypes>
+    <UnitType Country="9999" ID="0" />
+    <UnitType Country="9999" ID="1" />
+    <UnitType Country="9999" ID="2" />
+    <UnitType Country="9999" ID="3" />
+    <UnitType Country="9999" ID="4" />
+    <UnitType Country="9999" ID="5" />
+    <UnitType Country="9999" ID="6" />
+    <UnitType Country="9999" ID="7" />
+    <UnitType Country="9999" ID="8" />
+    <UnitType Country="9999" ID="9" />
+    <UnitType Country="9999" ID="10" />
+    <UnitType Country="9999" ID="11" />
+    <UnitType Country="9999" ID="12" />
+    <UnitType Country="0" ID="13" />
+    <UnitType Country="0" ID="13" />
+    <UnitType Country="9999" ID="14" />
+    <UnitType Country="0" ID="15" />
+    <UnitType Country="1" ID="15" />
+		<UnitType Country="9999" ID="18" />
+  </AllowedUnitTypes>
+  <!--Allowed Unit Group Types-->
+  <AllowedUnitGroupTypes>
+    <UnitGroupType ID="1" />
+    <UnitGroupType ID="2" />
+    <UnitGroupType ID="3" />
+  </AllowedUnitGroupTypes>
+</GameData>

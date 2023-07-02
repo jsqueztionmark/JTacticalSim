@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameBoard>
+  <Attributes Title="South West Washougal/Columbia River -- TEST" Width="9" Height="7" DrawHeight="5" DrawWidth="6" CellMeters="150" CellSize="150" CellMaxUnits="6" />
+  <Nodes>
+    <Node ID="0">
+      <Location>
+        <Coordinate X="0" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="4" Name="" ID="0">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="29" InstanceName="" Orientation="northwest" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="1">
+      <Location>
+        <Coordinate X="1" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="4" Name="" ID="1">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="2">
+      <Location>
+        <Coordinate X="2" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="2">
+          <Demographics>
+            <Demographic ID="5" InstanceName="" Orientation="none" />
+            <Demographic ID="12" InstanceName="" Orientation="east,west" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="3">
+      <Location>
+        <Coordinate X="3" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="2" Name="" ID="3">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="4">
+      <Location>
+        <Coordinate X="4" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="4">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="5">
+      <Location>
+        <Coordinate X="5" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="3" Name="" ID="5">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="6">
+      <Location>
+        <Coordinate X="6" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="6">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="7">
+      <Location>
+        <Coordinate X="7" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="7">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="8">
+      <Location>
+        <Coordinate X="8" Y="0" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="8">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="9">
+      <Location>
+        <Coordinate X="0" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="2" Name="" ID="9">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="10">
+      <Location>
+        <Coordinate X="1" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="1" Name="" ID="10">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="11">
+      <Location>
+        <Coordinate X="2" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="11">
+          <Demographics>
+            <Demographic ID="5" InstanceName="" Orientation="none" />
+            <Demographic ID="28" InstanceName="" Orientation="none" />
+            <Demographic ID="20" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="12">
+      <Location>
+        <Coordinate X="3" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="12">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="29" InstanceName="" Orientation="southeast" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="13">
+      <Location>
+        <Coordinate X="4" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="13">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="14">
+      <Location>
+        <Coordinate X="5" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="14">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="15">
+      <Location>
+        <Coordinate X="6" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="15">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="16">
+      <Location>
+        <Coordinate X="7" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="16">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="7" InstanceName="" Orientation="none" />
+            <Demographic ID="19" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="17">
+      <Location>
+        <Coordinate X="8" Y="1" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="17">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="18">
+      <Location>
+        <Coordinate X="0" Y="2" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="2" Name="" ID="18">
+          <Demographics>
+            <Demographic ID="4" InstanceName="" Orientation="none" />
+            <Demographic ID="12" InstanceName="" Orientation="east" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="19">
+      <Location>
+        <Coordinate X="1" Y="2" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="2" Name="" ID="19">
+          <Demographics>
+            <Demographic ID="5" InstanceName="" Orientation="none" />
+            <Demographic ID="12" InstanceName="" Orientation="east,west" />
+            <Demographic ID="19" InstanceName="" Orientation="none" />
+            <Demographic ID="20" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="20">
+      <Location>
+        <Coordinate X="2" Y="2" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="1" Name="" ID="20">
+          <Demographics>
+            <Demographic ID="5" InstanceName="" Orientation="none" />
+            <Demographic ID="20" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="21">
+      <Location>
+        <Coordinate X="3" Y="2" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="2" Name="" ID="21">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="22">
+      <Location>
+        <Coordinate X="5" Y="2" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="22">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="23">
+      <Location>
+        <Coordinate X="7" Y="2" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="23">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="24">
+      <Location>
+        <Coordinate X="8" Y="2" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="24">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="25">
+      <Location>
+        <Coordinate X="0" Y="3" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="25">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="26">
+      <Location>
+        <Coordinate X="1" Y="3" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="26">
+          <Demographics>
+            <Demographic ID="2" InstanceName="" Orientation="none" />
+            <Demographic ID="19" InstanceName="" Orientation="none" />
+            <Demographic ID="20" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="27">
+      <Location>
+        <Coordinate X="2" Y="3" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="27">
+          <Demographics>
+            <Demographic ID="5" InstanceName="" Orientation="none" />
+            <Demographic ID="20" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="28">
+      <Location>
+        <Coordinate X="3" Y="3" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="28">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="29">
+      <Location>
+        <Coordinate X="4" Y="3" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="29">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="30">
+      <Location>
+        <Coordinate X="7" Y="3" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="30">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="7" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="19" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="31">
+      <Location>
+        <Coordinate X="8" Y="3" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="31">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="32">
+      <Location>
+        <Coordinate X="0" Y="4" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="32">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+            <Demographic ID="12" InstanceName="" Orientation="east,west" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="33">
+      <Location>
+        <Coordinate X="1" Y="4" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="33">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+            <Demographic ID="12" InstanceName="" Orientation="east,west" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="34">
+      <Location>
+        <Coordinate X="2" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="3" Name="" ID="34">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="35">
+      <Location>
+        <Coordinate X="3" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="35">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="36">
+      <Location>
+        <Coordinate X="4" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="36">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="37">
+      <Location>
+        <Coordinate X="5" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="37">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="38">
+      <Location>
+        <Coordinate X="6" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="38">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="39">
+      <Location>
+        <Coordinate X="7" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="39">
+          <Demographics>
+            <Demographic ID="2" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="40">
+      <Location>
+        <Coordinate X="8" Y="4" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="40">
+          <Demographics>
+            <Demographic ID="2" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="41">
+      <Location>
+        <Coordinate X="0" Y="5" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="41">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="42">
+      <Location>
+        <Coordinate X="1" Y="5" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="42">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="43">
+      <Location>
+        <Coordinate X="2" Y="5" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="43">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="44">
+      <Location>
+        <Coordinate X="3" Y="5" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="44">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="45">
+      <Location>
+        <Coordinate X="4" Y="5" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="45">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="46">
+      <Location>
+        <Coordinate X="5" Y="5" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="46">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="47">
+      <Location>
+        <Coordinate X="6" Y="5" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="47">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="48">
+      <Location>
+        <Coordinate X="7" Y="5" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="48">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="49">
+      <Location>
+        <Coordinate X="8" Y="5" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="49">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="50">
+      <Location>
+        <Coordinate X="4" Y="2" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="1" Name="" ID="50">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="51">
+      <Location>
+        <Coordinate X="6" Y="2" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="51">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="10" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west,north,south" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="52">
+      <Location>
+        <Coordinate X="5" Y="3" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="52">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="7" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="19" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="53">
+      <Location>
+        <Coordinate X="6" Y="3" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="53">
+          <Demographics>
+            <Demographic ID="0" InstanceName="" Orientation="none" />
+            <Demographic ID="6" InstanceName="" Orientation="none" />
+            <Demographic ID="11" InstanceName="" Orientation="east,west" />
+            <Demographic ID="14" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="54">
+      <Location>
+        <Coordinate X="0" Y="6" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="54">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="55">
+      <Location>
+        <Coordinate X="1" Y="6" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="55">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="56">
+      <Location>
+        <Coordinate X="2" Y="6" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="56">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="57">
+      <Location>
+        <Coordinate X="3" Y="6" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="57">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="58">
+      <Location>
+        <Coordinate X="4" Y="6" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="58">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="59">
+      <Location>
+        <Coordinate X="5" Y="6" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="59">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="60">
+      <Location>
+        <Coordinate X="6" Y="6" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="60">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="61">
+      <Location>
+        <Coordinate X="7" Y="6" Z="0" />
+      </Location>
+      <Country ID="1" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="61">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+    <Node ID="62">
+      <Location>
+        <Coordinate X="8" Y="6" Z="0" />
+      </Location>
+      <Country ID="0" />
+      <DefaultTile>
+        <Tile VictoryPoints="0" Name="" ID="62">
+          <Demographics>
+            <Demographic ID="1" InstanceName="" Orientation="none" />
+          </Demographics>
+        </Tile>
+      </DefaultTile>
+    </Node>
+  </Nodes>
+</GameBoard>

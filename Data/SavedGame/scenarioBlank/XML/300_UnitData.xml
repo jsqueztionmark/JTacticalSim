@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <Unit ID="11" Name="FighterSquad_A" Description="Fighter Squadron" StackOrder="1">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="6" UnitClass="1" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="12" Name="BomberSquad_A" Description="Bomber Squadron" StackOrder="2">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="7" UnitClass="0" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="20" Name="Sandy_MLRS" Description="MLRS squad" StackOrder="1">
+    <Location>
+      <Coordinate X="7" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="7" Name="Fadaykin_SF" Description="Fadaykin - Infantry SF" StackOrder="1">
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="1" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="8" Name="A_SandyTanks" Description="Tank Company" StackOrder="2">
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="1" UnitGroupType="1" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="13" Name="SubSquad_A" Description="Sub Squad" StackOrder="1">
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="14" UnitClass="0" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="14" Name="ChopperSquad_A" Description="Chopper Squadron" StackOrder="2">
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="0" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="24" Name="testMLRS" Description="testMLRS" StackOrder="2">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="0" Name="101Btl" Description="101 Battalion" StackOrder="1">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="1" Name="A_Tank" Description="Tank Company A" StackOrder="1">
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="6" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="3" Name="B_Infantry" Description="Infantry Company B" StackOrder="2">
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="2" Name="C_Tank" Description="Tank Company C" StackOrder="3">
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="1" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="16" Name="D_Infantry" Description="Infantry Company C" StackOrder="1">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="17" Name="Z_Infantry" Description="Infantry Company Z" StackOrder="2">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="18" Name="MedVac_A" Description="Medical Squad" StackOrder="3">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="4" UnitGroupType="0" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="21" Name="Sam_Site_A" Description="SAM site" StackOrder="1">
+    <Location>
+      <Coordinate X="4" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="4" Name="B_Tank" Description="Tank Company B" StackOrder="1">
+    <Location>
+      <Coordinate X="5" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="5" Name="A_Infantry" Description="Infantry Company A" StackOrder="2">
+    <Location>
+      <Coordinate X="5" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="19" Name="BigGuns" Description="Artillery squad" StackOrder="3">
+    <Location>
+      <Coordinate X="5" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="22" Name="9thMedical" Description="Medical company" StackOrder="1">
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="15" Name="HellCats" Description="Chopper Squad" StackOrder="1">
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+      <SubNodeLocation Value="3" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="0" UnitGroupType="0" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="23" Name="testCav" Description="testCav" StackOrder="1">
+    <Location>
+      <Coordinate X="3" Y="3" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="7" UnitGroupType="1" />
+    <Country ID="0" />
+    <TransportedUnits />
+  </Unit>
+  <Unit ID="6" Name="Nuc_Sub_A" Description="Nuclear Submarine SF" StackOrder="1">
+    <Location>
+      <Coordinate X="6" Y="5" Z="0" />
+      <SubNodeLocation Value="6" />
+    </Location>
+    <UnitInfo UnitType="15" UnitClass="5" UnitGroupType="0" />
+    <Country ID="1" />
+    <TransportedUnits />
+  </Unit>
+</Units>

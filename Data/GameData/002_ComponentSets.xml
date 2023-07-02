@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ComponentSets>
+	<ComponentSet ID="0" Name="Modern" Description="Modern military units and environment" Path="Modern"/>
+	<ComponentSet ID="1" Name="Fantasy" Description="Fantasy characters and environment" Path="Fantasy"/>
+	<ComponentSet ID="2" Name="Zombie" Description="Zombie bad guys/human good guys!" Path="Zombie"/>
+	
+	<VictoryConditionType>
+		<Condition ID="0" Name="EnemyUnitsRemaining" Description="Sets the max number of oppposing units still in action as a condition for winning the game" />
+		<Condition ID="1" Name="VictoryPointsHeld" Description="Sets the total victory points held by a faction as a condition for winning the game." />
+		<Condition ID="2" Name="FlagCaptured" Description="Capture the flag. Sets a unit HQ as a flag-holder to be destroyed as a condition for winning the game." />
+	</VictoryConditionType>
+</ComponentSets>

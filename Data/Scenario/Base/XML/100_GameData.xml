@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~~~~~~~~~~~~~~~~ Scenario specific data
+	Country Colors:
+	
+		darkgreen, red, blue, yellow, darkred
+
+-->
+<GameData>
+  <Factions />
+  <Countries />
+  <Players />
+  <!--Conditions for winning the game for a faction. Winning is an OR proposition-->
+  <FactionVictoryConditions />
+  <!--Unit Assignments-->
+  <UnitAssignments />
+  <!--Unit Transports-->
+  <UnitTransports />
+	<AllowedUnitTypes />
+	<AllowedUnitGroupTypes />
+</GameData>

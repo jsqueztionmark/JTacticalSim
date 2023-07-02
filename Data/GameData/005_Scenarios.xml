@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Scenarios>
+  <Scenario ID="0" Name="SimpleTestScenario" GameFileDirectory="SimpleTestScenario" ComponentSet="0" Author="SimpleTestScenario" />
+  <Scenario ID="3" Name="CamasAreaTwoFactions" GameFileDirectory="CamasAreaTwoFactions" ComponentSet="0" Author="CamasAreaTwoFactions" />
+  <Scenario ID="4" Name="WashingtonStateThreeFactions" GameFileDirectory="WashingtonStateThreeFactions" ComponentSet="0" Author="WashingtonStateThreeFactions" />
+</Scenarios>

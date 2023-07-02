@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <Unit ID="27" Name="badSAM" Description="badSAM" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="1" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="1" Name="A_Tank" Description="Tank Company A" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="6" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="2" Name="C_Tank" Description="Tank Company C" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="1" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="16" Name="D_Infantry" Description="Infantry Company C" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="17" Name="Z_Infantry" Description="Infantry Company Z" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="18" Name="MedVac_A" Description="Medical Squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="34" Name="LOADME_HARMOR" Description="LOADME_HARMOR" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="35" Name="LOADME_LINFANTRY" Description="LOADME_LINFANTRY" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="3" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="36" Name="LOADME_FIGHTER" Description="LOADME_FIGHTER" StackOrder="3" CurrentFuelRange="5500000">
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="6" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="37" Name="LOADTO_HELO" Description="LOADTO_HELO" StackOrder="4" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+      <SubNodeLocation Value="6" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="7" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="39" Name="LOADME_MINFANTRY" Description="LOADME_MINFANTRY" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="6" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="30" Name="Trans_A" Description="Trans_A" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="12" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="3" Name="B_Infantry" Description="Infantry Company B" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="1" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="2" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="31" Name="Navy_HQ" Description="Navy_HQ" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="11" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="38" Name="LOADTO_TRANSPORT" Description="LOADTO_TRANSPORT" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="12" UnitClass="7" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="15" Name="HellCats" Description="Chopper Squad" StackOrder="1" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="2" Y="1" Z="0" />
+      <SubNodeLocation Value="8" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="10" Name="C_Infantry" Description="" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="2" Y="1" Z="0" />
+      <SubNodeLocation Value="8" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="21" Name="Sam_Site_A" Description="SAM site" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="1" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="32" Name="MI_HQ" Description="MI_HQ" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="19" Name="BigGuns" Description="Artillery squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="4" Name="B_Tank" Description="Tank Company B" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="5" Name="A_Infantry" Description="Infantry Company A" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="0" Name="101Btl" Description="101 Battalion" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="24" Name="testMLRS" Description="testMLRS" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="5" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="41" Name="Tenth_Medical" Description="Tenth_Medical" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="20" Name="Sandy_MLRS" Description="MLRS squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="7" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="5" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="25" Name="sam_site" Description="sam_site" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="7" Y="4" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="1" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="7" Name="Fadaykin_SF" Description="Fadaykin - Infantry SF" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="8" Name="A_SandyTanks" Description="Tank Company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="1" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="26" Name="inf_HQ" Description="inf_HQ" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="13" Name="SubSquad_A" Description="Sub Squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="14" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="14" Name="ChopperSquad_A" Description="Chopper Squadron" StackOrder="2" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="6" Name="Nuc_Sub_A" Description="Nuclear Submarine SF" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="15" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="6" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="23" Name="testCav" Description="testCav" StackOrder="1" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="6" Y="4" Z="0" />
+      <SubNodeLocation Value="4" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="7" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="28" Name="1stCav" Description="1stCav" StackOrder="2" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="6" Y="4" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="1" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="44" Name="snipers" Description="snipers" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="3" Z="0" />
+      <SubNodeLocation Value="4" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="11" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="1" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="40" Name="MEDSP_Tanks" Description="MEDSP_Tanks" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="43" Name="TestCavB" Description="TestCavB" StackOrder="2" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="42" Name="FighterSquad_Z" Description="FighterSquad_Z" StackOrder="3" CurrentFuelRange="5500000">
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="6" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="22" Name="9thMedical" Description="Medical company" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+      <SubNodeLocation Value="6" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="11" Name="FighterSquad_A" Description="Fighter Squadron" StackOrder="1" CurrentFuelRange="5500000">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="6" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="12" Name="BomberSquad_A" Description="Bomber Squadron" StackOrder="2" CurrentFuelRange="7000000">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="7" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="5" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="29" Name="scoutCavA" Description="scoutCavA" StackOrder="1" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="1" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="33" Name="LI_298" Description="LI_298" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="45" Name="CARRIER" Description="CARRIER" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="13" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="46" Name="LOADME_BOMBER" Description="LOADME_BOMBER" StackOrder="6" CurrentFuelRange="7000000">
+    <Location>
+      <Coordinate X="3" Y="0" Z="0" />
+      <SubNodeLocation Value="2" />
+    </Location>
+    <UnitInfo UnitType="7" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="5" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+	<Unit ID="47" Name="ANTISUB_FIGHTER" Description="ANTISUB_FIGHTER" StackOrder="2" CurrentFuelRange="5500000">
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="6" UnitClass="12" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+</Units>

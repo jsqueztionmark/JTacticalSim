@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <Unit ID="0" Name="63rd inf mech BTL" Description="Mechanized infantry battalion" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="3" Name="101st inf CO mechanized" Description="mechanized infinatry company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="4" Name="1st Missile bat/1st sqd" Description="SAM squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="5" Name="1st Cav/3rd sqd" Description="Helicopter squad" StackOrder="4" CurrentFuelRange="1150">
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="7" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="10" Name="1st/5th Art 3rd sqd" Description="Artillery Squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="19" Name="1st scouts/1st sqd" Description="Infantry squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="9" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="20" Name="1st Cav/2nd sqd" Description="Helicopter Squad" StackOrder="1" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="7" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="21" Name="1st Cav/1st sqd" Description="Helicopter Squad" StackOrder="1" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="7" Y="6" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="23" Name="2nd/11th Tank 3rd sqd" Description="tank squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="7" Y="6" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="26" Name="5th MLRS/2nd sqd" Description="MLRS squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="27" Name="5th MLRS/3rd sqd" Description="MLRS squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="11" Name="2nd/5th Artillery CO" Description="Artillery Company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="12" Name="2nd/5th Art 1st sqd" Description="Artillery squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="14" Name="2nd/5th Art 2nd sqd" Description="Artillery squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="13" Name="2nd/5th Art 3rd sqd" Description="Artillery squad" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="29" Name="99th Medical CO" Description="Medical infantry" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="30" Name="99th Med/1st sqd" Description="Medical infantry squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="31" Name="99th Med/2nd sqd" Description="Medical infantry squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="13" Y="2" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="33" Name="1st/11th Hvy Tank 1st sqd" Description="Heavy tank squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="34" Name="1st/11th Hvy Tank 2nd sqd" Description="Heavy tank squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="35" Name="1st/11th Hvy Tank 3rd sqd" Description="Heavy tank squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="32" Name="1st/11th Hvy Tank CO" Description="tank company" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="22" Name="2nd/11th Tank CO" Description="Heavy armor company" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="6" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="37" Name="2nd/11th Tank 2nd sqd" Description="tank squad" StackOrder="6" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="36" Name="2nd/11th Tank 1st sqd" Description="tank squad" StackOrder="7" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="2" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="39" Name="98th SF/1st sqd" Description="Special forces squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="16" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="40" Name="98th SF/2nd sqd" Description="Special forces squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="16" Y="4" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="28" Name="1st Missile bat/2nd sqd" Description="SAM squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="16" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="6" Name="1st Cav CO" Description="Helicopter company" StackOrder="2" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="16" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="7" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="2" Name="11th Tank BTL" Description="heavy armor battalion" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="16" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="38" Name="98th SF CO" Description="Special forces company" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="16" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="5" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="24" Name="5th MLRS CO" Description="MLRS company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="20" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="25" Name="5th MLRS/1st sqd" Description="MLRS squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="19" Y="1" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="8" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="41" Name="First Transport" Description="Transport" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="12" UnitClass="7" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="64" Name="ASC Destroyer GRP/1" Description="" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="11" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="42" Name="9th Infantry CO" Description="mechanized infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="43" Name="9th Infantry/1st squad" Description="light infantry" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="44" Name="9th Infantry/2nd squad" Description="light infantry " StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="11" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="45" Name="9th Infantry/3rd squad" Description="mechanized infantry" StackOrder="6" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="47" Name="49th Air Cav/2nd squad" Description="attack helicopters" StackOrder="7" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="56" Name="pt_A2" Description="pt boat" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="10" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="55" Name="pt_A1" Description="pt boat" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="2" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="10" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="50" Name="2nd Transport" Description="Transport" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="12" UnitClass="7" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="51" Name="21st Engineers" Description="engineering company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="3" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="52" Name="21st Engineers/1st squad -med-" Description="light infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="53" Name="21st Engineers/2nd squad" Description="engineers" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="3" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="54" Name="21st Engineers/3rd squad" Description="engineers" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="3" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="46" Name="49th Air Cav/1st squad" Description="attack helicopters" StackOrder="6" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="65" Name="ASC Destroyer GRP/2" Description="" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="11" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="49" Name="306 Infantry BTL" Description="mechanized infantry" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="13" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="66" Name="Third Transport" Description="Transport" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="12" UnitClass="7" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="4" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="67" Name="99th Tank CO" Description="heavy armor company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="69" Name="99th Tank/2nd squad" Description="heavy armor" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="9" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="73" Name="1st/4th SF" Description="special forces company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="75" Name="1st/4th SF 1st sqd" Description="special forces" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="76" Name="1st/4th SF 2nd sqd" Description="special forces" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="77" Name="1st/4th SF 3rd sqd" Description="special forces" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="74" Name="2nd/4th SF" Description="special forces company" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="78" Name="2nd/4th SF 1st sqd" Description="special forces" StackOrder="6" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="79" Name="2nd/4th SF 2nd sqd" Description="special forces" StackOrder="7" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="5" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="63" Name="Fadaykin Scouts sqd B" Description="scouts" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="18" Y="7" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="61" Name="Fadaykin Scouts CO" Description="scouts company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="10" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="62" Name="Fadaykin Scouts sqd A" Description="scouts" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="3" Y="8" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="10" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="72" Name="4th SF BTL" Description="special forces battalion" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="86" Name="1st/89th Inf" Description="infantry company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="87" Name="1st/89th Inf A squad" Description="light infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="88" Name="1st/89th Inf B squad" Description="light infantry" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="89" Name="1st/89th Inf C squad" Description="light infantry" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="83" Name="1st Missile btry squad" Description="SAM squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="70" Name="99th Tank/3rd squad" Description="heavy armor" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="68" Name="99th Tank/1st squad" Description="heavy armor" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="14" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="85" Name="89th Infantry BTL" Description="infantry battalion" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="90" Name="2nd/89th Inf" Description="infantry company" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="91" Name="2nd/89th Inf A squad" Description="light infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="92" Name="2nd/89th Inf B squad" Description="light infantry" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="84" Name="2nd Missile btry squad" Description="SAM squad" StackOrder="5" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="9" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="71" Name="99th Tank/4th squad" Description="heavy armor" StackOrder="6" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="3" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="57" Name="23rd Infantry CO" Description="light infantry" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="6" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="58" Name="23rd Infantry/1st sqd" Description="light infantry" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="6" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="59" Name="23rd Infantry/2nd sqd" Description="light infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="6" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="60" Name="23rd Infantry/3rd sqd" Description="light infantry" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="6" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="48" Name="49th Air Cav/3rd squad" Description="attack helicopters" StackOrder="5" CurrentFuelRange="1920000">
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="5" UnitClass="1" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="93" Name="3rd/89th Inf C squad" Description="light infantry" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="80" Name="3rd/89th Mech" Description="mechanized infantry" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="81" Name="3rd/89th Mech 1st sqd" Description="mechanized infantry" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="82" Name="3rd/89th Mech 2nd sqd" Description="mechanized infantry" StackOrder="4" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="8" Y="12" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="1" />
+  </Unit>
+  <Unit ID="94" Name="testship" Description="" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="17" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="1" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="15" Name="501st inf CO mech" Description="Infantry company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="8" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="6" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="16" Name="501st inf/1st sqd" Description="Infantry squad (med)" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="8" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="4" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="17" Name="501st inf/2nd sqd" Description="Infantry squad (snipers)" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="1" Y="8" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="0" UnitClass="11" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="1" Name="5th Artillery BTL" Description="Artillery battalion" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+      <SubNodeLocation Value="1" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="9" UnitGroupType="2" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="18" Name="501st inf/3rd sqd" Description="Infantry squad" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="3" Y="9" Z="0" />
+      <SubNodeLocation Value="6" />
+    </Location>
+    <UnitInfo UnitType="1" UnitClass="3" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="3" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="8" Name="1st/5th Art 1st sqd" Description="Artillery Squad" StackOrder="2" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="9" Name="1st/5th Art 2nd sqd" Description="Artillery Squad" StackOrder="3" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="0" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="7" Name="1st/5th Art CO" Description="Artillery Company" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <Coordinate X="4" Y="0" Z="0" />
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="4" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="2" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="2" />
+    <Country ID="0" />
+  </Unit>
+  <Unit ID="95" Name="test points" Description="" StackOrder="1" CurrentFuelRange="0">
+    <Location>
+      <SubNodeLocation Value="5" />
+    </Location>
+    <UnitInfo UnitType="11" UnitClass="0" UnitGroupType="1" />
+    <Posture ID="0" />
+    <MovementStats CurrentMovementPoints="0" CurrentHasPerformedAction="false" CurrentRemoteFirePoints="0" />
+    <Country ID="0" />
+  </Unit>
+</Units>

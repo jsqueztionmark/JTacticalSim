@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~~~~~~~~~~~~~~~~ Scenario specific data
+	Country Colors:
+	
+		darkgreen, red, blue, yellow, darkred
+-->
+<GameData>
+  <Factions>
+    <Faction ID="0" Name="Defenders" Description="Defending Alliance" />
+    <Faction ID="1" Name="Invaders" Description="Invading Alliance" />
+  </Factions>
+  <Countries>
+    <Country ID="0" Name="USA" 
+										Description="United States" 
+										Color="yellow" 
+										BGColor="darkyellow"
+										TextDisplayColor="darkyellow"										
+										FlagBGColor="white" 
+										FlagColorA="blue" 
+										FlagColorB="red" 
+										FlagDisplayTextA="■" 
+										FlagDisplayTextB="≡"
+										Faction="0" />
+    <Country ID="1" Name="US_ENEMY" 
+										Description="US Enemy" 
+										Color="red" 
+										BGColor="white" 
+										TextDisplayColor="red"
+										FlagBGColor="red" 
+										FlagColorA="white" 
+										FlagColorB="white"
+										FlagDisplayTextA="*"
+										FlagDisplayTextB="≡"
+										Faction="1" />
+  </Countries>
+  <Players>
+    <Player ID="0" Name="Jeff" Description="" Country="0" IsCurrentPlayer="true" IsAIPlayer="false">
+      <TrackedValues ReinforcementPoints="0" NuclearCharges="0" />
+			<UnplacedReinforcements />
+    </Player>
+    <Player ID="1" Name="Pat" Description="" Country="1" IsCurrentPlayer="false" IsAIPlayer="false">
+      <TrackedValues ReinforcementPoints="0" NuclearCharges="0" />
+			<UnplacedReinforcements />
+    </Player>
+  </Players>
+  <!--Conditions for winning the game for a faction. Winning is an OR proposition-->
+  <FactionVictoryConditions>
+    <VictoryCondition Faction="0" ConditionType="0" Value="0" />
+    <VictoryCondition Faction="1" ConditionType="0" Value="8" />
+    <VictoryCondition Faction="1" ConditionType="1" Value="42" />
+  </FactionVictoryConditions>
+  <!--Unit Assignments-->
+  <UnitAssignments>
+    <UnitAssignment Unit="3" AssignedToUnit="0" />
+    <UnitAssignment Unit="5" AssignedToUnit="6" />
+    <UnitAssignment Unit="6" AssignedToUnit="2" />
+    <UnitAssignment Unit="7" AssignedToUnit="1" />
+    <UnitAssignment Unit="8" AssignedToUnit="7" />
+    <UnitAssignment Unit="9" AssignedToUnit="7" />
+    <UnitAssignment Unit="10" AssignedToUnit="7" />
+    <UnitAssignment Unit="11" AssignedToUnit="1" />
+    <UnitAssignment Unit="12" AssignedToUnit="11" />
+    <UnitAssignment Unit="13" AssignedToUnit="11" />
+    <UnitAssignment Unit="14" AssignedToUnit="11" />
+    <UnitAssignment Unit="16" AssignedToUnit="15" />
+    <UnitAssignment Unit="17" AssignedToUnit="15" />
+    <UnitAssignment Unit="18" AssignedToUnit="15" />
+    <UnitAssignment Unit="15" AssignedToUnit="0" />
+    <UnitAssignment Unit="19" AssignedToUnit="15" />
+    <UnitAssignment Unit="20" AssignedToUnit="6" />
+    <UnitAssignment Unit="21" AssignedToUnit="6" />
+    <UnitAssignment Unit="22" AssignedToUnit="2" />
+    <UnitAssignment Unit="23" AssignedToUnit="22" />
+    <UnitAssignment Unit="25" AssignedToUnit="24" />
+    <UnitAssignment Unit="26" AssignedToUnit="24" />
+    <UnitAssignment Unit="27" AssignedToUnit="24" />
+    <UnitAssignment Unit="29" AssignedToUnit="0" />
+    <UnitAssignment Unit="30" AssignedToUnit="29" />
+    <UnitAssignment Unit="31" AssignedToUnit="29" />
+    <UnitAssignment Unit="32" AssignedToUnit="2" />
+    <UnitAssignment Unit="33" AssignedToUnit="32" />
+    <UnitAssignment Unit="34" AssignedToUnit="32" />
+    <UnitAssignment Unit="35" AssignedToUnit="32" />
+    <UnitAssignment Unit="36" AssignedToUnit="22" />
+    <UnitAssignment Unit="37" AssignedToUnit="22" />
+    <UnitAssignment Unit="38" AssignedToUnit="2" />
+    <UnitAssignment Unit="39" AssignedToUnit="38" />
+    <UnitAssignment Unit="40" AssignedToUnit="38" />
+    <UnitAssignment Unit="42" AssignedToUnit="49" />
+    <UnitAssignment Unit="43" AssignedToUnit="42" />
+    <UnitAssignment Unit="44" AssignedToUnit="42" />
+    <UnitAssignment Unit="45" AssignedToUnit="42" />
+    <UnitAssignment Unit="58" AssignedToUnit="57" />
+    <UnitAssignment Unit="59" AssignedToUnit="57" />
+    <UnitAssignment Unit="60" AssignedToUnit="57" />
+    <UnitAssignment Unit="71" AssignedToUnit="67" />
+    <UnitAssignment Unit="70" AssignedToUnit="67" />
+    <UnitAssignment Unit="68" AssignedToUnit="67" />
+    <UnitAssignment Unit="67" AssignedToUnit="49" />
+    <UnitAssignment Unit="61" AssignedToUnit="49" />
+    <UnitAssignment Unit="62" AssignedToUnit="61" />
+    <UnitAssignment Unit="63" AssignedToUnit="61" />
+    <UnitAssignment Unit="73" AssignedToUnit="72" />
+    <UnitAssignment Unit="74" AssignedToUnit="72" />
+    <UnitAssignment Unit="75" AssignedToUnit="73" />
+    <UnitAssignment Unit="76" AssignedToUnit="73" />
+    <UnitAssignment Unit="77" AssignedToUnit="73" />
+    <UnitAssignment Unit="78" AssignedToUnit="74" />
+    <UnitAssignment Unit="79" AssignedToUnit="74" />
+    <UnitAssignment Unit="82" AssignedToUnit="80" />
+    <UnitAssignment Unit="81" AssignedToUnit="80" />
+    <UnitAssignment Unit="80" AssignedToUnit="85" />
+    <UnitAssignment Unit="86" AssignedToUnit="85" />
+    <UnitAssignment Unit="87" AssignedToUnit="86" />
+    <UnitAssignment Unit="88" AssignedToUnit="86" />
+    <UnitAssignment Unit="89" AssignedToUnit="86" />
+    <UnitAssignment Unit="90" AssignedToUnit="85" />
+    <UnitAssignment Unit="91" AssignedToUnit="90" />
+    <UnitAssignment Unit="92" AssignedToUnit="90" />
+    <UnitAssignment Unit="93" AssignedToUnit="90" />
+    <UnitAssignment Unit="51" AssignedToUnit="49" />
+    <UnitAssignment Unit="52" AssignedToUnit="51" />
+    <UnitAssignment Unit="53" AssignedToUnit="51" />
+    <UnitAssignment Unit="54" AssignedToUnit="51" />
+    <UnitAssignment Unit="57" AssignedToUnit="85" />
+    <UnitAssignment Unit="56" AssignedToUnit="41" />
+    <UnitAssignment Unit="55" AssignedToUnit="41" />
+  </UnitAssignments>
+  <!--Unit Transports-->
+  <UnitTransports>
+    <UnitTransport Unit="43" TransportUnit="41" />
+    <UnitTransport Unit="42" TransportUnit="41" />
+    <UnitTransport Unit="44" TransportUnit="41" />
+    <UnitTransport Unit="45" TransportUnit="41" />
+		<UnitTransport Unit="51" TransportUnit="50" />
+    <UnitTransport Unit="52" TransportUnit="50" />
+    <UnitTransport Unit="53" TransportUnit="50" />
+    <UnitTransport Unit="54" TransportUnit="50" />
+		<UnitTransport Unit="49" TransportUnit="65" />
+		<UnitTransport Unit="67" TransportUnit="66" />
+		<UnitTransport Unit="69" TransportUnit="66" />
+  </UnitTransports>
+  <!--Allowed Unit Types-->
+  <AllowedUnitTypes>
+    <UnitType ID="0" Country="9999" />
+    <UnitType ID="1" Country="9999" />
+    <UnitType ID="2" Country="9999" />
+    <UnitType ID="3" Country="9999" />
+    <UnitType ID="4" Country="9999" />
+    <UnitType ID="5" Country="9999" />
+    <UnitType ID="8" Country="9999" />
+    <UnitType ID="9" Country="9999" />
+    <UnitType ID="10" Country="9999" />
+    <UnitType ID="11" Country="9999" />
+    <UnitType ID="12" Country="9999" />
+    <UnitType ID="17" Country="9999" />
+  </AllowedUnitTypes>
+	<AllowedUnitGroupTypes>
+    <UnitGroupType ID="0" />
+    <UnitGroupType ID="1" />
+    <UnitGroupType ID="2" />
+  </AllowedUnitGroupTypes>
+</GameData>

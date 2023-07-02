@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LookupData>
+
+	<!-- Mission creation -->
+	<UnitTaskTypeUnitClasses>
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="0" />			<!-- Attack / Standard -->
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="1" />			<!-- Attack / Attack -->
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="6" />			<!-- Attack / Defence -->
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="5" />			<!-- Attack / SpecialForces -->
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="10" />			<!-- Attack / Scout -->
+		<UnitTaskTypeUnitClass UnitTaskType="0" UnitClass="11" />			<!-- Attack / Sniper -->
+		<UnitTaskTypeUnitClass UnitTaskType="1" UnitClass="9999" />		<!-- Defend / All -->
+		<UnitTaskTypeUnitClass UnitTaskType="2" UnitClass="9999" />		<!-- MoveToLocation / All -->
+		<UnitTaskTypeUnitClass UnitTaskType="5" UnitClass="9" />			<!-- ProduceUnits / HQ -->
+		<UnitTaskTypeUnitClass UnitTaskType="6" UnitClass="9" />			<!-- AssignUnits / HQ -->
+		<UnitTaskTypeUnitClass UnitTaskType="3" UnitClass="9999" />		<!-- LoadUnits / All -->
+		<UnitTaskTypeUnitClass UnitTaskType="4" UnitClass="9999" />		<!-- DeployUnits / All -->
+		<UnitTaskTypeUnitClass UnitTaskType="11" UnitClass="3" />			<!-- BuildInfrastructure / Engineer -->
+		<UnitTaskTypeUnitClass UnitTaskType="12" UnitClass="9" />			<!-- PlaceUnits / HQ -->
+	</UnitTaskTypeUnitClasses>
+	
+	<UnitGroupTypeUnitTaskTypes>
+		<UnitGroupTypeUnitTaskType UnitGroupType="9999" UnitTaskType="0" />		<!-- All / DoBattle -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="9999" UnitTaskType="1" />		<!-- All / Defend -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="9999" UnitTaskType="2" />		<!-- All / MoveToLocation -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="9999" UnitTaskType="3" />		<!-- All / LoadUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="9999" UnitTaskType="4" />		<!-- All / DeployUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="2" UnitTaskType="5" />			<!-- Battalion / ProduceUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="2" UnitTaskType="6" />			<!-- Battalion / AssignUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="2" UnitTaskType="12" />			<!-- Battalion / PlaceUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="3" UnitTaskType="5" />			<!-- Division / ProduceUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="3" UnitTaskType="6" />			<!-- Division / AssignUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="3" UnitTaskType="12" />			<!-- Division / PlaceUnits -->
+		<UnitGroupTypeUnitTaskType UnitGroupType="0" UnitTaskType="11" />			<!-- Squad / BuildInfrastructure -->
+	</UnitGroupTypeUnitTaskTypes>
+
+	<!-- Tasks required for mission objectives -->
+	<MissionObjectiveTypeUnitTaskTypes>
+		<!-- Attack Location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="0" UnitTaskType="3" StepOrder="1" />		<!-- Load units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="0" UnitTaskType="2" StepOrder="2" />		<!-- Move to location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="0" UnitTaskType="4" StepOrder="3" />		<!-- Deploy units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="0" UnitTaskType="0" StepOrder="4" />		<!-- Do Battle -->
+		<!-- Defend Location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="1" UnitTaskType="3" StepOrder="1" />		<!-- Load units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="1" UnitTaskType="2" StepOrder="2" />		<!-- Move to location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="1" UnitTaskType="4" StepOrder="3" />		<!-- Deploy units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="1" UnitTaskType="1" StepOrder="4" />		<!-- Defend -->
+		<!-- Scout Location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="4" UnitTaskType="2" StepOrder="1" />		<!-- Move to location -->
+		<!-- Transport Units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="6" UnitTaskType="3" StepOrder="1" />		<!-- Load units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="6" UnitTaskType="2" StepOrder="2" />		<!-- Move to location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="6" UnitTaskType="4" StepOrder="3" />		<!-- Deploy units -->
+		<!-- Airborn Attack -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="7" UnitTaskType="3" StepOrder="1" />		<!-- Load units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="7" UnitTaskType="2" StepOrder="2" />		<!-- Move to location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="7" UnitTaskType="4" StepOrder="3" />		<!-- Deploy units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="7" UnitTaskType="0" StepOrder="4" />		<!-- Do Battle -->
+		<!-- Remote Attack -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="8" UnitTaskType="3" StepOrder="1" />		<!-- Load units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="8" UnitTaskType="2" StepOrder="2" />		<!-- Move to location -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="8" UnitTaskType="4" StepOrder="3" />		<!-- Deploy units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="8" UnitTaskType="0" StepOrder="4" />		<!-- Do Battle -->
+		<!-- Reinforce Units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="9" UnitTaskType="5" StepOrder="1" />		<!-- Produce units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="9" UnitTaskType="12" StepOrder="2" />		<!-- Place units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="9" UnitTaskType="6" StepOrder="3" />		<!-- Assign units -->
+		<!-- Reassign Units -->
+		<MissionObjectiveTypeUnitTaskType MissionObjectiveType="10" UnitTaskType="6" StepOrder="1" />		<!-- Assign units -->
+	</MissionObjectiveTypeUnitTaskTypes>
+
+	
+	
+	<UnitBaseTypeUnitClasses>
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="0" />		<!-- Infantry / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="6" />		<!-- Infantry / Defence -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="2" />		<!-- Infantry / Supply -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="3" />		<!-- Infantry / Engineer -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="4" />		<!-- Infantry / Medical -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="5" />		<!-- Infantry / SpecialForces -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="8" />		<!-- Infantry / Airborne -->
+    <UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="10" />   <!-- Infantry / Scout -->
+		<UnitBaseTypeUnitClass UnitBaseType="0" UnitClass="11" />		<!-- Infantry / Sniper -->
+		<UnitBaseTypeUnitClass UnitBaseType="1" UnitClass="0" />		<!-- Armor / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="1" UnitClass="6" />		<!-- Armor / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="2" UnitClass="0" />		<!-- Artillery / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="3" UnitClass="1" />		<!-- Helicopter / Attack -->
+		<UnitBaseTypeUnitClass UnitBaseType="3" UnitClass="2" />		<!-- Helicopter / Supply -->
+		<UnitBaseTypeUnitClass UnitBaseType="3" UnitClass="7" />		<!-- Helicopter / Transport -->
+		<UnitBaseTypeUnitClass UnitBaseType="3" UnitClass="4" />		<!-- Helicopter / Medical -->
+    <UnitBaseTypeUnitClass UnitBaseType="3" UnitClass="10" />   <!-- Helicopter / Scout -->
+		<UnitBaseTypeUnitClass UnitBaseType="4" UnitClass="1" />		<!-- Plane / Attack -->
+		<UnitBaseTypeUnitClass UnitBaseType="4" UnitClass="2" />		<!-- Plane / Supply -->
+		<UnitBaseTypeUnitClass UnitBaseType="4" UnitClass="7" />		<!-- Plane / Transport -->
+		<UnitBaseTypeUnitClass UnitBaseType="5" UnitClass="0" />		<!-- Missile / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="6" UnitClass="0" />		<!-- Surface-Watercraft / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="6" UnitClass="2" />		<!-- Surface-Watercraft / Supply -->
+		<UnitBaseTypeUnitClass UnitBaseType="6" UnitClass="7" />		<!-- Surface-Watercraft / Transport -->
+		<UnitBaseTypeUnitClass UnitBaseType="6" UnitClass="5" />		<!-- Surface-Watercraft / SpecialForces -->
+		<UnitBaseTypeUnitClass UnitBaseType="9999" UnitClass="9" />	<!-- HQ / All -->
+		<UnitBaseTypeUnitClass UnitBaseType="8" UnitClass="0" />		<!-- Sub-Watercraft / Standard -->
+		<UnitBaseTypeUnitClass UnitBaseType="9" UnitClass="0" />		<!-- Sub-Watercraft / Standard -->
+	</UnitBaseTypeUnitClasses>
+
+	<UnitBaseTypeUnitGeogTypes>
+		<UnitBaseTypeUnitGeogType UnitBaseType="0" UnitGeogType="0" />		<!-- Infantry / Land -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="1" UnitGeogType="0" />		<!-- Armor / Land -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="2" UnitGeogType="0" />		<!-- Artillery / Land -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="3" UnitGeogType="3" />		<!-- Helicopter / Air-LowAltitude -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="4" UnitGeogType="1" />		<!-- Plane / Air-AllAltitudes -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="5" UnitGeogType="0" />		<!-- Missile / Land -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="6" UnitGeogType="2" />		<!-- Surface Watercraft / Water-Surface -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="7" UnitGeogType="0" />		<!-- HQ / Land -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="8" UnitGeogType="4" />		<!-- Sub Watercraft / Water-Sub -->
+		<UnitBaseTypeUnitGeogType UnitBaseType="9" UnitGeogType="0" />
+	</UnitBaseTypeUnitGeogTypes>
+
+	<UnitGeogTypeDemographicClasses>
+		<UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="0" />		<!-- Land / FlatLand -->
+		<UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="1" />		<!-- Land / Hills -->
+		<UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="6" />		<!-- Land / City -->
+    <UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="11" />   <!-- Land / ShoreLineNorth -->
+    <UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="12" />   <!-- Land / ShoreLineSouth -->
+    <UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="13" />   <!-- Land / ShoreLineWest -->
+    <UnitGeogTypeDemographicClass UnitGeogType="0" DemographicClass="14" />   <!-- Land / ShoreLineEast -->
+		<UnitGeogTypeDemographicClass UnitGeogType="1" DemographicClass="9999" />	<!-- Air-AllAltitudes / All -->
+		<UnitGeogTypeDemographicClass UnitGeogType="3" DemographicClass="9999" />	<!-- Air-LowAltitudes / All -->
+		<UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="3" />		<!-- Water-surface / River -->
+		<UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="5" />		<!-- Water-surface / Sea -->
+    <UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="11" />   <!-- Water-surface / ShoreLineNorth -->
+    <UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="12" />   <!-- Water-surface / ShoreLineSouth -->
+    <UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="13" />   <!-- Water-surface / ShoreLineWest -->
+    <UnitGeogTypeDemographicClass UnitGeogType="2" DemographicClass="14" />   <!-- Water-surface / ShoreLineEast -->
+		<UnitGeogTypeDemographicClass UnitGeogType="4" DemographicClass="3" />		<!-- Water-Sub / River -->
+		<UnitGeogTypeDemographicClass UnitGeogType="4" DemographicClass="5" />		<!-- Water-Sub / Sea -->
+	</UnitGeogTypeDemographicClasses>
+
+
+  <UnitTypeUnitGeogTypeBattleEffective>
+    <BattleEffective UnitType="0" UnitGeogType="0" /> 		<!-- Light Infantry / Land -->
+    <BattleEffective UnitType="1" UnitGeogType="0" /> 		<!-- Motorized Infantry / Land -->
+    <BattleEffective UnitType="0" UnitGeogType="3" />     <!-- Light Infantry / Air-LowAltitudes -->
+    <BattleEffective UnitType="1" UnitGeogType="3" />     <!-- Motorized Infantry / Air-LowAltitudes -->
+		<BattleEffective UnitType="2" UnitGeogType="0" /> 		<!-- Light Armor / Land -->
+    <BattleEffective UnitType="2" UnitGeogType="3" />     <!-- Light Armor / Air-LowAltitudes -->
+		<BattleEffective UnitType="3" UnitGeogType="0" /> 		<!-- Heavy Armor / Land -->
+    <BattleEffective UnitType="3" UnitGeogType="3" />     <!-- Heavy Armor / Air-LowAltitudes -->
+		<BattleEffective UnitType="4" UnitGeogType="0" /> 		<!-- Artillery / Land -->
+		<BattleEffective UnitType="4" UnitGeogType="2" /> 		<!-- Artillery / Water -->
+		<BattleEffective UnitType="5" UnitGeogType="0" /> 		<!-- Cavalry / Land -->
+		<BattleEffective UnitType="5" UnitGeogType="1" /> 		<!-- Cavalry / Water-Surface -->
+		<BattleEffective UnitType="5" UnitGeogType="3" /> 		<!-- Cavalry / Air-LowAltitudes -->
+		<BattleEffective UnitType="6" UnitGeogType="3" /> 		<!-- Fighter / Air-LowAltitudes -->
+		<BattleEffective UnitType="6" UnitGeogType="0" /> 		<!-- Fighter / Land-->
+		<BattleEffective UnitType="6" UnitGeogType="1" /> 		<!-- Fighter / Air-AllAltitudes -->
+		<BattleEffective UnitType="6" UnitGeogType="2" /> 		<!-- Fighter / Water-Surface -->
+		<BattleEffective UnitType="7" UnitGeogType="0" /> 		<!-- Bomber / Land -->
+		<BattleEffective UnitType="7" UnitGeogType="2" /> 		<!-- Bomber / Water-Surface -->
+		<BattleEffective UnitType="8" UnitGeogType="0" /> 		<!-- MLRS / Land -->
+		<BattleEffective UnitType="9" UnitGeogType="1" /> 		<!-- SAM / Air-AllAltitudes -->
+		<BattleEffective UnitType="9" UnitGeogType="3" /> 		<!-- SAM / Air-LowAltitudes -->
+		<BattleEffective UnitType="10" UnitGeogType="2" /> 		<!-- PatrolBoat / Water-Surface -->
+		<BattleEffective UnitType="11" UnitGeogType="9999" /> <!-- Destroyer / All -->
+		<BattleEffective UnitType="12" UnitGeogType="2" /> 		<!-- Transport / Water-Surface -->
+		<BattleEffective UnitType="13" UnitGeogType="1" /> 		<!-- Carrier / Air-AllAltitudes -->
+		<BattleEffective UnitType="13" UnitGeogType="2" /> 		<!-- Carrier / Water-Surface -->
+		<BattleEffective UnitType="13" UnitGeogType="3" /> 		<!-- Carrier / Air-LowAltitudes -->
+		<BattleEffective UnitType="14" UnitGeogType="2" /> 		<!-- Submarine / Water-Surface -->
+		<BattleEffective UnitType="14" UnitGeogType="4" /> 		<!-- Submarine / Water-Sub -->
+		<BattleEffective UnitType="15" UnitGeogType="0" /> 		<!-- NuclearSubmarine / Land -->
+		<BattleEffective UnitType="15" UnitGeogType="2" /> 		<!-- NuclearSubmarine / Water-Surface -->
+		<BattleEffective UnitType="15" UnitGeogType="4" /> 		<!-- NuclearSubmarine / Water-Sub -->
+		<BattleEffective UnitType="17" UnitGeogType="9999" />	<!-- BattleShip / All -->
+  </UnitTypeUnitGeogTypeBattleEffective>
+
+	<!-- Maps modifier overrides for unit movement constraints -->
+	<UnitGeogTypeMovementOverrides>
+		<Override UnitGeogType="0" DemographicClassA="9999" DemographicClassB="7" />			<!-- Land Units / All / Roads -->
+		<Override UnitGeogType="0" DemographicClassA="9999" DemographicClassB="6" />			<!-- Land Units / All / Urban -->
+		<Override UnitGeogType="0" DemographicClassA="3" DemographicClassB="8" />				  <!-- Land Units / Rivers / Bridges -->
+    <Override UnitGeogType="0" DemographicClassA="11" DemographicClassB="8" />        <!-- Land Units / ShoreLineNorth / Bridges -->
+    <Override UnitGeogType="0" DemographicClassA="12" DemographicClassB="8" />        <!-- Land Units / ShoreLineSouth / Bridges -->
+    <Override UnitGeogType="0" DemographicClassA="13" DemographicClassB="8" />        <!-- Land Units / ShoreLineWest / Bridges -->
+    <Override UnitGeogType="0" DemographicClassA="14" DemographicClassB="8" />        <!-- Land Units / ShoreLineEast / Bridges -->
+		<Override UnitGeogType="0" DemographicClassA="3" DemographicClassB="6" />					<!-- Land Units / Rivers / Urban -->
+		<Override UnitGeogType="0" DemographicClassA="4" DemographicClassB="6" />					<!-- Land Units / Lakes / Urban -->
+		<Override UnitGeogType="1" DemographicClassA="9999" DemographicClassB="9999" />		<!-- Air-AllAltitude / All / All -->
+		<Override UnitGeogType="3" DemographicClassA="9999" DemographicClassB="9999" />		<!-- Air-AllAltitude / All / All -->
+	</UnitGeogTypeMovementOverrides>
+	
+	<!-- Maps transport to unit type and unit class -->
+	<UnitTransportUnitTypeUnitClasses>
+		<TransportEffective TransportUnitType="7" CarriedUnitType="0" CarriedUnitClass="8" />					<!-- Bomber / LightInfantry / Airborne -->
+		<TransportEffective TransportUnitType="7" CarriedUnitType="0" CarriedUnitClass="5" />					<!-- Bomber / LightInfantry / SF -->
+		<TransportEffective TransportUnitType="7" CarriedUnitType="1" CarriedUnitClass="8" />					<!-- Bomber / MotorizedInfantry / Airborne -->
+		<TransportEffective TransportUnitType="7" CarriedUnitType="1" CarriedUnitClass="5" />					<!-- Bomber / MotorizedInfantry / SF -->
+		<TransportEffective TransportUnitType="5" CarriedUnitType="0" CarriedUnitClass="9999" />			<!-- Cavalry / LightInfantry / All -->
+		<TransportEffective TransportUnitType="5" CarriedUnitType="1" CarriedUnitClass="9999" />			<!-- Cavalry / LightInfantry / All -->
+		<TransportEffective TransportUnitType="12" CarriedUnitType="9999" CarriedUnitClass="9999" />	<!-- Transport / All / All -->
+		<TransportEffective TransportUnitType="13" CarriedUnitType="9999" CarriedUnitClass="9999" />	<!-- Carrier / All / All -->
+	</UnitTransportUnitTypeUnitClasses>
+
+  <!-- Allows for tracking whether a demographic can contain more than one demographic type at the meta level -->
+  <HybridDemographics>
+    <HybridDemographicClass DemographicClass="11" />        <!-- ShoreLineNorth -->
+    <HybridDemographicClass DemographicClass="12" />        <!-- ShoreLineSouth -->
+    <HybridDemographicClass DemographicClass="13" />        <!-- ShoreLineWest -->       
+    <HybridDemographicClass DemographicClass="14" />        <!-- ShoreLineEast -->
+		<HybridDemographicClass DemographicClass="15" />        <!-- ShoreLineNorthWest -->
+		<HybridDemographicClass DemographicClass="16" />        <!-- ShoreLineNorthEast -->
+		<HybridDemographicClass DemographicClass="17" />        <!-- ShoreLineSouthWest -->
+		<HybridDemographicClass DemographicClass="18" />        <!-- ShoreLineSouthEast -->
+  </HybridDemographics>
+
+  <!-- Describes in what direction a given demographic class will hinder (disallow) movement for a given UnitGeogClass in a given direction -->
+  <DemographicClassMovementHinderanceInDirection>
+    <MovementHinderance DemographicClass="11" UnitGeogType="0" Direction="2" />     <!-- ShoreLineNorth / Land Units / SOUTH-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="0" Direction="7" />     <!-- ShoreLineNorth / Land Units / SOUTHWEST-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="0" Direction="8" />     <!-- ShoreLineNorth / Land Units / SOUTHEAST-->
+	
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="1" />     <!-- ShoreLineNorthWest / Land Units / NORTH-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="6" />     <!-- ShoreLineNorthWest / Land Units / NORTHEAST-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="3" />     <!-- ShoreLineNorthWest / Land Units / EAST-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="8" />     <!-- ShoreLineNorthWest / Land Units / SOUTHEAST-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="2" />     <!-- ShoreLineNorthWest / Land Units / SOUTH-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="7" />     <!-- ShoreLineNorthWest / Land Units / SOUTHWEST-->
+		<MovementHinderance DemographicClass="15" UnitGeogType="0" Direction="4" />     <!-- ShoreLineNorthWest / Land Units / WEST-->
+		
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="1" />     <!-- ShoreLineNorthEast / Land Units / NORTH-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="5" />     <!-- ShoreLineNorthEast / Land Units / NORTHWEST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="3" />     <!-- ShoreLineNorthEast / Land Units / EAST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="8" />     <!-- ShoreLineNorthEast / Land Units / SOUTHEAST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="2" />     <!-- ShoreLineNorthEast / Land Units / SOUTH-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="7" />     <!-- ShoreLineNorthEast / Land Units / SOUTHWEST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="0" Direction="4" />     <!-- ShoreLineNorthEast / Land Units / WEST-->
+	
+    <MovementHinderance DemographicClass="12" UnitGeogType="0" Direction="1" />     <!-- ShoreLineSouth / Land Units / NORTH-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="0" Direction="5" />     <!-- ShoreLineSouth / Land Units / NORTHWEST-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="0" Direction="6" />     <!-- ShoreLineSouth / Land Units / NORTHEAST-->
+	
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="1" />     <!-- ShoreLineSouthEast / Land Units / NORTH-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="5" />     <!-- ShoreLineSouthEast / Land Units / NORTHWEST-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="3" />     <!-- ShoreLineSouthEast / Land Units / EAST-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="6" />     <!-- ShoreLineSouthEast / Land Units / NORTHEAST-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="2" />     <!-- ShoreLineSouthEast / Land Units / SOUTH-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="7" />     <!-- ShoreLineSouthEast / Land Units / SOUTHWEST-->
+		<MovementHinderance DemographicClass="17" UnitGeogType="0" Direction="4" />     <!-- ShoreLineSouthEast / Land Units / WEST-->
+		
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="1" />     <!-- ShoreLineSouthWest / Land Units / NORTH-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="5" />     <!-- ShoreLineSouthWest / Land Units / NORTHWEST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="3" />     <!-- ShoreLineSouthWest / Land Units / EAST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="6" />     <!-- ShoreLineSouthWest / Land Units / NORTHEAST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="2" />     <!-- ShoreLineSouthWest / Land Units / SOUTH-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="8" />     <!-- ShoreLineSouthWest / Land Units / SOUTHEAST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="0" Direction="4" />     <!-- ShoreLineSouthWest / Land Units / WEST-->
+	
+    <MovementHinderance DemographicClass="13" UnitGeogType="0" Direction="3" />     <!-- ShoreLineWest / Land Units / EAST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="0" Direction="6" />     <!-- ShoreLineWest / Land Units / NORTHEAST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="0" Direction="8" />     <!-- ShoreLineWest / Land Units / SOUTHEAST -->
+    <MovementHinderance DemographicClass="14" UnitGeogType="0" Direction="4" />     <!-- ShoreLineEast / Land Units / WEST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="0" Direction="5" />     <!-- ShoreLineEast / Land Units / NORTHWEST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="0" Direction="7" />     <!-- ShoreLineEast / Land Units / SOUTHWEST-->
+		
+    <MovementHinderance DemographicClass="11" UnitGeogType="2" Direction="1" />     <!-- ShoreLineNorth / Water-surface / NORTH-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="2" Direction="5" />     <!-- ShoreLineNorth / Water-surface / NORTHWEST-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="2" Direction="6" />     <!-- ShoreLineNorth / Water-surface / NORTHEAST-->
+		
+		<MovementHinderance DemographicClass="15" UnitGeogType="2" Direction="5" />     <!-- ShoreLineNorthWest / Water-surface / NORTHWEST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="2" Direction="6" />     <!-- ShoreLineNorthEast / Water-surface / NORTHEAST-->
+		
+    <MovementHinderance DemographicClass="12" UnitGeogType="2" Direction="2" />     <!-- ShoreLineSouth / Water-surface / SOUTH-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="2" Direction="7" />     <!-- ShoreLineSouth / Water-surface / SOUTHWEST-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="2" Direction="8" />     <!-- ShoreLineSouth / Water-surface / SOUTHEAST-->
+		
+		<MovementHinderance DemographicClass="17" UnitGeogType="2" Direction="7" />     <!-- ShoreLineSouthWest / Water-surface / SOUTHWEST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="2" Direction="8" />     <!-- ShoreLineSouthEast / Water-surface / SOUTHEAST-->
+		
+    <MovementHinderance DemographicClass="13" UnitGeogType="2" Direction="4" />     <!-- ShoreLineWest / Water-surface / WEST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="2" Direction="5" />     <!-- ShoreLineWest / Water-surface / NORTHWEST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="2" Direction="7" />     <!-- ShoreLineWest / Water-surface / SOUTHWEST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="2" Direction="3" />     <!-- ShoreLineEast / Water-surface / EAST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="2" Direction="6" />     <!-- ShoreLineEast / Water-surface / NORTHEAST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="2" Direction="8" />     <!-- ShoreLineEast / Water-surface / SOUTHEAST-->
+		
+    <MovementHinderance DemographicClass="11" UnitGeogType="4" Direction="1" />     <!-- ShoreLineNorth / Water-Sub / NORTH-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="4" Direction="5" />     <!-- ShoreLineNorth / Water-Sub / NORTHWEST-->
+    <MovementHinderance DemographicClass="11" UnitGeogType="4" Direction="6" />     <!-- ShoreLineNorth / Water-Sub / NORTHEAST-->
+		
+		<MovementHinderance DemographicClass="15" UnitGeogType="4" Direction="5" />     <!-- ShoreLineNorthWest / Water-Sub / NORTHWEST-->
+		<MovementHinderance DemographicClass="16" UnitGeogType="4" Direction="6" />     <!-- ShoreLineNorthEast / Water-Sub / NORTHEAST-->
+		
+    <MovementHinderance DemographicClass="12" UnitGeogType="4" Direction="2" />     <!-- ShoreLineSouth / Water-Sub / SOUTH-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="4" Direction="7" />     <!-- ShoreLineSouth / Water-Sub / SOUTHWEST-->
+    <MovementHinderance DemographicClass="12" UnitGeogType="4" Direction="8" />     <!-- ShoreLineSouth / Water-Sub / SOUTHEAST-->
+		
+		<MovementHinderance DemographicClass="17" UnitGeogType="4" Direction="7" />     <!-- ShoreLineSouthWest / Water-Sub / SOUTHWEST-->
+		<MovementHinderance DemographicClass="18" UnitGeogType="4" Direction="8" />     <!-- ShoreLineSouthEast / Water-Sub / SOUTHEAST-->
+		
+    <MovementHinderance DemographicClass="13" UnitGeogType="4" Direction="4" />     <!-- ShoreLineWest / Water-Sub / WEST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="4" Direction="5" />     <!-- ShoreLineWest / Water-Sub / NORTHWEST-->
+    <MovementHinderance DemographicClass="13" UnitGeogType="4" Direction="7" />     <!-- ShoreLineWest / Water-Sub / SOUTHWEST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="4" Direction="3" />     <!-- ShoreLineEast / Water-Sub / EAST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="4" Direction="6" />     <!-- ShoreLineEast / Water-Sub / NORTHEAST-->
+    <MovementHinderance DemographicClass="14" UnitGeogType="4" Direction="8" />     <!-- ShoreLineEast / Water-Sub / SOUTHEAST-->
+  </DemographicClassMovementHinderanceInDirection>
+	
+
+</LookupData>

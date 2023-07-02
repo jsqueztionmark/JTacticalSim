@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SavedGames>
+  <SavedGame ID="10" Name="UNIT_TEST" GameFileDirectory="UNIT_TEST" LastPlayed="false" Scenario="0" />
+  <SavedGame ID="17" Name="Washington State-DEV" GameFileDirectory="Washington State-DEV" LastPlayed="false" Scenario="4" />
+  <SavedGame ID="15" Name="CamasArea-DEV" GameFileDirectory="CamasArea-DEV" LastPlayed="true" Scenario="3" />
+</SavedGames>

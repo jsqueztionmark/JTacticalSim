@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="C97D4F05-4C8B-4107-871A-E9582875F536/f:App.config" caret="205" fromTop="5" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:GameBoard/f:Unit.cs" caret="423" fromTop="0" />
+    <File id="4FD19D76-B546-4D31-B3BC-417F08CE53CD/d:Render/f:ConsoleRenderer.cs" caret="14147" fromTop="10" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Game/f:CommandInterface.cs" caret="672" fromTop="0" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Game/f:IGame.cs" caret="532" fromTop="10" />
+    <File id="C80BBEBA-1397-4574-8F3F-2B66AEE90982/f:Game.cs" caret="449" fromTop="17" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:InfoObjects/f:DataFileInfoBase.cs" caret="1225" fromTop="21" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:100_GameData.xml" caret="2916" fromTop="32" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:200_BoardMap.xml" caret="13082" fromTop="25" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Service/f:IGameComponentService.cs" caret="807" fromTop="30" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameComponentService.cs" caret="4086" fromTop="7" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:GameData/d:XML/f:050_ComponentData.xml" caret="2312" fromTop="11" />
+    <File id="4FD19D76-B546-4D31-B3BC-417F08CE53CD/f:App.config" caret="212" fromTop="5" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:300_UnitData.xml" caret="5031" fromTop="13" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:ISkirmish.cs" caret="402" fromTop="16" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Demographics/f:Demographic.cs" caret="0" fromTop="0" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/f:Namespace.cs" caret="2945" fromTop="10" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:IBattle.cs" caret="506" fromTop="21" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Service/f:IGameAIService.cs" caret="2493" fromTop="20" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/d:ServiceResult/f:BaseServiceResult.cs" caret="0" fromTop="0" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Round.cs" caret="313" fromTop="8" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:IRound.cs" caret="407" fromTop="15" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Skirmish.cs" caret="540" fromTop="8" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/d:ServiceResult/f:AIServiceResult.cs" caret="0" fromTop="0" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Battle.cs" caret="150" fromTop="6" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameRulesService.cs" caret="832" fromTop="0" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Args/f:GameArgs.cs" caret="0" fromTop="0" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Exception/f:GameException.cs" caret="0" fromTop="0" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Exception/f:ServiceException.cs" caret="0" fromTop="0" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameAIService.cs" caret="6675" fromTop="14" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Service/f:IGameRulesService.cs" caret="5350" fromTop="20" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:GameData/d:XML/f:060_LookupData.xml" caret="4271" fromTop="12" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:100_GameData.xml" caret="2775" fromTop="18" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:DTO/f:IBasePointValuesDTO.cs" caret="420" fromTop="17" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Data/f:IBasePointValues.cs" caret="420" fromTop="17" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Data/f:BasePointValues.cs" caret="1195" fromTop="30" />
+    <File id="C90E4B27-E007-42A6-95C2-81BE5384A7F6/d:DTO/f:BasePointValuesDTO.cs" caret="1398" fromTop="27" />
+    <File id="C90E4B27-E007-42A6-95C2-81BE5384A7F6/f:XMLDataContext.cs" caret="3529" fromTop="27" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/d:Extension/d:Converters/f:ConverterExtensions.cs" caret="10929" fromTop="25" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:300_UnitData.xml" caret="5230" fromTop="18" />
+    <File id="C97D4F05-4C8B-4107-871A-E9582875F536/f:App.config" caret="667" fromTop="12" />
+    <File id="C80BBEBA-1397-4574-8F3F-2B66AEE90982/f:Game.cs" caret="2040" fromTop="14" />
+    <File id="4FD19D76-B546-4D31-B3BC-417F08CE53CD/d:Render/f:ConsoleRenderer.cs" caret="14140" fromTop="9" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Game/f:CommandInterface.cs" caret="4912" fromTop="32" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Game/f:IGame.cs" caret="326" fromTop="13" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:Scenario/d:SimpleTestGame/d:XML/f:200_BoardMap.xml" caret="12962" fromTop="21" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameRulesService.cs" caret="5028" fromTop="10" />
+    <File id="4FD19D76-B546-4D31-B3BC-417F08CE53CD/f:App.config" caret="676" fromTop="12" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameComponentService.cs" caret="22469" fromTop="11" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Service/f:IGameComponentService.cs" caret="3096" fromTop="16" />
+    <File id="5A039B94-AEB1-488E-8663-D5197C98596D/d:GameData/d:XML/f:050_ComponentData.xml" caret="774" fromTop="14" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Service/f:IGameAIService.cs" caret="2447" fromTop="11" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:ISkirmish.cs" caret="558" fromTop="20" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:IBattle.cs" caret="655" fromTop="25" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Skirmish.cs" caret="1218" fromTop="20" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Round.cs" caret="946" fromTop="11" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Component/f:IRound.cs" caret="449" fromTop="16" />
+    <File id="753C9340-0CF8-44C5-80A9-BF4C19BF05AC/d:Battle/f:Battle.cs" caret="1093" fromTop="20" />
+    <File id="71A250C2-8620-46E3-8394-5FA2FF791B5B/d:Exception/f:ServiceException.cs" caret="699" fromTop="24" />
+    <File id="C47FFD83-F3CE-4595-8FD4-5500C7EF8297/f:GameAIService.cs" caret="7132" fromTop="15" />
+  </RecentEdits>
+</RecentFiles>

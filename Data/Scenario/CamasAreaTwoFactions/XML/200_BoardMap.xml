@@ -1,0 +1,5884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameBoard>
+  <Attributes Title="Camas Area East" Width="25" Height="16" DrawHeight="5" DrawWidth="6" CellSize="150" CellMeters="150" CellMaxUnits="8" />
+  <Nodes>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="10" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="10" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Zion Lutheran Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+		<DefaultTile>
+			<Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+            <Demographic ID="0" Orientation="none" />
+            <Demographic ID="21" Orientation="none" />
+            <Demographic ID="11" Orientation="east,west" />
+            <Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+						<Demographic ID="0" Orientation="none" />
+            <Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R Slough">
+        <Demographics>
+					<Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R Slough/HWY 14">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+					<Demographic ID="12" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="0" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Camas Friends Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+			</Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+					<Demographic ID="2" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R/Bead Island">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R/Bead Island">
+        <Demographics>
+         <Demographic ID="2" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R Slough/HWY 14">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+          <Demographic ID="12" Orientation="east,west" />
+					<Demographic ID="23" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="1" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Louis Bloch Park">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="8" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="12" Orientation="west" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="11" Orientation="east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="2" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Parkside Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban/Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Island">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="8" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial/Water Treatment">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial/Marina">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="north,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="3" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="St Thomas Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="11" Orientation="west,north" />
+					<Demographic ID="22" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R/Island">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Camas Industrial/Water Treatment">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="4" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="22" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="22" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+					<Demographic ID="22" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+					<Demographic ID="22" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west,north" />
+					<Demographic ID="22" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Lacamas Creek">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="22" Orientation="north,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="5" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+     <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation=",east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="6" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+       <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west,south,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="12" Orientation="south" />
+					<Demographic ID="11" Orientation="north" />
+					<Demographic ID="14" Orientation="south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="HWY 14/River Rock Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="7" Y="15" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="11" Orientation="west,north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="3" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="8" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Slough">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Belz Oak Park Self Storage">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="9" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Iron Guard Storage">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Slough">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Slough">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Marina">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="14" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="10" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="3" Name="Camas Municipal Ct./Power Substation">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Port Of Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Port Of Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="11" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,west" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Calvary Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Interchange">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Port Of Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="12" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Interchange">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Marina">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Marina">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="13" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="C/W Mini Storage">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="west,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="14" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+					<Demographic ID="5" Orientation="none" />
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="13" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="15" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="22" Orientation="south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="4" Orientation="none" />
+					<Demographic ID="12" Orientation="east" />
+					<Demographic ID="11" Orientation="west" />
+					<Demographic ID="19" Orientation="west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="3" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="8" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="16" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="20" Orientation="none" />
+					<Demographic ID="22" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Camas Mall">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="10" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="11" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="12" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="17" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="7th Day Adventist Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Washougal R/Riverside School">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Sandy Swimming Hole">
+        <Demographics>
+          <Demographic ID="4" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south,north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="7" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="8" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="9" Z="0" />
+    </Location>
+    <Country ID="1" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="18" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Community Church Of God">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="19" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="23" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,north" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="20" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+     <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="east,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+        </Demographics>
+      </Tile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,west,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="5" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="21" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Industrial">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="22" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Washougal R">
+        <Demographics>
+          <Demographic ID="4" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="2" Name="Washougal Transportation Dept.">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="23" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="0" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="1" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="2" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Rural">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="3" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="6" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="4" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="14" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="5" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="19" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="6" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="7" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="8" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="9" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="1" Name="Gateway Community Church">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="21" Orientation="none" />
+					<Demographic ID="11" Orientation="east,west" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="10" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="11" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Camas Urban">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="north,south,east,west" />
+					<Demographic ID="14" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="12" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="HWY 14">
+        <Demographics>
+          <Demographic ID="0" Orientation="none" />
+					<Demographic ID="10" Orientation="none" />
+					<Demographic ID="11" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="13" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="2" Orientation="none" />
+					<Demographic ID="11" Orientation="north,east" />
+					<Demographic ID="14" Orientation="west,south" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="14" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+  <Node>
+    <Location>
+      <Coordinate X="24" Y="15" Z="0" />
+    </Location>
+    <Country ID="0" />
+    <DefaultTile>
+      <Tile VictoryPoints="0" Name="Columbia R">
+        <Demographics>
+          <Demographic ID="1" Orientation="none" />
+        </Demographics>
+      </Tile>
+    </DefaultTile>
+  </Node>
+</Nodes>
+</GameBoard>

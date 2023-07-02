@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C80BBEBA-1397-4574-8F3F-2B66AEE90982}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JTacticalSim.Base</RootNamespace>
+    <AssemblyName>JTacticalSim.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - NOXNA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - NOXNA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\JTacticalSim.Base.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq, Version=4.5.10.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.5.10\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\BattleHandler.cs" />
+    <Compile Include="AI\StrategyHandler.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="BaseGameObject.cs" />
+    <Compile Include="Cache\BaseCache.cs" />
+    <Compile Include="Cache\GameCache.cs" />
+    <Compile Include="Cache\GameDemographicCache.cs" />
+    <Compile Include="Cache\GameNodeCache.cs" />
+    <Compile Include="Cache\GameTileCache.cs" />
+    <Compile Include="Cache\GameUnitCache.cs" />
+    <Compile Include="Cache\MoveStatCache.cs" />
+    <Compile Include="Cache\StrategyCache.cs" />
+    <Compile Include="ConstantsAndEnums.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameArgs.cs" />
+    <Compile Include="GameExceptions.cs" />
+    <Compile Include="GameState\AIInPlayState.cs" />
+    <Compile Include="GameState\BaseGameState.cs" />
+    <Compile Include="GameState\BattleState.cs" />
+    <Compile Include="GameState\GameOverState.cs" />
+    <Compile Include="GameState\GameInPlayState.cs" />
+    <Compile Include="GameState\GameSettingsState.cs" />
+    <Compile Include="GameState\GameStateSystem.cs" />
+    <Compile Include="GameState\HelpState.cs" />
+    <Compile Include="GameState\QuickSelectState.cs" />
+    <Compile Include="GameState\ReinforceState.cs" />
+    <Compile Include="GameState\ScenarioInfoState.cs" />
+    <Compile Include="GameState\TitleScreenState.cs" />
+    <Compile Include="Interface\AI\Battle\IBattle.cs" />
+    <Compile Include="Interface\AI\Battle\IRound.cs" />
+    <Compile Include="Interface\AI\Battle\ISkirmish.cs" />
+    <Compile Include="Interface\AI\Strategy\IAIStrategyObjectContainer.cs" />
+    <Compile Include="Interface\AI\Strategy\IMission.cs" />
+    <Compile Include="Interface\AI\Strategy\IMissionType.cs" />
+    <Compile Include="Interface\AI\Strategy\IStrategy.cs" />
+    <Compile Include="Interface\AI\Strategy\ITactic.cs" />
+    <Compile Include="Interface\AI\Strategy\IUnitTask.cs" />
+    <Compile Include="Interface\AI\Strategy\IUnitTaskType.cs" />
+    <Compile Include="Interface\Cache\IBaseCache.cs" />
+    <Compile Include="Interface\Cache\IGameCacheDependencies.cs" />
+    <Compile Include="Interface\Cache\IGameDemographicCache.cs" />
+    <Compile Include="Interface\Cache\IGameNodeCache.cs" />
+    <Compile Include="Interface\Cache\IGameTileCache.cs" />
+    <Compile Include="Interface\Cache\IGameUnitCache.cs" />
+    <Compile Include="Interface\Cache\IMoveStatCache.cs" />
+    <Compile Include="Interface\Cache\IStrategyCache.cs" />
+    <Compile Include="Interface\Component\Extension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\Component\IBaseComponent.cs" />
+    <Compile Include="Interface\Component\IBaseResult.cs" />
+    <Compile Include="Interface\Component\IBoard.cs" />
+    <Compile Include="Interface\Component\IBoardComponent.cs" />
+    <Compile Include="Interface\Component\IClickableComponent.cs" />
+    <Compile Include="Interface\Component\ICompletable.cs" />
+    <Compile Include="Interface\Component\IComponentSet.cs" />
+    <Compile Include="Interface\Component\ICoordinate.cs" />
+    <Compile Include="Interface\Component\ICountry.cs" />
+    <Compile Include="Interface\Component\IDemographic.cs" />
+    <Compile Include="Interface\Component\IDemographicClass.cs" />
+    <Compile Include="Interface\Component\IDemographicType.cs" />
+    <Compile Include="Interface\Component\IExecutableTask.cs" />
+    <Compile Include="Interface\Component\IFaction.cs" />
+    <Compile Include="Interface\Component\IGameFileCopyable.cs" />
+    <Compile Include="Interface\Component\IInfoDisplayable.cs" />
+    <Compile Include="Interface\Component\IMoveableComponent.cs" />
+    <Compile Include="Interface\Component\INode.cs" />
+    <Compile Include="Interface\Component\IPathableObject.cs" />
+    <Compile Include="Interface\Component\IPathNode.cs" />
+    <Compile Include="Interface\Component\IRenderable.cs" />
+    <Compile Include="Interface\Component\IResult.cs" />
+    <Compile Include="Interface\Component\ISavedGame.cs" />
+    <Compile Include="Interface\Component\IScenario.cs" />
+    <Compile Include="Interface\Component\ISelectableComponent.cs" />
+    <Compile Include="Interface\Component\ISpriteContainer.cs" />
+    <Compile Include="Interface\Component\IStatModifier.cs" />
+    <Compile Include="Interface\Component\ISubNodeLocation.cs" />
+    <Compile Include="Interface\Component\ITextDisplayable.cs" />
+    <Compile Include="Interface\Component\ITile.cs" />
+    <Compile Include="Interface\Component\IUnit.cs" />
+    <Compile Include="Interface\Component\IUnitBaseType.cs" />
+    <Compile Include="Interface\Component\IUnitBranch.cs" />
+    <Compile Include="Interface\Component\IUnitClass.cs" />
+    <Compile Include="Interface\Component\IUnitGeogType.cs" />
+    <Compile Include="Interface\Component\IUnitGroupType.cs" />
+    <Compile Include="Interface\Component\IUnitStack.cs" />
+    <Compile Include="Interface\Component\IUnitType.cs" />
+    <Compile Include="Interface\Component\IVictoryConditionType.cs" />
+    <Compile Include="Interface\Data\IBasePointValues.cs" />
+    <Compile Include="Interface\Data\ICanGetNextID.cs" />
+    <Compile Include="Interface\Game\BaseRenderer.cs" />
+    <Compile Include="Interface\CommandInterface.cs" />
+    <Compile Include="Interface\Game\IBaseGameObject.cs" />
+    <Compile Include="Interface\Game\IBattleHandler.cs" />
+    <Compile Include="Interface\Game\ICommandInterface.cs" />
+    <Compile Include="Interface\Game\ICommandProcessor.cs" />
+    <Compile Include="Interface\Game\IZoomHandler.cs" />
+    <Compile Include="Interface\Game\IGame.cs" />
+    <Compile Include="Interface\Game\IInputCommandContainer.cs" />
+    <Compile Include="Interface\Game\IInputCommandHandler.cs" />
+    <Compile Include="Interface\Game\IMapModeHandler.cs" />
+    <Compile Include="Interface\Game\IParsedCommandArgs.cs" />
+    <Compile Include="Interface\Game\IPlayer.cs" />
+    <Compile Include="Interface\Game\IPlayerTurn.cs" />
+    <Compile Include="Interface\Game\IRenderer.cs" />
+    <Compile Include="Interface\Game\IStrategyHandler.cs" />
+    <Compile Include="Interface\Game\ITextRenderer.cs" />
+    <Compile Include="Interface\Game\IVictoryCondition.cs" />
+    <Compile Include="Interface\Game\State\IGameState.cs" />
+    <Compile Include="Interface\Game\State\IGameStateSystem.cs" />
+    <Compile Include="Interface\Game\TileConsoleRenderHelper.cs" />
+    <Compile Include="Interface\InfoObjects\BuildInfo.cs" />
+    <Compile Include="Interface\InfoObjects\CurrentMoveStatInfo.cs" />
+    <Compile Include="Interface\InfoObjects\GameboardAttributeInfo.cs" />
+    <Compile Include="Interface\InfoObjects\GameboardStrategicValueAttributesInfo.cs" />
+    <Compile Include="Interface\InfoObjects\MapModeInfo.cs" />
+    <Compile Include="Interface\InfoObjects\NodeNeighborInfo.cs" />
+    <Compile Include="Interface\InfoObjects\PlayerTrackedValuesInfo.cs" />
+    <Compile Include="Interface\InfoObjects\RouteInfo.cs" />
+    <Compile Include="Interface\InfoObjects\StrategicAssessmentInfo.cs" />
+    <Compile Include="Interface\InfoObjects\StrategicAttributeInfo.cs" />
+    <Compile Include="Interface\InfoObjects\TableInfo.cs" />
+    <Compile Include="Interface\InfoObjects\UnitInfo.cs" />
+    <Compile Include="Interface\InfoObjects\ZoomInfo.cs" />
+    <Compile Include="Interface\Media\ISoundPlayable.cs" />
+    <Compile Include="Interface\Media\ISoundHandler.cs" />
+    <Compile Include="Interface\Media\ISoundSystem.cs" />
+    <Compile Include="Interface\Service\IAIService.cs" />
+    <Compile Include="Interface\Service\IDataService.cs" />
+    <Compile Include="Interface\Service\IDemographicService.cs" />
+    <Compile Include="Interface\Service\IGameService.cs" />
+    <Compile Include="Interface\Service\IGenericComponentService.cs" />
+    <Compile Include="Interface\Service\IMediaService.cs" />
+    <Compile Include="Interface\Service\INodeService.cs" />
+    <Compile Include="Interface\Service\IRulesService.cs" />
+    <Compile Include="Interface\Service\IServiceDependencies.cs" />
+    <Compile Include="Interface\Service\ITileService.cs" />
+    <Compile Include="Interface\Service\IUnitService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Util\GameComponentTextInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JTacticalSim.Utility\JTacticalSim.Utility.csproj">
+      <Project>{74A61E0A-0D59-4353-9B35-8C648D895B23}</Project>
+      <Name>JTacticalSim.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy *.dll ..\..\..\Build</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

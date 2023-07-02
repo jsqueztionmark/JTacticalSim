@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ComponentData>
+
+	<!--	Game level modifier base values 
+				Movement: 											Base movement value for all units. Adjustments are made to this value.
+				CombatRoll: 										How many sides on the dice for a combat roll.
+				CombatBase: 										Base combat (attack/defend) value for all units. Adjustments are made to this value.
+				MedicalSupportBase: 						Static value for all units for determining medical assistance based on the medical assistance die roll.
+				WeightBase: 										Multiplier base for unit weights.
+				CostBase:												Static value for determining reinforcement point costs per unit
+				AIBaseRoll:											How many sides on the dice for AI action
+				AIAggressiveness:								Static Modifier to determine frequency of AI Aggressive actions. Higher values more aggressive capped at AIBaseRoll
+				AIDefensiveness:								Static Modifier to determine frequency of AI Defensive actions. Higher values more defensive capped at AIBaseRoll
+				AIIntelligence:									Static Modifier to determine other AI related actions. Higher values more intelligent capped at AIBaseRoll
+				ReinforcementCalcBaseCountry:		Multiplier base for determining reinforcement points earned per turn. Decimal percentage (country owned nodes) value * ReinforcementCalcBaseCountry
+				ReinforcementCalcBaseFaction:		Multiplier base for determining reinforcement points earned per turn. Decimal percentage (faction owned nodes) value * ReinforcementCalcBaseFaction
+				ReinforcementCalcBaseVP:				Multiplier base for determining reinforcement points earned per turn. Total sum victory points (country owned nodes) value * ReinforcementCalcBaseVP
+				HQBonus: 												Static combat bonus for a unit being attached to another unit.
+				SuppliedBonus: 									Static combat bonus for having a supply unit within the MaxSupplyDistance.
+				MaxSupplyDistance: 							How far are supply units effective.	
+				TargetAttachedUnitBonus:				Static target desirability bonus given per attached unit of another unit
+				TargetMedicalUnitBonus:					Static target desirability bonus given to medical units
+				TargetSupplyUnitBonus:					Static target desirability bonus given to supply units
+	-->
+	
+	<BasePointValues Movement="1"
+									 CombatRoll="7"
+                   StealthRoll="10" 
+                   StealthBase="2"
+									 CombatBase="1" 
+									 MedicalSupportBase="2"
+									 WeightBase="5" 
+									 CostBase="3"
+									 AIBaseRoll="7"
+									 AIAggressiveness="4"
+									 AIDefensiveness="4"
+									 AIIntelligence="4"
+									 ReinforcementCalcBaseCountry="20"
+									 ReinforcementCalcBaseFaction="5"
+									 ReinforcementCalcBaseVP=".2"
+									 HQBonus=".7" 
+									 SuppliedBonus=".7"
+									 MaxSupplyDistance="2"
+									 TargetAttachedUnitBonus=".3" 
+									 TargetMedicalUnitBonus="1.2"
+									 TargetSupplyUnitBonus="1" />
+
+	<VictoryConditions>
+		<Condition ID="0" Name="EnemyUnitsRemaining" Description="Sets the max number of oppposing units still in action as a condition for winning the game" />
+		<Condition ID="1" Name="VictoryPointsHeld" Description="Sets the total victory points held by a faction as a condition for winning the game." />
+		<Condition ID="2" Name="FlagCaptured" Description="Capture the flag. Sets a unit HQ as a flag-holder to be destroyed as a condition for winning the game." />
+	</VictoryConditions>
+										
+	<!-- Demographics and related -->
+	<DemographicTypes>
+		<DemographicType ID="0" Name="BaseGeography" Description="Demographic that represents a geographic attribute" DisplayOrder="1" />
+		<DemographicType ID="1" Name="Terrain" Description="Demographic that represents terrain" DisplayOrder="2" />
+		<DemographicType ID="2" Name="Population" Description="Demographic that represents population statistics" DisplayOrder="5" />
+		<DemographicType ID="3" Name="Weather" Description="Demographic that represents weather statistics" DisplayOrder="6" />
+		<DemographicType ID="4" Name="Infrastructure" Description="Demographic that represents infrastructure improvements to geography" DisplayOrder="4" />
+		<DemographicType ID="5" Name="Flora" Description="Demographic that represents plant life components" DisplayOrder="3" />
+	</DemographicTypes>
+
+  <!-- Default Demographics -->
+  <Demographics>
+    <!-- Base Geography -->
+    <Demographic ID="0" Name="Land" Description="Generic Land" DemographicClass="0" Value="Land" />
+    <Demographic ID="1" Name="Water" Description="Generic River" DemographicClass="3" Value="Water" />
+    <Demographic ID="2" Name="WaterNorthShore" Description="Generic River North Shore" DemographicClass="11" Value="Water" />
+    <Demographic ID="3" Name="WaterSouthShore" Description="Generic River South Shore" DemographicClass="12" Value="Water" />
+    <Demographic ID="4" Name="WaterWestShore" Description="Generic River West Shore" DemographicClass="13" Value="Water" />
+    <Demographic ID="5" Name="WaterEastShore" Description="Generic River East Shore" DemographicClass="14" Value="Water" />
+    <Demographic ID="15" Name="WaterNorthWestShore" Description="Generic River North West Shore" DemographicClass="15" Value="Water" />
+    <Demographic ID="16" Name="WaterNorthEast" Description="Generic River North East Shore" DemographicClass="16" Value="Water" />
+    <Demographic ID="17" Name="WaterSouthWestShore" Description="Generic River South West Shore" DemographicClass="17" Value="Water" />
+    <Demographic ID="18" Name="WaterSouthEastShore" Description="Generic River South East Shore" DemographicClass="18" Value="Water" />
+    <!-- Geography -->
+    <Demographic ID="6" Name="Hills" Description="Generic Foothills" DemographicClass="1" Value="Hills" />
+    <Demographic ID="7" Name="Mountains" Description="Generic Mountains" DemographicClass="2" Value="Mountains" />
+    <Demographic ID="8" Name="Lake" Description="Generic Lake" DemographicClass="4" Value="Lake" />
+    <Demographic ID="9" Name="Sea" Description="Generic Sea" DemographicClass="5" Value="Sea" />
+    <!-- Infrastructure -->
+    <Demographic ID="10" Name="Urban" Description="Generic Urban Area" DemographicClass="6" Value="Urban" />    
+    <Demographic ID="11" Name="Road" Description="Generic Road" DemographicClass="7" Value="Road" />
+    <Demographic ID="12" Name="Bridge" Description="Generic Bridge" DemographicClass="8" Value="Bridge" />
+    <Demographic ID="13" Name="TrainTrack" Description="Generic Train Track" DemographicClass="9" Value="TrainTrack" />
+    <!-- Flora -->
+    <Demographic ID="14" Name="Trees" Description="Some Generic Trees" DemographicClass="10" Value="Trees" />
+		<Demographic ID="19" Name="Forests" Description="Dominated With Trees" DemographicClass="19" Value="Forests" />
+		<Demographic ID="20" Name="Marsh" Description="Generic Swamp" DemographicClass="20" Value="Marsh" />
+	</Demographics>
+  
+  <DemographicClasses>
+		<DemographicClass ID="0" 
+											Name="Land" 
+											Description="Normal Flat Earth" 
+											DemographicType="0" 
+											TextDisplay=" " 
+											AttackModifier="0"
+											AttackDistanceModifier="1"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="-0.5"
+											/>
+		<DemographicClass ID="1" 
+											Name="Hills" 
+											Description="Normal HillyEarth" 
+											DemographicType="1" 
+											TextDisplay="∩" 
+											AttackModifier="-1"
+											AttackDistanceModifier="0"
+											DefenceModifier="1"
+											MovementModifier="0" 
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="2" 
+											Name="Mountains" 
+											Description="Normal Mountainous Earth" 
+											DemographicType="1" 
+											TextDisplay="▲▲" 
+											AttackModifier="-1"
+											AttackDistanceModifier="-1"
+											DefenceModifier="2"
+											MovementModifier="-1"
+                      StealthModifier="0.7"
+											/>
+		<DemographicClass ID="3" 
+											Name="River" 
+											Description="Normal Riverway" 
+											DemographicType="0" 
+											TextDisplay=" " 
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="-0.5"
+											/>
+		<DemographicClass ID="4" 
+											Name="Lake" 
+											Description="Normal Lake - partial space" 
+											DemographicType="1" 
+											TextDisplay="▒" 
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="-0.5"
+											/>
+		<DemographicClass ID="5" 
+											Name="Sea" 
+											Description="Normal broad water - full space" 
+											DemographicType="0" 
+											TextDisplay="▓" 
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0" 
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="6" 
+											Name="Urban" 
+											Description="Urban area" 
+											DemographicType="4" 
+											TextDisplay="╬" 
+											AttackModifier=".7"
+											AttackDistanceModifier="0"
+											DefenceModifier=".4"
+											MovementModifier=".3"
+                      StealthModifier="0.5"
+											/>
+		<DemographicClass	ID="7"
+											Name="Road"
+											Description="Road"
+											DemographicType="4"
+											TextDisplay="══"
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier=".3"
+                      StealthModifier="0"
+											/>
+		<DemographicClass	ID="8"
+											Name="Bridge"
+											Description="Bridge"
+											DemographicType="4"
+											TextDisplay="▬▬"
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="-0.5"
+											/>
+		<DemographicClass	ID="9"
+											Name="TrainTrack"
+											Description="Train Track"
+											DemographicType="4"
+											TextDisplay="‡"
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="10"
+											Name="Trees"
+											Description="Some Trees"
+											DemographicType="5"
+											TextDisplay="¥"
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="1"
+											MovementModifier="-0.3"
+                      StealthModifier="1"
+											/>
+		<DemographicClass ID="11"
+											Name="ShoreLineNorth"
+											Description="Land to the north, water to the south"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="12"
+											Name="ShoreLineSouth"
+											Description="Land to the South, water to the north"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="13"
+											Name="ShoreLineWest"
+											Description="Land to the west, water to the east"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="14"
+											Name="ShoreLineEast"
+											Description="Land to the east, water to the west"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>											
+		<DemographicClass ID="15"
+											Name="ShoreLineNorthWest"
+											Description="Land to the northwest, water elsewhere"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="16"
+											Name="ShoreLineNorthEast"
+											Description="Land to the northeast, water elsewhere"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="17"
+											Name="ShoreLineSouthWest"
+											Description="Land to the southwest, water elsewhere"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="18"
+											Name="ShoreLineSouthEast"
+											Description="Land to the southeast, water elsewhere"
+											DemographicType="0"
+											TextDisplay=" "
+											AttackModifier="0"
+											AttackDistanceModifier="0"
+											DefenceModifier="0"
+											MovementModifier="0"
+                      StealthModifier="0"
+											/>
+		<DemographicClass ID="19"
+											Name="Forested"
+											Description="Dominated with trees and other vegitation"
+											DemographicType="5"
+											TextDisplay="¥¥"
+											AttackModifier="-0.5"
+											AttackDistanceModifier="-1"
+											DefenceModifier="1.5"
+											MovementModifier="-1"
+                      StealthModifier="1.5"
+											/>
+		<DemographicClass ID="20"
+											Name="Marsh"
+											Description="Dominated with swamps"
+											DemographicType="5"
+											TextDisplay="≈"
+											AttackModifier="-0.7"
+											AttackDistanceModifier="-1"
+											DefenceModifier="-0.6"
+											MovementModifier="-0.6"
+                      StealthModifier="-0.6"
+											/>
+  </DemographicClasses>
+	
+	
+  <!-- Unit Code Data -->
+
+	<UnitGroupTypes>
+		<UnitGroupType ID="3" 
+									 Name="Division"
+									 Description="Division - Up to 4 battalions" 
+									 Level="40" 
+									 MaxDirectAssignedUnits="4"
+									 TextDisplay="xxx"/>
+		<UnitGroupType ID="2" 
+									 Name="Battalion" 
+									 Description="Battalion - Up to 6 companies" 
+									 Level="30" 
+									 MaxDirectAssignedUnits="6"
+									 TextDisplay="xx"/>
+		<UnitGroupType ID="1" 
+									 Name="Company" 
+									 Description="Company - Attack/Defence Unit - Up to 12 squads" 
+									 Level="20" 
+									 MaxDirectAssignedUnits="12"
+									 TextDisplay="x"/>
+		<UnitGroupType ID="0" 
+									 Name="Squad" 
+									 Description="Squad - Attack/Defence Force - 5 units" 
+									 Level="10" 
+									 MaxDirectAssignedUnits="0"
+									 TextDisplay="."/>
+	</UnitGroupTypes>
+	
+  <UnitBaseTypes>
+    <UnitBaseType ID="0" Name="Infantry" Description="Leg and light motorized units" CanReceiveMedicalSupport="true" />
+    <UnitBaseType ID="1" Name="Armor" Description="Heavy motorized and mechanized units" CanReceiveMedicalSupport="true" />
+    <UnitBaseType ID="2" Name="Artillery" Description="HE projectile firing units" CanReceiveMedicalSupport="true" />
+    <UnitBaseType ID="3" Name="Helicopter" Description="Aviation Rotary Wing" CanReceiveMedicalSupport="true" />
+    <UnitBaseType ID="4" Name="Plane" Description="Aviation Fixed Wing" CanReceiveMedicalSupport="false" />
+    <UnitBaseType ID="5" Name="Missile" Description="Missile firing units" CanReceiveMedicalSupport="true" />
+    <UnitBaseType ID="6" Name="Watercraft" Description="Units that float on water" CanReceiveMedicalSupport="true" />
+		<UnitBaseType ID="8" Name="Watercraft-Sub" Description="Units that can move on or under water" CanReceiveMedicalSupport="true" />
+		<UnitBaseType ID="9" Name="AirDefence" Description="Units that defend against air attacks only" CanReceiveMedicalSupport="true" />
+  </UnitBaseTypes>
+
+  <UnitTypes>
+    <UnitType ID="0" 
+							Name="LightInfantry" 
+							Description="Infantry on foot" 
+							UnitBaseType="0" 
+							TextDisplay="☺"
+							AttackModifier="0"
+							AttackDistanceModifier="0"
+							DefenceModifier="1"
+							MovementModifier="0"
+							UnitCostModifier="1"
+							UnitWeightModifier="1"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+    <UnitType ID="1" 
+							Name="MotorizedInfantry" 
+							Description="Infantry with vehicles" 
+							UnitBaseType="0" 
+							TextDisplay="☻"
+							AttackModifier="0"
+							AttackDistanceModifier="0"
+							DefenceModifier="1"
+							MovementModifier="1"
+							UnitCostModifier="1.2"
+							UnitWeightModifier="1.6"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+    <UnitType ID="2" 
+							Name="LightArmor" 
+							Description="Armor light defence" 
+							UnitBaseType="1" 
+							TextDisplay="⌂"
+							AttackModifier="1.3"
+							AttackDistanceModifier="0"
+							DefenceModifier="1"
+							MovementModifier="1"
+							UnitCostModifier="1.5"
+							UnitWeightModifier="2.3"
+							AllowableWeightModifier="0"
+              StealthModifier="-0.3"
+							/>
+    <UnitType ID="3" 
+							Name="HeavyArmor" 
+							Description="Armor heavy defence" 
+							UnitBaseType="1" 
+							TextDisplay="⌂" 
+							AttackModifier="1.3"
+							AttackDistanceModifier="0"
+							DefenceModifier="2"
+							MovementModifier="1"
+							UnitCostModifier="1.7"
+							UnitWeightModifier="2.8"
+							AllowableWeightModifier="0"
+              StealthModifier="-0.7"
+							/>
+    <UnitType ID="4" 
+							Name="Artillery" 
+							Description="HE projectile firing" 
+							UnitBaseType="2" 
+							TextDisplay="┴" 
+							AttackModifier="1"
+							AttackDistanceModifier="2"
+							DefenceModifier="1"
+							MovementModifier="0"
+							UnitCostModifier="1.6"
+							UnitWeightModifier="2.2"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+    <UnitType ID="5" 
+							Name="Cavalry" 
+							Description="Helicopters" 
+							UnitBaseType="3" 
+							TextDisplay="∞"
+							AttackModifier="1.8"
+							AttackDistanceModifier="0"
+							DefenceModifier="1.7"
+							MovementModifier="1"
+							UnitCostModifier="2.2"
+							UnitWeightModifier="2.4"
+							AllowableWeightModifier="1.5"
+              StealthModifier="0.3"
+							/>
+    <UnitType ID="6" 
+							Name="Fighter" 
+							Description="Light attack" 
+							UnitBaseType="4" 
+							TextDisplay="F" 
+							AttackModifier="2.2"
+							AttackDistanceModifier="0"
+							DefenceModifier="2"
+							MovementModifier="2"
+							UnitCostModifier="4"
+							UnitWeightModifier="3.2"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+    <UnitType ID="7" 
+							Name="Bomber" 
+							Description="Heavy attack" 
+							UnitBaseType="4" 
+							TextDisplay="B" 
+							AttackModifier="2.8"
+							AttackDistanceModifier="0"
+							DefenceModifier="0"
+							MovementModifier="3"
+							UnitCostModifier="5"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="2"
+              StealthModifier="0"
+							/>
+    <UnitType ID="8" 
+							Name="MLRS" 
+							Description="Surface to surface missiles" 
+							UnitBaseType="5" 
+							TextDisplay="╩" 
+							AttackModifier="2.8"
+							AttackDistanceModifier="5"
+							DefenceModifier="1.7"
+							MovementModifier="0"
+							UnitCostModifier="3.2"
+							UnitWeightModifier="2.3"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+    <UnitType ID="9" 
+							Name="SAM" 
+							Description="Surface to air missiles" 
+							UnitBaseType="9" 
+							TextDisplay="╩" 
+							AttackModifier="2.3"
+							AttackDistanceModifier="1"
+							DefenceModifier="2"
+							MovementModifier="0"
+							UnitCostModifier="2.5"
+							UnitWeightModifier="1.7"
+							AllowableWeightModifier="0"
+              StealthModifier="0.4"
+							/>
+    <UnitType ID="10" 
+							Name="Patrol" 
+							Description="Watercraft small light defence" 
+							UnitBaseType="6" 
+							TextDisplay=">" 
+							AttackModifier="1"
+							AttackDistanceModifier="0"
+							DefenceModifier="1"
+							MovementModifier="0"
+							UnitCostModifier="1"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="0"
+              StealthModifier="0.4"
+							/>
+    <UnitType ID="11" 
+							Name="Destroyer" 
+							Description="Watercraft large heavy defence" 
+							UnitBaseType="6" 
+							TextDisplay="►" 
+							AttackModifier="2"
+							AttackDistanceModifier="0"
+							DefenceModifier="2"
+							MovementModifier="1"
+							UnitCostModifier="4"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="3"
+              StealthModifier="0"
+							/>
+    <UnitType ID="12" 
+							Name="Transport" 
+							Description="Watercraft medium light defence" 
+							UnitBaseType="6" 
+							TextDisplay="≥" 
+							AttackModifier="-1"
+							AttackDistanceModifier="0"
+							DefenceModifier="0"
+							MovementModifier="1"
+							UnitCostModifier="2.2"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="10"
+              StealthModifier="0"
+							/>
+    <UnitType ID="13" 
+							Name="Carrier" 
+							Description="Watercraft large heavy defence" 
+							UnitBaseType="6" 
+							TextDisplay="►►►" 
+							AttackModifier="0"
+							AttackDistanceModifier="0"
+							DefenceModifier="3"
+							MovementModifier="0"
+							UnitCostModifier="4.5"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="12"
+              StealthModifier="0"
+							/>
+		<UnitType ID="14" 
+							Name="Submarine" 
+							Description="Watercraft submersible light attack" 
+							UnitBaseType="8" 
+							TextDisplay="-►"
+							AttackModifier="2"
+							AttackDistanceModifier="0"
+							DefenceModifier="2"
+							MovementModifier="1"
+							UnitCostModifier="2.6"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="0"
+              StealthModifier="2"
+							/>
+    <UnitType ID="15"
+							Name="NuclearSubmarine"
+							Description="Watercraft submersible heavy missile attack"
+							UnitBaseType="8"
+							TextDisplay="-►"
+							AttackModifier="5"
+							AttackDistanceModifier="6"
+							DefenceModifier="2"
+							MovementModifier="1"
+							UnitCostModifier="6"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="0"
+              StealthModifier="2"
+							/>
+		<UnitType ID="17"
+							Name="BattleShip"
+							Description="BattleShip"
+							UnitBaseType="6"
+							TextDisplay="►►"
+							AttackModifier="3"
+							AttackDistanceModifier="2"
+							DefenceModifier="4"
+							MovementModifier="1"
+							UnitCostModifier="5.3"
+							UnitWeightModifier="0"
+							AllowableWeightModifier="0"
+              StealthModifier="0"
+							/>
+  </UnitTypes>
+
+	<UnitGeogTypes>
+		<UnitGeogType ID="0" Name="Land" Description="Units that move on land only" />
+		<UnitGeogType ID="1" Name="Air-AllAltitudes" Description="Units that fly at all altitudes" />
+		<UnitGeogType ID="2" Name="Water-Surface" Description="Units that move on the surface of water only" />
+		<UnitGeogType ID="3" Name="Air-LowAltitudes" Description="Units that fly primarily at low altitudes" />
+		<UnitGeogType ID="4" Name="Water-Sub" Description="Units that move under the surface of water" />
+	</UnitGeogTypes>
+	
+  <UnitClasses>
+		<UnitClass 	ID="0" 
+								Name="Standard" 
+								Description="" 
+								TextDisplay="" 
+								AttackModifier="0"
+								DefenceModifier="0"
+								MovementModifier="0"
+								UnitCostModifier="1"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/>
+    <UnitClass 	ID="1" 
+								Name="Attack" 
+								Description="Specialty in attack" 
+								TextDisplay="»" 
+								AttackModifier="1"
+								DefenceModifier="0"
+								MovementModifier="0"
+								UnitCostModifier="1.5"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/>
+    <UnitClass 	ID="2" 
+								Name="Supply" 
+								Description="Can supply other units" 
+								TextDisplay="s" 
+								AttackModifier="0"
+								DefenceModifier="-1"
+								MovementModifier="0"
+								UnitCostModifier="1.2"
+								AllowableWeightModifier="1.2"
+                StealthModifier="0"
+								/>
+    <UnitClass 	ID="3" 
+								Name="Engineer" 
+								Description="Construction Experts" 
+								TextDisplay="☼" 
+								AttackModifier="-0.7"
+								DefenceModifier="0"
+								MovementModifier="0"
+								UnitCostModifier="1.5"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/> 
+    <UnitClass 	ID="4" 
+								Name="Medical" 
+								Description="Medically trained" 
+								TextDisplay="+" 
+								AttackModifier="-0.7"
+								DefenceModifier="-0.7"
+								MovementModifier="0"
+								UnitCostModifier="2.1"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/>
+    <UnitClass 	ID="5" 
+								Name="SpecialForces" 
+								Description="Elite trained" 
+								TextDisplay="*" 
+								AttackModifier="1.4"
+								DefenceModifier="0.7"
+								MovementModifier="0"
+								UnitCostModifier="2"
+								AllowableWeightModifier="0"
+                StealthModifier="1"
+								/>
+		<UnitClass 	ID="6"
+								Name="Defence"
+								Description="Specialty in defence"
+								TextDisplay="«"
+								AttackModifier="0"
+								DefenceModifier="1"
+								MovementModifier="0"
+								UnitCostModifier="1.5"
+								AllowableWeightModifier="0"
+                StealthModifier=".5"
+								/>
+		<UnitClass 	ID="7"
+								Name="Transport"
+								Description="Can transport other units"
+								TextDisplay="t"
+								AttackModifier="0"
+								DefenceModifier="-0.7"
+								MovementModifier="1"
+								UnitCostModifier="1.2"
+								AllowableWeightModifier="1.2"
+                StealthModifier="0"
+								/>
+		<UnitClass 	ID="8"
+								Name="Airborne"
+								Description="Can accomplish airborne missions"
+								TextDisplay="▼"
+								AttackModifier="0"
+								DefenceModifier="0"
+								MovementModifier="0"
+								UnitCostModifier="1.5"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/>
+		<UnitClass 	ID="9"
+								Name="HQ"
+								Description="Unit Headquarters"
+								TextDisplay="■"
+								AttackModifier="0"
+								DefenceModifier="0"
+								MovementModifier="0"
+								UnitCostModifier="1.5"
+								AllowableWeightModifier="0"
+                StealthModifier="0"
+								/>
+    <UnitClass 	ID="10"
+								Name="Scout"
+								Description="Specialized in evasion"
+								TextDisplay="*"
+								AttackModifier="0"
+								DefenceModifier="1"
+								MovementModifier="0"
+								UnitCostModifier="1.6"
+								AllowableWeightModifier="0"
+                StealthModifier="2.5"
+								/>
+		<UnitClass 	ID="11"
+								Name="Sniper"
+								Description="Long distance riflemen"
+								TextDisplay="¬"
+								AttackModifier="1"
+								DefenceModifier="0"
+								AttackDistanceModifier="1"
+								MovementModifier="0"
+								UnitCostModifier="2.5"
+								AllowableWeightModifier="0"
+                StealthModifier="1.5"
+								/>
+  </UnitClasses>
+
+	<!-- 
+		Mission Objectives contain specific unit tasks to accomplish.
+		Unit Tasks are assignable to specific Unit classes and group types
+	-->
+  <MissionObjectiveTypes>
+    <MissionObjectiveType ID="0" Name="LocationAttack" Description="Attack At Location" Priority="32" TurnOrder="2" />
+    <MissionObjectiveType ID="1" Name="DefendLocation" Description="Defend At Location" Priority="20" TurnOrder="2" />
+		<MissionObjectiveType ID="4" Name="Scout" Description="Scout an area for enemy units" Priority="50" TurnOrder="2" />
+		<MissionObjectiveType ID="6" Name="Transport" Description="Transport Units" Priority="10" TurnOrder="1" />
+		<MissionObjectiveType ID="7" Name="AirbornAttack" Description="Drop airborne units and attack" Priority="35" TurnOrder="2" />
+		<MissionObjectiveType ID="8" Name="RemoteAttack" Description="Attack remote units" Priority="30" TurnOrder="2" />
+		<MissionObjectiveType ID="9" Name="ReinforceUnits" Description="Bring in reinforcements" Priority="40" TurnOrder="3" />
+		<MissionObjectiveType ID="10" Name="ReassignUnits" Description="Reorganize unit assignments" Priority="45" TurnOrder="3" />
+  </MissionObjectiveTypes>
+  
+	<UnitTaskTypes>
+		<UnitTaskType ID="0" Name="Attack" Description="Attack At Location" />
+		<UnitTaskType ID="1" Name="Defend" Description="Defend At Location" />
+		<UnitTaskType ID="2" Name="MoveToLocation" Description="Move To Location" />
+		<UnitTaskType ID="3" Name="LoadUnits" Description="Load units to transport" />
+		<UnitTaskType ID="4" Name="DeployUnits" Description="Offload units from transport" />
+		<UnitTaskType ID="5" Name="ProduceUnits" Description="Produce Units" />
+		<UnitTaskType ID="6" Name="AssignUnits" Description="Assign Units" />
+		<unittaskType ID="11" Name="BuildInfrastructure" Description="Build infrastructure at location" />
+		<unittaskType ID="12" Name="PlaceUnits" Description="Place new reinforcements" />
+	</UnitTaskTypes>
+
+
+</ComponentData>

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Runtime.Serialization;
+
+namespace JTacticalSim.Data.DTO
+{
+	[Serializable, DataContract]
+	public class MissionDTO : BaseGameComponentDTO
+	{
+		[DataMember]
+		public int Unit { get; set; }
+
+		[DataMember]
+		public int MissionType { get; set; }
+
+		[DataMember]
+		public int Tactic { get; set; }
+
+		[DataMember]
+		public int CurrentTask { get; set; }
+	}
+}
