@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JTacticalSim.Base", "JTacticalSim.Base\JTacticalSim.Base.csproj", "{C80BBEBA-1397-4574-8F3F-2B66AEE90982}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JTacticalSim.Component", "JTacticalSim.Component\JTacticalSim.Component.csproj", "{753C9340-0CF8-44C5-80A9-BF4C19BF05AC}"
@@ -22,61 +24,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleControls", "ConsoleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JTacticalSim.Media", "JTacticalSim.Media\JTacticalSim.Media.csproj", "{8BAB8AC6-9992-4DB2-92C2-20E250B9FE1D}"
 EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup1", "Setup1\Setup1.isproj", "{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}"
-	ProjectSection(ProjectDependencies) = postProject
-		{71989733-2287-488B-8B66-EFCD559CA031} = {71989733-2287-488B-8B66-EFCD559CA031}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JTacticalSim.Console_OLD", "JTacticalSim.Console_OLD\JTacticalSim.Console_OLD.csproj", "{4FD19D76-B546-4D31-B3BC-417F08CE53CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JTacticalSim.ConsoleApp", "JTacticalSim.ConsoleApp\JTacticalSim.ConsoleApp.csproj", "{71989733-2287-488B-8B66-EFCD559CA031}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 13
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://jstorm.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = JTacticalSim.Base\\JTacticalSim.Base.csproj
-		SccProjectName1 = JTacticalSim.Base
-		SccLocalPath1 = JTacticalSim.Base
-		SccProjectUniqueName2 = JTacticalSim.Component\\JTacticalSim.Component.csproj
-		SccProjectName2 = JTacticalSim.Component
-		SccLocalPath2 = JTacticalSim.Component
-		SccProjectUniqueName3 = JTacticalSim.DataContext\\JTacticalSim.DataContext.csproj
-		SccProjectName3 = JTacticalSim.DataContext
-		SccLocalPath3 = JTacticalSim.DataContext
-		SccProjectUniqueName4 = JTacticalSim.Service\\JTacticalSim.Service.csproj
-		SccProjectName4 = JTacticalSim.Service
-		SccLocalPath4 = JTacticalSim.Service
-		SccProjectUniqueName5 = JTacticalSim.Test\\JTacticalSim.Test.csproj
-		SccProjectName5 = JTacticalSim.Test
-		SccLocalPath5 = JTacticalSim.Test
-		SccProjectUniqueName6 = JTacticalSim.Utility\\JTacticalSim.Utility.csproj
-		SccProjectName6 = JTacticalSim.Utility
-		SccLocalPath6 = JTacticalSim.Utility
-		SccProjectUniqueName7 = JTacticalSim.LINQPad.Plugins\\JTacticalSim.LINQPad.Plugins.csproj
-		SccProjectName7 = JTacticalSim.LINQPad.Plugins
-		SccLocalPath7 = JTacticalSim.LINQPad.Plugins
-		SccProjectUniqueName8 = ConsoleControls\\ConsoleControls.csproj
-		SccProjectName8 = ConsoleControls
-		SccLocalPath8 = ConsoleControls
-		SccProjectUniqueName9 = JTacticalSim.Media\\JTacticalSim.Media.csproj
-		SccProjectName9 = JTacticalSim.Media
-		SccLocalPath9 = JTacticalSim.Media
-		SccProjectUniqueName10 = Setup1\\Setup1.isproj
-		SccProjectName10 = Setup1
-		SccLocalPath10 = Setup1
-		SccProjectUniqueName11 = JTacticalSim.Console_OLD\\JTacticalSim.Console_OLD.csproj
-		SccProjectName11 = JTacticalSim.Console_OLD
-		SccLocalPath11 = JTacticalSim.Console_OLD
-		SccProjectUniqueName12 = JTacticalSim.ConsoleApp\\JTacticalSim.ConsoleApp.csproj
-		SccProjectName12 = JTacticalSim.ConsoleApp
-		SccLocalPath12 = JTacticalSim.ConsoleApp
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = GameProjects.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
 		CD_ROM|Mixed Platforms = CD_ROM|Mixed Platforms
@@ -368,41 +320,6 @@ Global
 		{8BAB8AC6-9992-4DB2-92C2-20E250B9FE1D}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8BAB8AC6-9992-4DB2-92C2-20E250B9FE1D}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
 		{8BAB8AC6-9992-4DB2-92C2-20E250B9FE1D}.SingleImage|x86.ActiveCfg = Release|Any CPU
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|Any CPU.Build.0 = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|Mixed Platforms.ActiveCfg = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|Mixed Platforms.Build.0 = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|x86.ActiveCfg = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.CD_ROM|x86.Build.0 = CD_ROM
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|Any CPU.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|Any CPU.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|Mixed Platforms.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|Mixed Platforms.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|x86.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug - NOXNA|x86.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug|Any CPU.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug|Any CPU.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug|Mixed Platforms.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug|x86.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Debug|x86.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|Any CPU.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|Any CPU.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|Mixed Platforms.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|Mixed Platforms.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|x86.ActiveCfg = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.DVD-5|x86.Build.0 = DVD-5
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|Any CPU.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|Any CPU.Build.0 = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|Mixed Platforms.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|Mixed Platforms.Build.0 = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|x86.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.Release|x86.Build.0 = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|Any CPU.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|Any CPU.Build.0 = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|Mixed Platforms.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|Mixed Platforms.Build.0 = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|x86.ActiveCfg = SingleImage
-		{AFADA1D2-ACF4-4C16-A01D-53CF8F1C3146}.SingleImage|x86.Build.0 = SingleImage
 		{4FD19D76-B546-4D31-B3BC-417F08CE53CD}.CD_ROM|Any CPU.ActiveCfg = Debug - NOXNA|Any CPU
 		{4FD19D76-B546-4D31-B3BC-417F08CE53CD}.CD_ROM|Any CPU.Build.0 = Debug - NOXNA|Any CPU
 		{4FD19D76-B546-4D31-B3BC-417F08CE53CD}.CD_ROM|Mixed Platforms.ActiveCfg = Debug - NOXNA|x86
@@ -472,5 +389,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = GameProjects.vsmdi
 	EndGlobalSection
 EndGlobal
