@@ -105,7 +105,7 @@ namespace JTacticalSim.Test
             return failed > 0 ? 1 : 0;
         }
 
-        static object[]? BuildInvokeArgs(MethodInfo method, TestCaseAttribute? tc)
+        static object[] BuildInvokeArgs(MethodInfo method, TestCaseAttribute tc)
         {
             var rawArgs = tc?.Arguments;
             if (rawArgs == null || rawArgs.Length == 0) return null;
