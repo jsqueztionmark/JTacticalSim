@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>

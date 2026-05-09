@@ -4,6 +4,7 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <AssemblyName>JTacticalSim.Service</AssemblyName>
     <RootNamespace>JTacticalSim.Service</RootNamespace>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <AssemblyName>JConsoleControls</AssemblyName>
     <RootNamespace>ConsoleControls</RootNamespace>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
 </Project>

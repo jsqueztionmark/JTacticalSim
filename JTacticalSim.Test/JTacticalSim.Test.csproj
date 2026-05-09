@@ -6,6 +6,7 @@
     <RootNamespace>JTacticalSim.Test</RootNamespace>
     <IsPackable>false</IsPackable>
     <OutputType>Exe</OutputType>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

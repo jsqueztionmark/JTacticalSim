@@ -4,6 +4,7 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <AssemblyName>JTacticalSim.LINQPad.Plugins</AssemblyName>
     <RootNamespace>JTacticalSim.LINQPad.Plugins</RootNamespace>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
