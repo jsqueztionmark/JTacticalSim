@@ -5,6 +5,7 @@
     <AssemblyName>JTacticalSim.Utility</AssemblyName>
     <RootNamespace>JTacticalSim.Utility</RootNamespace>
     <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
 </Project>
