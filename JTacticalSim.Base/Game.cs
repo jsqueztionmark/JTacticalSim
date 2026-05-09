@@ -127,8 +127,11 @@ namespace JTacticalSim
 		/// </summary>
 		private void LoadSavedGameData(bool isScenario)
 		{
-			var curDrive = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());
-			var filePath = "{0}{1}".F(curDrive, ConfigurationManager.AppSettings["datafilepathDefault"]);
+			var configPath = ConfigurationManager.AppSettings["datafilepathDefault"]
+				.Replace('\\', Path.DirectorySeparatorChar);
+			var filePath = Path.IsPathRooted(configPath)
+				? configPath
+				: Path.Combine(Directory.GetCurrentDirectory(), configPath);
 			JTSServices.DataService.LoadSavedGameData(filePath, isScenario);
 		}
 

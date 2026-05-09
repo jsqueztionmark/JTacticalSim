@@ -7,7 +7,6 @@ using JTacticalSim.API.AI;
 using JTacticalSim.Utility;
 using JTacticalSim.API;
 using NUnit.Framework;
-using JTacticalSim.LINQPad.Plugins;
 using JTacticalSim.Component.GameBoard;
 using JTacticalSim.Component.Game;
 using JTacticalSim.Component.World;

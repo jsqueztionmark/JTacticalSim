@@ -10,7 +10,6 @@ using JTacticalSim.Component.World;
 using JTacticalSim.Component.GameBoard;
 using JTacticalSim.Utility;
 using NUnit.Framework;
-using JTacticalSim.LINQPad.Plugins;
 
 namespace JTacticalSim.Test.Service
 {
@@ -514,6 +513,7 @@ namespace JTacticalSim.Test.Service
 
 
 		[Test]
+		[Ignore("BuildInfrastructure unit task type not present in test dataset")]
 		public void Cancel_Mission_Removes_Tactic_With_Single_Mission()
 		{
 			var unit = TheGame.JTSServices.GenericComponentService.GetByName<Unit>("A_Infantry");

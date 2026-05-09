@@ -9,7 +9,6 @@ using JTacticalSim.API;
 using JTacticalSim.Component.AI;
 using JTacticalSim.Component.World;
 using NUnit.Framework;
-using JTacticalSim.LINQPad.Plugins;
 
 namespace JTacticalSim.Test.Service
 {

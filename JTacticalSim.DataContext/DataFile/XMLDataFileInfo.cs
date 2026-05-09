@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,10 +25,10 @@ namespace JTacticalSim.DataContext
 		public override XDocument CacheDataFile	{ get { return XDocument.Load(_cacheDataFilePath); }
 		}
 
-		public override string ComponentDirectory { get { return "{0}\\{1}".F(FilePathComponentData, FILE_TYPE_DIRECTORY); }}
-		public override string GameSaveRootDirectory { get {return "{0}\\{1}".F(FilePathGameSave, _gameFileDirectory);}}
-		public override string GameSaveDirectory { get { return "{0}\\{1}".F(GameSaveRootDirectory, FILE_TYPE_DIRECTORY); }}
-		public override string ScenarioDirectory { get { return "{0}\\{1}\\{2}".F(FilePathScenario, _gameFileDirectory, FILE_TYPE_DIRECTORY); }}
+		public override string ComponentDirectory { get { return Path.Combine(FilePathComponentData, FILE_TYPE_DIRECTORY); }}
+		public override string GameSaveRootDirectory { get { return Path.Combine(FilePathGameSave, _gameFileDirectory); }}
+		public override string GameSaveDirectory { get { return Path.Combine(GameSaveRootDirectory, FILE_TYPE_DIRECTORY); }}
+		public override string ScenarioDirectory { get { return Path.Combine(FilePathScenario, _gameFileDirectory, FILE_TYPE_DIRECTORY); }}
 
 		public XMLDataFileInfo(string gameFileDirectory, IComponentSet componentSet,  bool IsScenario)
 			: base(componentSet)
@@ -36,13 +36,13 @@ namespace JTacticalSim.DataContext
 			var basePath = (IsScenario) ? FilePathScenario : FilePathGameSave;
 
 			_gameFileDirectory = gameFileDirectory;
-			_componentDataFilePath = "{0}\\{1}\\050_ComponentData.xml".F(FilePathComponentData, FILE_TYPE_DIRECTORY);
-			_lookupDataFilePath = "{0}\\{1}\\060_LookupData.xml".F(FilePathComponentData, FILE_TYPE_DIRECTORY);
-			_gameDataFilePath = "{0}\\{1}\\{2}\\100_GameData.xml".F(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY);
-			_boardDataFilePath = "{0}\\{1}\\{2}\\200_BoardMap.xml".F(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY);
-			_unitDataFilePath = "{0}\\{1}\\{2}\\300_UnitData.xml".F(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY);
-			_cacheDataFilePath = "{0}\\{1}\\{2}\\400_Cache.xml".F(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY);
-			_synopsisFilePath = "{0}\\{1}\\{2}\\500_Synopsis.xml".F(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY);
+			_componentDataFilePath = Path.Combine(FilePathComponentData, FILE_TYPE_DIRECTORY, "050_ComponentData.xml");
+			_lookupDataFilePath = Path.Combine(FilePathComponentData, FILE_TYPE_DIRECTORY, "060_LookupData.xml");
+			_gameDataFilePath = Path.Combine(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY, "100_GameData.xml");
+			_boardDataFilePath = Path.Combine(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY, "200_BoardMap.xml");
+			_unitDataFilePath = Path.Combine(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY, "300_UnitData.xml");
+			_cacheDataFilePath = Path.Combine(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY, "400_Cache.xml");
+			_synopsisFilePath = Path.Combine(basePath, gameFileDirectory, FILE_TYPE_DIRECTORY, "500_Synopsis.xml");
 		}
 	}
 }
