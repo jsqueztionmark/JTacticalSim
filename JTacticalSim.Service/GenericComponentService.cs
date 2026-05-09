@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using JTacticalSim.Component;
 using JTacticalSim.API.Service;
 using JTacticalSim.API.Component;
@@ -13,7 +12,6 @@ using ctxUtil = JTacticalSim.DataContext.Utility;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class GenericComponentService : BaseGameService, IGenericComponentService
 	{
 		static readonly object padlock = new object();
@@ -40,7 +38,7 @@ namespace JTacticalSim.Service
 
 #region Generic Get Methods
 
-		[OperationBehavior]
+		
 		public bool ExistsInContext(IBaseComponent component)
 		{
 			dynamic table = ctxUtil.GetComponentTable(component);
@@ -55,7 +53,7 @@ namespace JTacticalSim.Service
 			return false;
 		}
 
-		[OperationBehavior]
+		
 		public object GetDTOForComponent(IBaseComponent component)
 		{
 			var matches = new List<IBaseGameComponentDTO>();
@@ -82,7 +80,7 @@ namespace JTacticalSim.Service
 
 		}
 
-		[OperationBehavior]
+		
 		public int GetNextID(IBaseComponent component)
 		{
 			TableInfo table = ctxUtil.GetComponentTable(component);
@@ -93,7 +91,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public TableInfo GetComponentTable<TComponent>()
 			where TComponent : class, IBaseComponent
 		{
@@ -106,7 +104,7 @@ namespace JTacticalSim.Service
 		// Cool, but HIGHLY Unperformant!!!!!
 		// Don't use these for rendering!!!!
 
-		[OperationBehavior]
+		
 		public TComponent GetByName<TComponent>(string name)
 			where TComponent : class, IBaseComponent
 		{
@@ -114,7 +112,7 @@ namespace JTacticalSim.Service
 			return ConvertToComponent<TComponent>(dto);
 		}
 
-		[OperationBehavior]
+		
 		public TComponent GetByID<TComponent>(int id)
 			where TComponent : class, IBaseComponent
 		{
@@ -122,7 +120,7 @@ namespace JTacticalSim.Service
 			return ConvertToComponent<TComponent>(dto);
 		}
 
-		[OperationBehavior]
+		
 		public List<TComponent> GetAll<TComponent>()
 			where TComponent : class, IBaseComponent
 		{
@@ -154,7 +152,7 @@ namespace JTacticalSim.Service
 
 #region Service Result helpers
 
-		[OperationBehavior]
+		
 		public IResult<TResult, TObject> ConvertServiceResultDataToComponentResult<TResult, TObject>(IResult<TResult, TObject> serviceResult)
 		{
 			var componentResult = new OperationResult<TResult, TObject>
@@ -170,7 +168,7 @@ namespace JTacticalSim.Service
 			return componentResult;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<TResult, TObject> CreateNewComponentResult<TResult, TObject>()
 		{
 			return new OperationResult<TResult, TObject>();

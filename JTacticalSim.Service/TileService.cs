@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceModel;
 using System.Transactions;
 using JTacticalSim.API.Component;
 using JTacticalSim.API;
@@ -13,7 +12,6 @@ using JTacticalSim.Component.World;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class TileService : BaseGameService, ITileService
 	{
 		static readonly object padlock = new object();
@@ -41,31 +39,31 @@ namespace JTacticalSim.Service
 
 #region Service Methods
 
-		[OperationBehavior]
+		
 		public IEnumerable<ITile> GetTiles()
 		{
 			return ComponentRepository.GetTiles().Select(t => t.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITile, ITile> SaveTiles(List<ITile> tiles)
 		{
 			return ComponentRepository.SaveTiles(tiles);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITile, ITile> RemoveTiles(List<ITile> tiles)
 		{
 			return ComponentRepository.RemoveTiles(tiles);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITile, ITile> UpdateTiles(List<ITile> tiles)
 		{
 			return ComponentRepository.UpdateTiles(tiles);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITile, ITile> NukeAffectTile(ITile tile, IDemographic nukeDemographic)
 		{
 			var result = new OperationResult<ITile, ITile>();
@@ -113,13 +111,13 @@ namespace JTacticalSim.Service
 
 	// Other
 
-		[OperationBehavior]
+		
 		public ICoordinate CreateCoordinate(int X, int Y, int Z)
 		{
 			return new Coordinate(X, Y, Z);
 		}
 
-		[OperationBehavior]
+		
 		public ICoordinate CreateCoordinateForDirection(ICoordinate location, Direction direction, int distance)
 		{
 			switch (direction)
@@ -145,7 +143,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IUnitStack GetCurrentStack(IMoveableComponent component)
 		{
 			var tile = component.GetNode().DefaultTile;
@@ -154,7 +152,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<Direction> GetOrientationAllowableForDemographicClassByTile(ITile tile, IDemographicClass demographicClass)
 		{
 			// Get allowable orientations by base geographies

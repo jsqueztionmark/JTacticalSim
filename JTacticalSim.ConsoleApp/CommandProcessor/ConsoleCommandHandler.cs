@@ -11,6 +11,7 @@ using JTacticalSim.Component;
 using JTacticalSim.Component.GameBoard;
 using JTacticalSim.Utility;
 using ConsoleControls;
+using TextBox = ConsoleControls.TextBox;
 
 // ReSharper disable CheckNamespace
 namespace JTacticalSim.ConsoleApp

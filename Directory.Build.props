@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>warnings</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!-- Disable parallel inner builds — parallel GetTargetFrameworks calls race in workload resolver on Linux with EnableWindowsTargeting -->
+    <BuildInParallel>false</BuildInParallel>
+    <!-- Disable git/SourceLink analysis — .gitmodules is a device file in this environment -->
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <UseSourceLink>false</UseSourceLink>
+    <DeterministicSourcePaths>false</DeterministicSourcePaths>
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Configuration" />
+  </ItemGroup>
+
+</Project>

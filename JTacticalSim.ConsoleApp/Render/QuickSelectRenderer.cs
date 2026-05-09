@@ -12,6 +12,7 @@ using JTacticalSim.API.Component.Util;
 using JTacticalSim.Component;
 using JTacticalSim.Utility;
 using ConsoleControls;
+using Screen = ConsoleControls.Screen;
 
 namespace JTacticalSim.ConsoleApp
 {

@@ -4,7 +4,6 @@ using JTacticalSim.API.Service;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public class MediaService : BaseGameService, IMediaService
 	{
 		//private readonly string _curDrive = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());

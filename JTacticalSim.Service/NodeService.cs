@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ServiceModel;
 using JTacticalSim.Component.World;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Service;
@@ -14,7 +12,6 @@ using ctxUtil = JTacticalSim.DataContext.Utility;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class NodeService : BaseGameService, INodeService
 	{
 		static readonly object padlock = new object();
@@ -41,25 +38,25 @@ namespace JTacticalSim.Service
 
 #region Service Methods
 
-		[OperationBehavior]
+		
 		public IResult<INode, INode> SaveNodes(List<INode> nodes)
 		{
 			return ComponentRepository.SaveNodes(nodes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<INode, INode> RemoveNodes(List<INode> nodes)
 		{
 			return ComponentRepository.RemoveNodes(nodes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<INode, INode> UpdateNodes(List<INode> nodes)
 		{
 			return ComponentRepository.UpdateNodes(nodes);
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<INode> GetAllNodes()
 		{
 			var retVal = new List<INode>();
@@ -85,7 +82,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public INode GetNodeAt(ICoordinate coordinate)
 		{
 			var node = GetAllNodes().SingleOrDefault(n => n.LocationEquals(coordinate));
@@ -94,13 +91,13 @@ namespace JTacticalSim.Service
 			return node;
 		}
 
-		[OperationBehavior]
+		
 		public INode GetNodeAt(int X, int Y, int Z)
 		{
 			return GetNodeAt(new Coordinate(X, Y, Z));
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<Tuple<INode, bool>> GetAllowableNeighborNodesForGrid(IUnit unit, INode node, IEnumerable<IPathableObject> map)
 		{
 			// allow for nodes off the start map given movement adjustments for that node			
@@ -135,7 +132,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<INode> GetAllNodesWithinMaxDistance(IUnit unit,
 																bool includeCurrentNode,
 																bool includeExtendedNodes)
@@ -151,7 +148,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public List<IPathNode> GetAllowableMovementNodesForUnit(IUnit unit)
 		{
 			var retVal = new List<IPathNode>();
@@ -202,7 +199,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<INode> GetAllNodesAtDistance(INode node,
 														int distance,
 														bool includeExtendedNodes)
@@ -223,7 +220,7 @@ namespace JTacticalSim.Service
 		/// <param name="node"></param>
 		/// <param name="distance"></param>
 		/// <returns></returns>
-		[OperationBehavior]
+		
 		public IEnumerable<INode> GetNodesAtDistance(INode node, int distance)
 		{
 			return GetNodesWithinDistance(node, distance)
@@ -236,7 +233,7 @@ namespace JTacticalSim.Service
 						)).ToList();
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<INode> GetAllNodesWithinDistance(INode node,
 															int distance,
 															bool includeCurrentNode,
@@ -256,7 +253,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public Direction GetNodeDirectionFromNeighborSourceNode(INode neighbor, INode source)
 		{
 			var LocationsWithDirections = GetAllNeighborNodeLocationsWithDirections(source);
@@ -264,7 +261,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public List<Tuple<ITile, ITile>> GetNeighborNodesOppositeTilePairs(INode source)
 		{
 			var r = new List<Tuple<ITile, ITile>>();

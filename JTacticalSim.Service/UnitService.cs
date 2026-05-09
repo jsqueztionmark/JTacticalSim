@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Configuration;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
-using System.ServiceModel;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Game;
@@ -19,7 +17,6 @@ using JTacticalSim.Component.World;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class UnitService : BaseGameService, IUnitService
 	{
 		static readonly object padlock = new object();
@@ -47,7 +44,7 @@ namespace JTacticalSim.Service
 
 #region Service Methods
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> CreateUnit(string name,
 												ICoordinate coordinate,
 												ICountry country,
@@ -92,25 +89,25 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> SaveUnits(List<IUnit> units)
 		{
 			return ComponentRepository.SaveUnits(units);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> RemoveUnits(List<IUnit> units)
 		{
 			return ComponentRepository.RemoveUnits(units);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> UpdateUnits(List<IUnit> units)
 		{
 			return ComponentRepository.UpdateUnits(units);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> RemoveUnitFromGame(IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit> {Status = ResultStatus.SUCCESS};
@@ -151,7 +148,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> SaveReinforcementUnitToPlayer(IPlayer player, IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit> {Status = ResultStatus.SUCCESS};
@@ -187,7 +184,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> RemoveReinforcementUnitFromPlayer(IPlayer player, IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS};
@@ -213,7 +210,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public void UpdateUnitLocation(IUnit unit, INode node, INode lastNode)
 		{
 			if (!unit.ExistsInContext()) return;
@@ -234,7 +231,7 @@ namespace JTacticalSim.Service
 			UpdateUnits(new List<IUnit> { unit });
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> UpdateUnitFuelRange(IUnit unit, int nodeDistance)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS};
@@ -267,7 +264,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnit> GetAllUnits()
 		{
 			var retVal = new List<IUnit>();
@@ -294,7 +291,7 @@ namespace JTacticalSim.Service
 		}
 		
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnit> GetAllUnits(IEnumerable<IFaction> factions)
 		{
 			return GetAllUnits()
@@ -302,14 +299,14 @@ namespace JTacticalSim.Service
 				.Select(u => u);
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnit> GetAllUnits(ICountry country)
 		{
 			return GetAllUnits()
 				.Where(u => u.Country.Equals(country));
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetUnitsAt(ICoordinate coordinate, IEnumerable<IFaction> factions)
 		{
 			var comps = ComponentRepository.GetUnits().Where(u => u.Location != null).Select(u => u.ToComponent());
@@ -319,7 +316,7 @@ namespace JTacticalSim.Service
 					.Select(u => u).ToList();
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetUnitsAt(ICoordinate coordinate, IEnumerable<ICountry> countries)
 		{
 			var comps = ComponentRepository.GetUnits().Where(u => u.Location != null).Select(u => u.ToComponent());
@@ -329,14 +326,14 @@ namespace JTacticalSim.Service
 					.Select(u => u).ToList();
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetAllUnitsAt(ICoordinate coordinate)
 		{
 			var factions = TheGame().JTSServices.GameService.GetAllFactions();
 			return GetUnitsAt(coordinate, factions);
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetUnitsByUnitAssignment(int unitID)
 		{
 			var ids = DataRepository.GetUnitAssignments().Where(ua => ua.AssignedToUnit == unitID).Select(ua => ua.Unit);
@@ -344,7 +341,7 @@ namespace JTacticalSim.Service
 			return retVal.ToList();
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetUnitsByUnitAssignmentRecursive(int unitID)
 		{
 			var retVal = new List<IUnit>();
@@ -366,7 +363,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public List<IUnit> GetUnitsByTransport(int transportID)
 		{
 			var ids = DataRepository.GetUnitTransports().Where(ut => ut.TransportUnit == transportID).Select(ua => ua.Unit);
@@ -374,7 +371,7 @@ namespace JTacticalSim.Service
 			return retVal.ToList();
 		}
 
-		[OperationBehavior]
+		
 		public IUnit GetUnitAssignedToUnit(int unitID)
 		{
 			var id = DataRepository.GetUnitAssignments()
@@ -387,7 +384,7 @@ namespace JTacticalSim.Service
 			return unit.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IUnit GetUnitByID(int id)
 		{
 			var dto = ComponentRepository.GetUnits().SingleOrDefault(u => u.ID == id);
@@ -398,7 +395,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IUnitClass GetUnitClassByID(int id)
 		{
 			var dto = ComponentRepository.GetUnitClasses().SingleOrDefault(uc => uc.ID == id);
@@ -409,7 +406,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IUnitClass GetUnitClassByName(string name)
 		{
 			var dto = ComponentRepository.GetUnitClasses().SingleOrDefault(uc => uc.Name.ToLowerInvariant() == name.ToLowerInvariant());
@@ -420,7 +417,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<IUnitClass>, IUnitClass> GetUnitClassesByIDs(IEnumerable<int> ids)
 		{
 			var r = new OperationResult<IEnumerable<IUnitClass>, IUnitClass>();
@@ -428,7 +425,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<IUnitClass>, IUnitClass> GetAllowableUnitClassesForUnit(IUnit unit)
 		{
 			var r = new OperationResult<IEnumerable<IUnitClass>, IUnitClass>();
@@ -472,50 +469,50 @@ namespace JTacticalSim.Service
 			return r;
 		}
 			
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitClass> GetUnitClasses()
 		{
 			return ComponentRepository.GetUnitClasses().Select(uc => uc.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitClass, IUnitClass> SaveUnitClasses(List<IUnitClass> unitClasses)
 		{
 			return ComponentRepository.SaveUnitClasses(unitClasses);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitClass, IUnitClass> RemoveUnitClasses(List<IUnitClass> unitClasses)
 		{
 			return ComponentRepository.RemoveUnitClasses(unitClasses);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitClass, IUnitClass> UpdateUnitClasses(List<IUnitClass> unitClasses)
 		{
 			return ComponentRepository.UpdateUnitClasses(unitClasses);
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitBaseType> GetUnitBaseTypes()
 		{
 			return ComponentRepository.GetUnitBaseTypes().Select(ubt => ubt.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitBaseType, IUnitBaseType> SaveUnitBaseTypes(List<IUnitBaseType> unitBaseTypes)
 		{
 			return ComponentRepository.SaveUnitBaseTypes(unitBaseTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitBaseType, IUnitBaseType> RemoveUnitBaseTypes(List<IUnitBaseType> unitBaseTypes)
 		{
 			return ComponentRepository.RemoveUnitBaseTypes(unitBaseTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitBaseType, IUnitBaseType> UpdateUnitBaseTypes(List<IUnitBaseType> unitBaseTypes)
 		{
 			return ComponentRepository.UpdateUnitBaseTypes(unitBaseTypes);
@@ -523,7 +520,7 @@ namespace JTacticalSim.Service
 
 
 
-		[OperationBehavior]
+		
 		public IUnitGroupType GetUnitGroupTypeByID(int id)
 		{
 			var dto = ComponentRepository.GetUnitGroupTypes().SingleOrDefault(ugt => ugt.ID == id);
@@ -533,7 +530,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IUnitGroupType GetUnitGroupTypeByName(string name)
 		{
 			var dto = ComponentRepository.GetUnitGroupTypes().SingleOrDefault(o => o.Name.ToLowerInvariant() == name.ToLowerInvariant());
@@ -544,7 +541,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<IUnitGroupType>, IUnitGroupType> GetUnitGroupTypesByIDs(IEnumerable<int> ids)
 		{
 			var r = new OperationResult<IEnumerable<IUnitGroupType>, IUnitGroupType>();
@@ -552,31 +549,31 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitGroupType> GetUnitGroupTypes()
 		{
 			return ComponentRepository.GetUnitGroupTypes().Select(ugt => ugt.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGroupType, IUnitGroupType> SaveUnitGroupTypes(List<IUnitGroupType> unitGroupTypes)
 		{
 			return ComponentRepository.SaveUnitGroupTypes(unitGroupTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGroupType, IUnitGroupType> RemoveUnitGroupTypes(List<IUnitGroupType> unitGroupTypes)
 		{
 			return ComponentRepository.RemoveUnitGroupTypes(unitGroupTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGroupType, IUnitGroupType> UpdateUnitGroupTypes(List<IUnitGroupType> unitGroupTypes)
 		{
 			return ComponentRepository.UpdateUnitGroupTypes(unitGroupTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IUnitGroupType GetNextHighestUnitGroupType(IUnitGroupType ugt)
 		{
 			var allUnitLevels = ComponentRepository.GetUnitGroupTypes().Select(gt => gt.ToComponent()).ToList();
@@ -585,38 +582,38 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitGeogType> GetUnitGeogTypes()
 		{
 			return ComponentRepository.GetUnitGeogTypes().Select(ugt => ugt.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGeogType, IUnitGeogType> SaveUnitGeogTypes(List<IUnitGeogType> unitGeogTypes)
 		{
 			return ComponentRepository.SaveUnitGeogTypes(unitGeogTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGeogType, IUnitGeogType> RemoveUnitGeogTypes(List<IUnitGeogType> unitGeogTypes)
 		{
 			return ComponentRepository.RemoveUnitGeogTypes(unitGeogTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitGeogType, IUnitGeogType> UpdateUnitGeogTypes(List<IUnitGeogType> unitGeogTypes)
 		{
 			return ComponentRepository.UpdateUnitGeogTypes(unitGeogTypes);
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitType> GetUnitTypes()
 		{
 			return ComponentRepository.GetUnitTypes().Select(ugt => ugt.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IUnitType GetUnitTypeByID(int id)
 		{
 			var dto = ComponentRepository.GetUnitTypes().SingleOrDefault(ut => ut.ID == id);
@@ -627,7 +624,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IUnitType GetUnitTypeByName(string name)
 		{
 			var dto = ComponentRepository.GetUnitTypes().SingleOrDefault(o => o.Name.ToLowerInvariant() == name.ToLowerInvariant());
@@ -638,7 +635,7 @@ namespace JTacticalSim.Service
 			return dto.ToComponent();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<IUnitType>, IUnitType> GetUnitTypesByIDs(IEnumerable<int> ids)
 		{
 			var r = new OperationResult<IEnumerable<IUnitType>, IUnitType>();
@@ -646,25 +643,25 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitType, IUnitType> SaveUnitTypes(List<IUnitType> unitTypes)
 		{
 			return ComponentRepository.SaveUnitTypes(unitTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitType, IUnitType> RemoveUnitTypes(List<IUnitType> unitTypes)
 		{
 			return ComponentRepository.RemoveUnitTypes(unitTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitType, IUnitType> UpdateUnitTypes(List<IUnitType> unitTypes)
 		{
 			return ComponentRepository.UpdateUnitTypes(unitTypes.ToList());
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitType> GetUnitTypesAllowableForTile(ITile tile)
 		{
 			var retVal = new List<IUnitType>();
@@ -691,7 +688,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<IUnitClass>, IUnitClass> GetAllowableUnitClassesForUnitType(IUnitType unitType)
 		{
 			var r = new OperationResult<IEnumerable<IUnitClass>, IUnitClass>();

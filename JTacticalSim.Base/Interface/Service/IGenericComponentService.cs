@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ServiceModel;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.InfoObjects;
 
@@ -13,7 +12,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="component"></param>
 		/// <returns></returns>
-		[OperationContract]
 		bool ExistsInContext(IBaseComponent component);
 
 		/// <summary>
@@ -21,7 +19,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="component"></param>
 		/// <returns></returns>
-		[OperationContract]
 		object GetDTOForComponent(IBaseComponent component);
 
 		/// <summary>
@@ -31,7 +28,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="dtoT"></typeparam>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		[OperationContract]
 		TComponent GetByID<TComponent>(int id)
 			where TComponent : class, IBaseComponent;
 
@@ -42,7 +38,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="dtoT"></typeparam>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		[OperationContract]
 		TComponent GetByName<TComponent>(string name)
 			where TComponent : class, IBaseComponent;
 
@@ -52,7 +47,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="T"></typeparam>
 		/// <typeparam name="dtoT"></typeparam>
 		/// <returns></returns>
-		[OperationContract]
 		List<TComponent> GetAll<TComponent>()
 			where TComponent : class, IBaseComponent;
 
@@ -63,7 +57,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="T"></typeparam>
 		/// <typeparam name="dtoT"></typeparam>
 		/// <returns></returns>
-		[OperationContract]
 		TableInfo GetComponentTable<TComponent>()
 			where TComponent : class, IBaseComponent;
 
@@ -72,7 +65,6 @@ namespace JTacticalSim.API.Service
 		/// T must be IAutoIncrementable
 		/// </summary>
 		/// <returns></returns>
-		[OperationContract]
 		int GetNextID(IBaseComponent component);
 
 		/// <summary>
@@ -82,7 +74,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="TObject"></typeparam>
 		/// <param name="serviceResult"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<TResult, TObject> ConvertServiceResultDataToComponentResult<TResult, TObject>(IResult<TResult, TObject> serviceResult);
 
 		/// <summary>
@@ -91,7 +82,6 @@ namespace JTacticalSim.API.Service
 		/// <typeparam name="TResult"></typeparam>
 		/// <typeparam name="TObject"></typeparam>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<TResult, TObject> CreateNewComponentResult<TResult, TObject>();
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ServiceModel;
 using System;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
@@ -13,10 +12,8 @@ namespace JTacticalSim.API.Service
 	/// <summary>
 	/// Checks rules for game operations and returns a service result with appropriate actions
 	/// </summary>
-	[ServiceContract]
 	public interface IRulesService
 	{
-		[OperationContract]
 		IResult<bool, string> UnitNameIsUnique(string name);
 
 		/// <summary>
@@ -25,7 +22,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="opponent"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, IUnit>> UnitCanDoBattleWithUnit(IUnit unit, IUnit opponent, BattleType battleType);
 
 		/// <summary>
@@ -34,7 +30,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="units"></param>
 		/// <param name="opponents"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<List<IUnit>, List<IUnit>>> UnitsCanDoBattleWithUnits(List<IUnit> units, List<IUnit> opponents, BattleType battleType);
 
 		/// <summary>
@@ -42,7 +37,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitCanDoBattle(IUnit unit);
 
 		/// <summary>
@@ -51,7 +45,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitCanMoveOntoNode(IUnit unit, INode target);
 
 		/// <summary>
@@ -59,7 +52,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitCanClaimNodeForFaction(IUnit unit);
 
 		/// <summary>
@@ -68,7 +60,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="attachToUnit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, IUnit>> UnitCanAttachToUnit(IUnit unit, IUnit attachToUnit);
 
 		/// <summary>
@@ -77,7 +68,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="taskType"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, IUnitTaskType>> UnitCanPerformTask(IUnit unit, IUnitTaskType taskType);
 
 		/// <summary>
@@ -86,7 +76,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="location"></param>
 		/// <param name="faction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ICoordinate> NodeIsFactionNode(ICoordinate location, IFaction faction);
 
 		/// <summary>
@@ -95,7 +84,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="targetNode"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, INode>> NodeIsValidForMove(IUnit unit, INode targetNode);
 
 		/// <summary>
@@ -103,7 +91,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tile"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ITile> TileIsChokepoint(ITile tile);
 
 		/// <summary>
@@ -112,7 +99,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="neighborPairs"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ITile> TileIsPassThroughRestrictedMovement(ITile tile, List<Tuple<ITile, ITile>> neighborPairs);
 
 		/// <summary>
@@ -121,7 +107,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="neighborPairs"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ITile> TileIsNarrowGeography(ITile tile, List<Tuple<ITile, ITile>> neighborPairs);
 
 		/// <summary>
@@ -131,7 +116,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="faction"></param>
 		/// <param name="MaxUnits"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<ITile, IFaction>> TileHasMaxUnitsForFaction(ITile tile, IFaction faction, int MaxUnits);
 
 		/// <summary>
@@ -141,7 +125,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="movingUnits"></param>
 		/// <param name="MaxUnits"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ITile> TileWillExceedMaxUnitsForFaction(ITile tile, IEnumerable<IUnit> movingUnits, int MaxUnits);
 
 		/// <summary>
@@ -150,7 +133,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="infrastructure"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ITile> TileCanSupportInfrastructureBuilding(ITile tile, IDemographic infrastructure);
 
 		/// <summary>
@@ -158,7 +140,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="transport"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int, IUnit> GetAllowableDeployDistanceForTransport(IUnit transport);
 
 		/// <summary>
@@ -166,7 +147,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="transport"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int, IUnit> GetAllowableLoadDistanceForTransport(IUnit transport);
 
 		/// <summary>
@@ -175,7 +155,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="tile"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, ITile>> TileIsAllowableForUnit(IUnit unit, ITile tile);
 
 		/// <summary>
@@ -184,7 +163,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unitType"></param>
 		/// <param name="tile"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnitType, ITile>> TileIsAllowableForUnitType(IUnitType unitType, ITile tile);
 
 		/// <summary>
@@ -193,7 +171,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unitType"></param>
 		/// <param name="tile"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnitGeogType, ITile>> TileHasMovementOverrideForUnitGeogType(IUnitGeogType unitGeogType, ITile tile);
 
 		/// <summary>
@@ -203,7 +180,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="direction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnitType, ITile>> TileHasMovementOverrideForUnit(IUnit unit, ITile tile, Direction direction);
 
 		/// <summary>
@@ -213,7 +189,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="direction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnitType, ITile>> TileHasMovementOverrideForUnitType(IUnitType unitType, ITile tile, Direction direction);
 
 		/// <summary>
@@ -221,7 +196,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<double, IUnit> CalculateTotalUnitWeight(IUnit unit);
 
 		/// <summary>
@@ -229,7 +203,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<double, IUnit> CalculateUnitWeight(IUnit unit);
 		
 		/// <summary>
@@ -237,7 +210,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<double, IUnit> CalculateAllowableTransportWeight(IUnit unit);
 
 		/// <summary>
@@ -246,7 +218,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="component"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double? CalculateMovementHeuristic(IPathableObject component);
 
 		/// <summary>
@@ -254,7 +225,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="faction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int, IFaction> CalculateTotalVictoryPoints(IFaction faction);
 
 		/// <summary>
@@ -264,7 +234,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="baseSize"></param>
 		/// <param name="cellSize"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int, int> CalculateCellCountFromRealWorldMeasurements(int modifier, int baseSize, int cellSize);
 
 		/// <summary>
@@ -272,7 +241,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="player"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int, IPlayer> CalculateReinforcementPointsForTurn(IPlayer player);
 
 		/// <summary>
@@ -280,7 +248,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateUnitStealthValueForCurrentGeog(IUnit unit);
 
 		/// <summary>
@@ -288,7 +255,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateUnitAttackValueForCurrentGeog(IUnit unit);
 
 		/// <summary>
@@ -296,7 +262,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateUnitDefenceValueForCurrentGeog(IUnit unit);
 
 		/// <summary>
@@ -304,7 +269,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateTargetDesirabilityForUnit(IUnit unit);
 
 		/// <summary>
@@ -312,7 +276,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<double, IUnit> CalculateTotalRPCostForUnit(IUnit unit);
 
 		/// <summary>
@@ -321,7 +284,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="ut"></param>
 		/// <param name="uc"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateTotalRPByUnitTypeUnitClass(IUnitType ut, IUnitClass uc);
 
 		/// <summary>
@@ -329,7 +291,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		double CalculateUnitStrength(IUnit unit);
 
 		/// <summary>
@@ -338,7 +299,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="factorValue">The modifier value</param>
 		/// <param name="baseValue">The base roll value</param>
 		/// <returns></returns>
-		[OperationContract]
 		int CalculateThreatDistance(int factorValue, int baseValue);
 
 		/// <summary>
@@ -346,7 +306,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitIsSupplied(IUnit unit);
 
 		/// <summary>
@@ -354,7 +313,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitHasMedicalSupport(IUnit unit);
 
 		/// <summary>
@@ -363,7 +321,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="className"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitIsUnitClass(IUnit unit, string className);
 
 		/// <summary>
@@ -372,7 +329,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="baseTypeName"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitIsUnitBaseType(IUnit unit, string baseTypeName);
 
 		/// <summary>
@@ -382,7 +338,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="node"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, INode>> UnitIsDeployableToNode(IUnit unit, INode node);
 
 		/// <summary>
@@ -391,7 +346,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="hiddenStealthThreshhold"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitIsHiddenFromEnemy(IUnit unit, double hiddenStealthThreshhold);
 
 		/// <summary>
@@ -400,7 +354,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="node"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, INode>> UnitCanReinforceAtLocation(IUnit unit, INode node);
 
 		/// <summary>
@@ -409,7 +362,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="unit"></param>
 		/// <param name="node"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, INode>> UnitCanRefuelAtLocation(IUnit unit, INode node);
 
 		/// <summary>
@@ -418,7 +370,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="transport"></param>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, Tuple<IUnit, IUnit>> UnitCanTransportUnitTypeAndClass(IUnit transport, IUnit unit);
 
 		/// <summary>
@@ -430,7 +381,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="currentNode"></param>
 		/// <param name="direction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<MoveInDirectionResult, Tuple<IUnit, INode>> UnitCanMoveInDirection(IUnit unit, ITile currentNodeTile, Direction direction);
 
 		/// <summary>
@@ -439,7 +389,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnit> UnitHasGlobalMovementOverride(IUnit unit);
 
 		/// <summary>
@@ -447,7 +396,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="component"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IMoveableComponent> ComponentIsVisible(IMoveableComponent component);
 
 		/// <summary>
@@ -455,7 +403,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="component"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IMoveableComponent> ComponentIsBeingTransported(IMoveableComponent component);
 
 		/// <summary>
@@ -463,7 +410,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unitType"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IUnitType> UnitTypeIsAllowedTypeForScenario(IUnitType unitType);
 
 		/// <summary>
@@ -472,7 +418,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="faction"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IFaction> GameVictoryAchieved(IFaction faction);
 
 		/// <summary>
@@ -480,7 +425,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="name"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, TComponent> NameIsValid<TComponent>(string name)
 			where TComponent : class, IBaseComponent;
 
@@ -489,7 +433,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="title"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, string> ScenarioTitleIsValid(string title);
 
 		/// <summary>
@@ -497,7 +440,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="country"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, ICountry> CountryHasDependantComponents(ICountry country);
 
 		/// <summary>
@@ -505,7 +447,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="battle"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IBattle, IBattle> CheckBattleVictoryCondition(IBattle battle);
 
 		/// <summary>
@@ -513,7 +454,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="battle"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IBattle> BattleCanContinue(IBattle battle);
 
 		/// <summary>
@@ -521,7 +461,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="skirmish"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ISkirmish, ISkirmish> CheckSkirmishVictoryCondition(ISkirmish skirmish);
 
 		/// <summary>
@@ -529,10 +468,8 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="assessment"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<StrategicAssessmentRating, StrategicAssessmentInfo> GetOverallRatingForStrategicAssessment(StrategicAssessmentInfo assessment);
 
-		[OperationContract]
 		bool DemographicIsHybrid(IDemographic demographic);
 
 		/// <summary>
@@ -540,7 +477,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="mission"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<bool, IMission> MissionCanceledByMove(IMission mission);
 	} 
 }

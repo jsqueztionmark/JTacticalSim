@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Configuration;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
-using System.ServiceModel;
 using System.Reflection;
-using System.Web.Compilation;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
@@ -26,7 +23,6 @@ using JTacticalSim.Component.GameBoard;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class AIService : BaseGameService, IAIService
 	{
 		static readonly object padlock = new object();
@@ -54,8 +50,7 @@ namespace JTacticalSim.Service
 #region Service Methods
 
 	// Unit Orders
-
-		[OperationBehavior]
+	
 		public IResult<IUnit, IUnit> DeployUnitsFromTransportToNode(IUnit transport, IEnumerable<IUnit> units, INode destinationNode)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS};
@@ -131,8 +126,7 @@ namespace JTacticalSim.Service
 			r.Messages.Add("All units deployed.");
 			return r;
 		}
-
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> LoadUnitsToTransport(IUnit transport, List<IUnit> units)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS};
@@ -237,8 +231,7 @@ namespace JTacticalSim.Service
 			r.Messages.Add("All units loaded.");
 			return r;
 		}
-
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> AttachUnitToUnit (IUnit parent, IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS, Result = unit};
@@ -269,8 +262,7 @@ namespace JTacticalSim.Service
 			r.Messages.Add("Unit attached.");
 			return r;
 		}
-
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> DetachUnitFromUnit(IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit>{Status = ResultStatus.SUCCESS, Result = unit};
@@ -302,7 +294,7 @@ namespace JTacticalSim.Service
 		/// <param name="faction"></param>
 		/// <param name="supplyDistance"></param>
 		/// <returns></returns>
-		[OperationBehavior]
+		
 		public RouteInfo FindSupplyPath(INode source, IFaction faction, int supplyDistance)
 		{
 			// Use only friendly nodes
@@ -406,7 +398,7 @@ namespace JTacticalSim.Service
 		/// <param name="map"></param>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationBehavior]
+		
 		public IResult<RouteInfo, IMoveableComponent> FindPath(INode source, 
 																INode target, 
 																IEnumerable<IPathableObject> map,
@@ -519,7 +511,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IResult<int?, INode> CalculateNodeCountToNode(INode source, INode target, int maxDistance)
 		{
 			var r = new OperationResult<int?, INode>{Status = ResultStatus.SUCCESS};
@@ -552,7 +544,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int?, INode> CalculateNodeCountToUnit(IUnit source, IUnit target, int maxDistance)
 		{
 			var r = new OperationResult<int?, INode>{Status = ResultStatus.SUCCESS};
@@ -597,7 +589,7 @@ namespace JTacticalSim.Service
 
 	// Battle 
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> GetPrimeUnitTargetForUnit(List<IUnit> candidates, 
 																IUnit attacker, 
 																BattleType battleType)
@@ -648,7 +640,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 		
-		[OperationBehavior]
+		
 		public IResult<List<ISkirmish>, ISkirmish> CreateFullCombatSkirmishes(IBattle battle)
 		{
 			var attackers = new List<IUnit>();
@@ -725,7 +717,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<List<ISkirmish>, ISkirmish> CreateAirDefenceSkirmishes(IBattle battle)
 		{
 			var attackers = new List<IUnit>();
@@ -741,7 +733,7 @@ namespace JTacticalSim.Service
 			return CreateSpecialDefenceSkirmishes(attackers, defenders, battle, SkirmishType.AIR_DEFENCE);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<List<ISkirmish>, ISkirmish> CreateMissileDefenceSkirmishes(IBattle battle)
 		{
 			var attackers = new List<IUnit>();
@@ -757,7 +749,7 @@ namespace JTacticalSim.Service
 			
 		}
 
-		[OperationBehavior]
+		
 		private IResult<List<ISkirmish>, ISkirmish> CreateSpecialDefenceSkirmishes(	List<IUnit> attackers, 
 																					List<IUnit> defenders, 
 																					IBattle battle,
@@ -812,7 +804,7 @@ namespace JTacticalSim.Service
 
 
 
-		[OperationBehavior]
+		
 		public IResult<IBattle, IBattle> ResolveNuclearBattle(IBattle battle, INode target)
 		{
 			var r = new OperationResult<IBattle, IBattle>();
@@ -868,7 +860,7 @@ namespace JTacticalSim.Service
 			return r;	
 		}
 		
-		[OperationBehavior]
+		
 		public IResult<ISkirmish, ISkirmish> ResolveSkirmish(ISkirmish skirmish, BattleType battleType)
 		{
 			// -------------------------------------------------------
@@ -964,7 +956,7 @@ namespace JTacticalSim.Service
 			return r;			
 		}
 
-		[OperationBehavior]
+		
 		public IResult<INode, INode> ClaimNodeForVictorFaction(List<IUnit> units, INode node)
 		{
 			var r = new OperationResult<INode, INode>{Status = ResultStatus.SUCCESS};
@@ -1004,7 +996,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> HandleSpecialTurnEndUnitManagement()
 		{
 			var result = new OperationResult<IUnit, IUnit>();
@@ -1051,7 +1043,7 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> HandleSpecialTurnStartUnitManagement()
 		{
 			throw new NotImplementedException();
@@ -1059,52 +1051,52 @@ namespace JTacticalSim.Service
 
 	// AI player control
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitTaskType> GetUnitTaskTypes()
 		{
 			return ComponentRepository.GetUnitTaskTypes().Select(ut => ut.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitTaskType, IUnitTaskType> SaveUnitTaskTypes(List<IUnitTaskType> unitTaskTypes)
 		{
 			return ComponentRepository.SaveUnitTaskTypes(unitTaskTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitTaskType, IUnitTaskType> RemoveUnitTaskTypes(List<IUnitTaskType> unitTaskTypes)
 		{
 			return ComponentRepository.RemoveUnitTaskTypes(unitTaskTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnitTaskType, IUnitTaskType> UpdateUnitTaskTypes(List<IUnitTaskType> unitTaskTypes)
 		{
 			return ComponentRepository.UpdateUnitTaskTypes(unitTaskTypes);
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<IMissionType> GetMissionTypes()
 		{
 			return ComponentRepository.GetMissionTypes().Select(ut => ut.ToComponent());
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IMissionType, IMissionType> SaveMissionTypes(
 			List<IMissionType> MissionTypes)
 		{
 			return ComponentRepository.SaveMissionTypes(MissionTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IMissionType, IMissionType> RemoveMissionTypes(
 			List<IMissionType> MissionTypes)
 		{
 			return ComponentRepository.RemoveMissionTypes(MissionTypes);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IMissionType, IMissionType> UpdateMissionTypes(
 			List<IMissionType> MissionTypes)
 		{
@@ -1113,50 +1105,50 @@ namespace JTacticalSim.Service
 
 
 
-		//[OperationBehavior]
+		//
 		//public IEnumerable<IStrategy> GetStrategies()
 		//{
 		//	return ComponentRepository.GetStrategies();
 		//}
 
-		//[OperationBehavior]
+		//
 		//public IResult<IStrategy, IStrategy> SaveStrategy(IStrategy strategy)
 		//{
 		//	return ComponentRepository.SaveStrategy(strategy);
 		//}
 
-		//[OperationBehavior]
+		//
 		//public IResult<IStrategy, IStrategy> RemoveStrategy(IStrategy strategy)
 		//{
 		//	return ComponentRepository.RemoveStrategy(strategy);
 		//}
 
-		//[OperationBehavior]
+		//
 		//public IResult<IStrategy, IStrategy> UpdateStrategy(IStrategy strategy)
 		//{
 		//	return ComponentRepository.UpdateStrategy(strategy);
 		//}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<ITactic> GetTactics()
 		{
 			return ComponentRepository.GetTactics();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITactic, ITactic> SaveTactic(ITactic tactic)
 		{
 			return ComponentRepository.SaveTactic(tactic);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITactic, ITactic> RemoveTactic(ITactic tactic)
 		{
 			return ComponentRepository.RemoveTactic(tactic);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITactic, ITactic> UpdateTactic(ITactic tactic)
 		{
 			return ComponentRepository.UpdateTactic(tactic);
@@ -1194,7 +1186,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IResult<StrategicAssessmentInfo, ITile> DetermineTileStrategicValue(ITile tile, GameboardStrategicValueAttributesInfo attributes)
 		{
 			// 1:
@@ -1238,7 +1230,7 @@ namespace JTacticalSim.Service
 
 
 
-		[OperationBehavior]
+		
 		public IResult<IMission, IMission> GetCurrentMissionForUnitTask(IUnitTask task)
 		{
 			var retVal = new OperationResult<IMission, IMission> { Status = ResultStatus.SUCCESS };
@@ -1275,7 +1267,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<ITactic, ITactic> GetCurrentTacticForMission(IMission mission)
 		{
 			var retVal = new OperationResult<ITactic, ITactic> { Status = ResultStatus.SUCCESS };
@@ -1311,7 +1303,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		//[OperationBehavior]
+		//
 		//public IResult<IStrategy, IStrategy> GetCurrentStrategyForTactic(ITactic tactic)
 		//{
 		//	var retVal = new OperationResult<IStrategy, IStrategy> { Status = ResultStatus.SUCCESS };
@@ -1347,7 +1339,7 @@ namespace JTacticalSim.Service
 		//	}
 		//}
 
-		[OperationBehavior]
+		
 		public IResult<ITactic, ITactic> ExecuteStrategies(List<ITactic> tactics)
 		{
 			var result = new OperationResult<ITactic, ITactic> { Status = ResultStatus.SUCCESS };
@@ -1374,20 +1366,20 @@ namespace JTacticalSim.Service
 	#region Unit Tasks
 
 		// Will we need this?
-		[OperationBehavior]
+		
 		public IResult<IMission, IMission> CreateMission(IMissionType missionType)
 		{
 			throw new NotImplementedException();
 		}
 		
 		// Will we need this?
-		[OperationBehavior]
+		
 		public IResult<IMission, IMission> CreateMission(IMissionType missionType, IUnitTask unitTask)
 		{
 			throw new NotImplementedException();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IMission, IMission> CancelMission(IMission mission)
 		{
 			var result = new OperationResult<IMission, IMission>();
@@ -1450,7 +1442,7 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IMission, IUnit> GetCurrentAssignedMissionForUnit(IUnit unit)
 		{
 			var result = new OperationResult<IMission, IUnit>();
@@ -1494,7 +1486,7 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> AttemptRefuelUnit(IUnit unit)
 		{
 			var result = new OperationResult<IUnit, IUnit>();
@@ -1512,7 +1504,7 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> HandleZeroFuelForUnit(IUnit unit)
 		{
 			var r = new OperationResult<IUnit, IUnit>();
@@ -1566,7 +1558,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> BuildInfrastructure(IUnit unit, ITile tile, IDemographic demographic)
 		{
 			var result = new OperationResult<IUnit, IUnit>();
@@ -1607,7 +1599,7 @@ namespace JTacticalSim.Service
 			
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> DestroyInfrastructure(IUnit unit, ITile tile, IDemographic demographic, Direction direction)
 		{
 			var result = new OperationResult<IUnit, IUnit>();
@@ -1654,7 +1646,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IEnumerable<object>, TaskExecutionArgument> GetExecutionArgumentObjects(TaskExecutionArgument argument)
 		{
 			var result = new OperationResult<IEnumerable<object>, TaskExecutionArgument>();

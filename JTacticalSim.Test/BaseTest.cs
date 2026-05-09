@@ -9,7 +9,6 @@ using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.API.Cache;
 using JTacticalSim.Service;
-using JTacticalSim.LINQPad.Plugins;
 using JTacticalSim.Cache;
 
 namespace JTacticalSim.Test

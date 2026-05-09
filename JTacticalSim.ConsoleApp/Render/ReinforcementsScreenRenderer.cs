@@ -11,6 +11,8 @@ using JTacticalSim.API.InfoObjects;
 using JTacticalSim.Component;
 using JTacticalSim.Utility;
 using ConsoleControls;
+using Screen = ConsoleControls.Screen;
+using TextBox = ConsoleControls.TextBox;
 
 namespace JTacticalSim.ConsoleApp
 {
