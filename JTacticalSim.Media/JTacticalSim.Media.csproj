@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>JTacticalSim.Media</AssemblyName>
     <RootNamespace>JTacticalSim.Media</RootNamespace>
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+    <PackageReference Include="System.Windows.Extensions" Version="10.0.7" />
   </ItemGroup>
 
   <ItemGroup>

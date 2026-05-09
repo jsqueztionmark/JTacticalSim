@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Drawing;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.Utility;

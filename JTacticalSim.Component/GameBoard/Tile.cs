@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Drawing;
 using System.Transactions;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;

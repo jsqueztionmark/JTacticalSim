@@ -30,7 +30,6 @@ namespace JTacticalSim.ConsoleApp
 				Console.SetWindowSize(winWidth, winHeight);
                 Console.SetBufferSize(winWidth, winHeight);
 				Console.CursorVisible = false;
-				ConsoleUtils.CenterConsole();
 			}
 			catch
 			{ }

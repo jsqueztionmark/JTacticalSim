@@ -1,12 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0-windows</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <AssemblyName>JTacticalSim</AssemblyName>
     <RootNamespace>JTacticalSim.ConsoleApp</RootNamespace>
-    <UseWindowsForms>true</UseWindowsForms>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationIcon>PerfCenterCpl.ico</ApplicationIcon>
     <Nullable>disable</Nullable>
   </PropertyGroup>
