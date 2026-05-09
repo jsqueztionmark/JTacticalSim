@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using JTacticalSim.API;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.API.Component;

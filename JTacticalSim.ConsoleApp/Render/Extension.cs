@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Drawing;
-using System.Threading.Tasks;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.Utility;

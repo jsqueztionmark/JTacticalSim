@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;

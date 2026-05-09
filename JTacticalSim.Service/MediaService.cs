@@ -1,5 +1,4 @@
-﻿using System.ServiceModel;
-using JTacticalSim.API.Service;
+﻿using JTacticalSim.API.Service;
 
 
 namespace JTacticalSim.Service

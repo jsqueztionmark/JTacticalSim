@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 using JTacticalSim.API.Game.State;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;

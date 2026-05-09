@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
 using JTacticalSim.API.Game;

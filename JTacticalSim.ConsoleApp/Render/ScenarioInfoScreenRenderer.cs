@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
-using System.Threading;
 using System.Text;
 using System.Transactions;
 using JTacticalSim.API;

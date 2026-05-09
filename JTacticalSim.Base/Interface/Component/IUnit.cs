@@ -1,6 +1,5 @@
 ﻿using System;
 using JTacticalSim.API.InfoObjects;
-using System.Collections.Generic;
 using JTacticalSim.API.AI;
 using JTacticalSim.API.Media.Sound;
 using JTacticalSim.Utility;
