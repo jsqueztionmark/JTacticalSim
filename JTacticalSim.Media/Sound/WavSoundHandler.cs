@@ -1,4 +1,5 @@
 using System.Media;
+using System.Runtime.Versioning;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Media.Sound;
@@ -6,6 +7,7 @@ using JTacticalSim.Utility;
 
 namespace JTacticalSim.Media.Sound
 {
+	[SupportedOSPlatform("windows")]
 	internal class WavSoundHandler : ISoundHandler
 	{
 		public event EventHandler FileLoaded;
@@ -51,7 +53,7 @@ namespace JTacticalSim.Media.Sound
 				var mediaRoot = ConfigurationManager.AppSettings["mediafilepathDefault"]
 					.Replace('\\', Path.DirectorySeparatorChar);
 				if (!Path.IsPathRooted(mediaRoot))
-					mediaRoot = Path.Combine(Directory.GetCurrentDirectory(), mediaRoot);
+					mediaRoot = Path.Combine(AppContext.BaseDirectory, mediaRoot);
 
 				var fileDir = Path.Combine(mediaRoot,
 					Game.Instance.LoadedScenario.ComponentSet.Name,

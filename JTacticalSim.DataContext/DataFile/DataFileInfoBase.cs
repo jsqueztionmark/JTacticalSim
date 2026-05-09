@@ -101,7 +101,7 @@ namespace JTacticalSim.DataContext
 			var normalized = configPath.Replace('\\', Path.DirectorySeparatorChar);
 			return Path.IsPathRooted(normalized)
 				? normalized
-				: Path.Combine(Directory.GetCurrentDirectory(), normalized);
+				: Path.Combine(AppContext.BaseDirectory, normalized);
 		}
 	}
 }

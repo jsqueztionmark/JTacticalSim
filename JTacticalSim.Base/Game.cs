@@ -126,7 +126,7 @@ namespace JTacticalSim
 				.Replace('\\', Path.DirectorySeparatorChar);
 			var filePath = Path.IsPathRooted(configPath)
 				? configPath
-				: Path.Combine(Directory.GetCurrentDirectory(), configPath);
+				: Path.Combine(AppContext.BaseDirectory, configPath);
 			JTSServices.DataService.LoadSavedGameData(filePath, isScenario);
 		}
 
