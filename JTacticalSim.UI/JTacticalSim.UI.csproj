@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>JTacticalSimUI</AssemblyName>
+    <RootNamespace>JTacticalSim.UI</RootNamespace>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Terminal.Gui" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JTacticalSim.Base\JTacticalSim.Base.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Component\JTacticalSim.Component.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Media\JTacticalSim.Media.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Service\JTacticalSim.Service.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Utility\JTacticalSim.Utility.csproj" />
+  </ItemGroup>
+
+</Project>
