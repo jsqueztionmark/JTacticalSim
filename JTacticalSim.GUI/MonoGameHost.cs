@@ -17,8 +17,8 @@ public class MonoGameHost : XnaGame
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
-        _graphics.PreferredBackBufferWidth = 1280;
-        _graphics.PreferredBackBufferHeight = 800;
+        _graphics.PreferredBackBufferWidth = 1600;
+        _graphics.PreferredBackBufferHeight = 900;
     }
 
     protected override void Initialize()
@@ -43,7 +43,7 @@ public class MonoGameHost : XnaGame
         var pixel = new Texture2D(GraphicsDevice, 1, 1);
         pixel.SetData(new[] { Color.White });
 
-        var renderer = (MonoGameRenderer)Game().Renderer;
+        var renderer = (Renderer)Game().Renderer;
         renderer.SpriteBatch = _spriteBatch;
         renderer.Font = _font;
         renderer.GraphicsDevice = GraphicsDevice;
@@ -61,7 +61,10 @@ public class MonoGameHost : XnaGame
     {
         GraphicsDevice.Clear(Color.Black);
         _spriteBatch.Begin();
+        var renderer = (Renderer)Game().Renderer;
+        renderer.IsInDrawPhase = true;
         Game().StateSystem.Render();
+        renderer.IsInDrawPhase = false;
         _spriteBatch.End();
         base.Draw(gameTime);
     }

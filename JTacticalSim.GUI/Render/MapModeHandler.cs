@@ -4,7 +4,7 @@ using JTacticalSim.API.InfoObjects;
 
 namespace JTacticalSim.GUI.Render;
 
-public sealed class MonoGameMapModeHandler : BaseGameObject, IMapModeHandler
+public sealed class MapModeHandler : BaseGameObject, IMapModeHandler
 {
     private readonly MapMode MAX = Enum.GetValues(typeof(MapMode)).Cast<MapMode>().Max();
     private readonly MapMode MIN = Enum.GetValues(typeof(MapMode)).Cast<MapMode>().Min();
@@ -12,7 +12,7 @@ public sealed class MonoGameMapModeHandler : BaseGameObject, IMapModeHandler
     private List<MapModeInfo> _mapModes { get; set; }
     public MapModeInfo CurrentMapMode => _mapModes.SingleOrDefault(mm => mm.IsCurrent);
 
-    public MonoGameMapModeHandler()
+    public MapModeHandler()
         : base(GameObjectType.HANDLER)
     {
         _mapModes = new List<MapModeInfo>();

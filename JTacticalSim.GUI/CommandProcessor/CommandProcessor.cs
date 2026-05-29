@@ -4,14 +4,14 @@ using JTacticalSim.API.Game;
 
 namespace JTacticalSim.GUI.CommandProcessor;
 
-public class MonoGameCommandProcessor : BaseGameObject, ICommandProcessor
+public class CommandProcessor : BaseGameObject, ICommandProcessor
 {
     private readonly ICommandInterface _commandInterface;
 
-    public MonoGameCommandProcessor()
+    public CommandProcessor()
         : base(GameObjectType.HANDLER)
     {
-        _commandInterface = new CommandInterface(new MonoGameCommandHandler());
+        _commandInterface = new CommandInterface(new CommandHandler());
     }
 
     public void SetInputError<TResult, TObject>(IResult<TResult, TObject> result)

@@ -9,7 +9,7 @@ using JTacticalSim.Component.World;
 
 namespace JTacticalSim.GUI.Render;
 
-public class MonoGameRenderer : BaseRenderer
+public class Renderer : BaseRenderer
 {
     public SpriteBatch SpriteBatch { get; set; }
     public SpriteFont Font { get; set; }
@@ -20,33 +20,34 @@ public class MonoGameRenderer : BaseRenderer
     private IZoomHandler _zoomHandler => TheGame().ZoomHandler;
     private IMapModeHandler _mapModeHandler => TheGame().MapModeHandler;
 
-    public MonoGameTitleScreenRenderer TitleScreenRenderer { get; private set; }
-    public MonoGameMainScreenRenderer MainScreenRenderer { get; private set; }
-    public MonoGameBattleScreenRenderer BattleScreenRenderer { get; private set; }
-    public MonoGameReinforcementsScreenRenderer ReinforcementsScreenRenderer { get; private set; }
-    public MonoGameQuickSelectRenderer QuickSelectRenderer { get; private set; }
-    public MonoGameScenarioInfoScreenRenderer ScenarioInfoScreenRenderer { get; private set; }
-    public MonoGameHelpScreenRenderer HelpScreenRenderer { get; private set; }
-    public MonoGameGameOverScreenRenderer GameOverScreenRenderer { get; private set; }
+    public TitleScreenRenderer TitleScreenRenderer { get; private set; }
+    public MainScreenRenderer MainScreenRenderer { get; private set; }
+    public BattleScreenRenderer BattleScreenRenderer { get; private set; }
+    public ReinforcementsScreenRenderer ReinforcementsScreenRenderer { get; private set; }
+    public QuickSelectRenderer QuickSelectRenderer { get; private set; }
+    public ScenarioInfoScreenRenderer ScenarioInfoScreenRenderer { get; private set; }
+    public HelpScreenRenderer HelpScreenRenderer { get; private set; }
+    public GameOverScreenRenderer GameOverScreenRenderer { get; private set; }
 
-    public MonoGameRenderer()
+    public Renderer()
     {
-        TitleScreenRenderer = new MonoGameTitleScreenRenderer(this);
-        MainScreenRenderer = new MonoGameMainScreenRenderer(this);
-        BattleScreenRenderer = new MonoGameBattleScreenRenderer(this);
-        ReinforcementsScreenRenderer = new MonoGameReinforcementsScreenRenderer(this);
-        QuickSelectRenderer = new MonoGameQuickSelectRenderer(this);
-        ScenarioInfoScreenRenderer = new MonoGameScenarioInfoScreenRenderer(this);
-        HelpScreenRenderer = new MonoGameHelpScreenRenderer(this);
-        GameOverScreenRenderer = new MonoGameGameOverScreenRenderer(this);
+        TitleScreenRenderer = new TitleScreenRenderer(this);
+        MainScreenRenderer = new MainScreenRenderer(this);
+        BattleScreenRenderer = new BattleScreenRenderer(this);
+        ReinforcementsScreenRenderer = new ReinforcementsScreenRenderer(this);
+        QuickSelectRenderer = new QuickSelectRenderer(this);
+        ScenarioInfoScreenRenderer = new ScenarioInfoScreenRenderer(this);
+        HelpScreenRenderer = new HelpScreenRenderer(this);
+        GameOverScreenRenderer = new GameOverScreenRenderer(this);
     }
 
     public override void LoadContent()
     {
-        TheGame().ZoomHandler = new MonoGameZoomHandler();
-        TheGame().MapModeHandler = new MonoGameMapModeHandler();
+        TheGame().ZoomHandler = new ZoomHandler();
+        TheGame().MapModeHandler = new MapModeHandler();
         LoadZoomInfo();
         LoadMapModes();
+        MainScreenRenderer.Reset();
     }
 
     public override void UnloadContent() { }
@@ -55,14 +56,29 @@ public class MonoGameRenderer : BaseRenderer
     {
         var zooms = new List<ZoomInfo>
         {
-            new ZoomInfo { RowSpacing = 64, ColumnSpacing = 96, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 9,  DrawWidth = 12, IsCurrent = true,  Level = ZoomLevel.FOUR  },
-            new ZoomInfo { RowSpacing = 48, ColumnSpacing = 80, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 12, DrawWidth = 14, IsCurrent = false, Level = ZoomLevel.THREE },
-            new ZoomInfo { RowSpacing = 32, ColumnSpacing = 48, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 18, DrawWidth = 24, IsCurrent = false, Level = ZoomLevel.TWO   },
-            new ZoomInfo { RowSpacing = 16, ColumnSpacing = 16, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 16, DrawWidth = 25, IsCurrent = false, Level = ZoomLevel.ONE   },
+            new ZoomInfo { RowSpacing = 64, ColumnSpacing = 96, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = true,  Level = ZoomLevel.FOUR  },
+            new ZoomInfo { RowSpacing = 48, ColumnSpacing = 80, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.THREE },
+            new ZoomInfo { RowSpacing = 32, ColumnSpacing = 48, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.TWO   },
+            new ZoomInfo { RowSpacing = 16, ColumnSpacing = 16, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.ONE   },
         };
         TheGame().ZoomHandler.LoadZooms(zooms);
-        TheGame().GameBoard.DefaultAttributes.DrawHeight = _zoomHandler.GetZoomLevelInfo(ZoomLevel.FOUR).DrawHeight;
-        TheGame().GameBoard.DefaultAttributes.DrawWidth  = _zoomHandler.GetZoomLevelInfo(ZoomLevel.FOUR).DrawWidth;
+        // Actual DrawWidth/DrawHeight are set by MainScreenRenderer.RecalcZoomDrawCounts()
+        // once the map panel pixel dimensions are known.
+    }
+
+    public void RecalcZoomDrawCounts(int mapPixelWidth, int mapPixelHeight)
+    {
+        foreach (var level in new[] { ZoomLevel.ONE, ZoomLevel.TWO, ZoomLevel.THREE, ZoomLevel.FOUR })
+        {
+            var z = _zoomHandler.GetZoomLevelInfo(level);
+            if (z == null) continue;
+            z.DrawWidth  = mapPixelWidth  / z.ColumnSpacing;
+            z.DrawHeight = mapPixelHeight / z.RowSpacing;
+        }
+
+        var cur = _zoomHandler.CurrentZoom;
+        TheGame().GameBoard.DefaultAttributes.DrawHeight = cur.DrawHeight;
+        TheGame().GameBoard.DefaultAttributes.DrawWidth  = cur.DrawWidth;
     }
 
     private void LoadMapModes()
@@ -78,11 +94,11 @@ public class MonoGameRenderer : BaseRenderer
 
     // ── Main screen ──────────────────────────────────────────────────────────
 
-    public override void RenderMainScreen()        => MainScreenRenderer.RenderScreen();
-    public override void RenderBoardFrame()        => MainScreenRenderer.RenderBoardFrame();
-    public override void RenderBoard()             => MainScreenRenderer.RenderBoard();
-    public override void RenderMap(bool clear)     => MainScreenRenderer.RenderMap(clear);
-    public override void RenderFullMap(bool clear) => MainScreenRenderer.RenderFullMap(clear);
+    public override void RenderMainScreen()        { if (IsInDrawPhase) MainScreenRenderer.RenderScreen(); }
+    public override void RenderBoardFrame()        { if (IsInDrawPhase) MainScreenRenderer.RenderBoardFrame(); }
+    public override void RenderBoard()             { if (IsInDrawPhase) MainScreenRenderer.RenderBoard(); }
+    public override void RenderMap(bool clear)     { if (IsInDrawPhase) MainScreenRenderer.RenderMap(clear); }
+    public override void RenderFullMap(bool clear) { if (IsInDrawPhase) MainScreenRenderer.RenderFullMap(clear); }
     public override void RenderTileUnitInfoArea()  => MainScreenRenderer.RenderTileUnitInfoArea();
     public override void RenderNode(INode node, int zoomLevel)    => MainScreenRenderer.RenderNode(node, zoomLevel);
     public override void RenderTile(ITile tile, int zoomLevel)    => MainScreenRenderer.RenderTile(tile, zoomLevel);
@@ -103,45 +119,38 @@ public class MonoGameRenderer : BaseRenderer
             .Where(n => n != null);
     }
 
-    public override void RefreshActiveNodes()
-    {
-        if (_board.LastSelectedNode == null)
-            _board.LastSelectedNode = _board.SelectedNode;
-        RefreshNodes(new[] { _board.LastSelectedNode });
-        RefreshNodes(new[] { _board.SelectedNode });
-        TheGame().Renderer.RenderTileUnitInfoArea();
-    }
+    // Guards against SpriteBatch.Draw() being called during Update() before Begin().
+    // Set true only inside MonoGameHost.Draw() between Begin/End.
+    internal bool IsInDrawPhase { get; set; }
 
-    public override void RefreshActiveRoute()
-    {
-        if (_board.CurrentRoute == null) return;
-        foreach (var node in _board.CurrentRoute.Nodes)
-            if (_board.NodeIsInViewableArea(node.GetNode()))
-                TheGame().Renderer.RenderNode(node.GetNode(), (int)_zoomHandler.CurrentZoom.Level);
-    }
-
-    public override void RefreshNodes(IEnumerable<INode> nodes)
-    {
-        foreach (var n in nodes)
-        {
-            if (n == null) continue;
-            if (TheGame().GameBoard.NodeIsInViewableArea(n))
-                TheGame().Renderer.RenderNode(n, (int)_zoomHandler.CurrentZoom.Level);
-        }
-    }
+    // These are no-ops: the full screen re-renders every frame in Draw(), so any state
+    // change made during Update() is reflected automatically on the next draw call.
+    // Calling SpriteBatch.Draw() here (during Update) would crash with "Begin not called".
+    public override void RefreshActiveNodes()  { }
+    public override void RefreshActiveRoute()  { }
+    public override void RefreshNodes(IEnumerable<INode> nodes) { }
 
     public override void CenterSelectedNode()
     {
-        var vOffSet = 0;
-        var hOffSet = 0;
-        if (_board.SelectedNode.Location.X > _zoomHandler.CurrentZoom.DrawWidth / 2 &&
-            _board.SelectedNode.Location.X < (_board.DefaultAttributes.Width - 1) - _zoomHandler.CurrentZoom.DrawWidth)
-            hOffSet = _zoomHandler.CurrentZoom.DrawWidth / 2;
-        if (_board.SelectedNode.Location.Y > _zoomHandler.CurrentZoom.DrawHeight / 2 &&
-            _board.SelectedNode.Location.Y < (_board.DefaultAttributes.Height - 1) - _zoomHandler.CurrentZoom.DrawHeight)
-            vOffSet = _zoomHandler.CurrentZoom.DrawHeight / 2;
+        var node  = _board.SelectedNode;
+        var zoom  = _zoomHandler.CurrentZoom;
+        int boardW = _board.DefaultAttributes.Width;
+        int boardH = _board.DefaultAttributes.Height;
+
+        // Desired top-left origin that places the node at the centre of the viewport
+        int originX = node.Location.X - zoom.DrawWidth  / 2;
+        int originY = node.Location.Y - zoom.DrawHeight / 2;
+
+        // Clamp so we never scroll past map edges
+        originX = Math.Max(0, Math.Min(originX, boardW - zoom.DrawWidth));
+        originY = Math.Max(0, Math.Min(originY, boardH - zoom.DrawHeight));
+
+        // ResetAllZoomLevels expects offsets from the node position (origin = node - offset)
+        int hOffset = node.Location.X - originX;
+        int vOffset = node.Location.Y - originY;
+
+        _zoomHandler.ResetAllZoomLevels(vOffset, hOffset);
         SetCurrentViewableArea();
-        _zoomHandler.ResetAllZoomLevels(vOffSet, hOffSet);
     }
 
     public override void ZoomMap(CycleDirection direction)
@@ -149,20 +158,17 @@ public class MonoGameRenderer : BaseRenderer
         if (direction == CycleDirection.IN && _zoomHandler.CurrentZoom.Level <= ZoomLevel.TWO) return;
         if (_zoomHandler.CycleZoomLevel(direction))
         {
+            var cur = _zoomHandler.CurrentZoom;
+            TheGame().GameBoard.DefaultAttributes.DrawHeight = cur.DrawHeight;
+            TheGame().GameBoard.DefaultAttributes.DrawWidth  = cur.DrawWidth;
             SetCurrentViewableArea();
-            RenderBoardFrame();
-            RenderMap(true);
         }
     }
 
     public override void CycleMapMode(CycleDirection direction)
     {
         if (_mapModeHandler.CycleMapMode(direction))
-        {
             SetCurrentViewableArea();
-            RenderBoardFrame();
-            RenderMap(true);
-        }
     }
 
     // ── Units ────────────────────────────────────────────────────────────────
@@ -175,12 +181,12 @@ public class MonoGameRenderer : BaseRenderer
 
     // ── Secondary screens ────────────────────────────────────────────────────
 
-    public override void RenderReinforcementScreen() => ReinforcementsScreenRenderer.RenderScreen();
-    public override void RenderTitleScreen()         => TitleScreenRenderer.RenderScreen();
-    public override void RenderQuickSelectScreen()   => QuickSelectRenderer.RenderScreen();
-    public override void RenderScenarioInfoScreen()  => ScenarioInfoScreenRenderer.RenderScreen();
-    public override void RenderHelpScreen()          => HelpScreenRenderer.RenderScreen();
-    public override void RenderGameOverScreen()      => GameOverScreenRenderer.RenderScreen();
+    public override void RenderReinforcementScreen() { if (IsInDrawPhase) ReinforcementsScreenRenderer.RenderScreen(); }
+    public override void RenderTitleScreen()         { if (IsInDrawPhase) TitleScreenRenderer.RenderScreen(); }
+    public override void RenderQuickSelectScreen()   { if (IsInDrawPhase) QuickSelectRenderer.RenderScreen(); }
+    public override void RenderScenarioInfoScreen()  { if (IsInDrawPhase) ScenarioInfoScreenRenderer.RenderScreen(); }
+    public override void RenderHelpScreen()          { if (IsInDrawPhase) HelpScreenRenderer.RenderScreen(); }
+    public override void RenderGameOverScreen()      { if (IsInDrawPhase) GameOverScreenRenderer.RenderScreen(); }
 
     // ── Battle ───────────────────────────────────────────────────────────────
 

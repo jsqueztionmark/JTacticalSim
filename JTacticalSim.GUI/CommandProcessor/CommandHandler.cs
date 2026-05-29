@@ -7,11 +7,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace JTacticalSim.GUI.CommandProcessor;
 
-internal class MonoGameCommandHandler : InputCommandHandlerBase
+internal class CommandHandler : InputCommandHandlerBase
 {
     private KeyboardState _previousKeyState;
 
-    public MonoGameCommandHandler()
+    public CommandHandler()
     {
         _previousKeyState = Keyboard.GetState();
     }
@@ -27,16 +27,18 @@ internal class MonoGameCommandHandler : InputCommandHandlerBase
 
     protected override void Handle_TITLE_MENU_Input(ICommandInterface ci)
     {
-        var current = Keyboard.GetState();
-        var renderer = (JTacticalSim.GUI.Render.MonoGameRenderer)TheGame().Renderer;
+        var current  = Keyboard.GetState();
+        var renderer = Renderer();
         renderer.TitleScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
     protected override void Handle_GAME_IN_PLAY_Input(ICommandInterface ci)
     {
-        // TODO: map keys/mouse to game commands
-        _previousKeyState = Keyboard.GetState();
+        var current  = Keyboard.GetState();
+        var renderer = Renderer();
+        renderer.MainScreenRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
     }
 
     protected override void Handle_AI_IN_PLAY_Input(ICommandInterface ci)
@@ -44,12 +46,46 @@ internal class MonoGameCommandHandler : InputCommandHandlerBase
         // AI handles its own turn; no player input processed
     }
 
-    protected override void Handle_BATTLE_Input(ICommandInterface ci)         { }
-    protected override void Handle_REINFORCE_Input(ICommandInterface ci)       { }
-    protected override void Handle_QUICK_SELECT_Input(ICommandInterface ci)    { }
-    protected override void Handle_GAME_OVER_Input(ICommandInterface ci)       { }
-    protected override void Handle_HELP_Input(ICommandInterface ci)            { }
-    protected override void Handle_SCENARIO_INFO_Input(ICommandInterface ci)   { }
+    protected override void Handle_BATTLE_Input(ICommandInterface ci)
+    {
+        // Battle screen is driven by the engine; no player keypress routing needed
+    }
+
+    protected override void Handle_REINFORCE_Input(ICommandInterface ci)
+    {
+        var current  = Keyboard.GetState();
+        Renderer().ReinforcementsScreenRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
+    }
+
+    protected override void Handle_QUICK_SELECT_Input(ICommandInterface ci)
+    {
+        var current  = Keyboard.GetState();
+        Renderer().QuickSelectRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
+    }
+
+    protected override void Handle_GAME_OVER_Input(ICommandInterface ci)
+    {
+        var current  = Keyboard.GetState();
+        Renderer().GameOverScreenRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
+    }
+
+    protected override void Handle_HELP_Input(ICommandInterface ci)
+    {
+        var current  = Keyboard.GetState();
+        Renderer().HelpScreenRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
+    }
+
+    protected override void Handle_SCENARIO_INFO_Input(ICommandInterface ci)
+    {
+        var current  = Keyboard.GetState();
+        Renderer().ScenarioInfoScreenRenderer.HandleInput(current, _previousKeyState);
+        _previousKeyState = current;
+    }
+
     protected override void Handle_SETTINGS_MENU_Input(ICommandInterface ci)   { }
     protected override void Handle_SPLASH_SCREEN_Input(ICommandInterface ci)   { }
 
@@ -75,4 +111,9 @@ internal class MonoGameCommandHandler : InputCommandHandlerBase
     protected override void On_CmdBoxEscapePressed(object sender, EventArgs e)      { }
     protected override void On_SaveAsGameTitleEscapePressed(object sender, EventArgs e) { }
     protected override void On_SaveAsGameTitleEntered(object sender, EventArgs e)   { }
+
+    // ── Helper ───────────────────────────────────────────────────────────────
+
+    private JTacticalSim.GUI.Render.Renderer Renderer()
+        => (JTacticalSim.GUI.Render.Renderer)TheGame().Renderer;
 }

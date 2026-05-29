@@ -31,9 +31,9 @@ public class GameContext : BaseGameObject
     {
         TheGame().NullGame();
         TheGame().Create(new ServiceDependencies(),
-                         new MonoGameRenderer(),
+                         new Renderer(),
                          new SoundSystem(),
-                         new MonoGameCommandProcessor());
+                         new CommandProcessor.CommandProcessor());
 
         TheGame().StateSystem.GameStateChanged += On_GameStateChangedHandler;
 

@@ -2,9 +2,9 @@ using JTacticalSim.API.AI;
 
 namespace JTacticalSim.GUI.Render;
 
-public sealed class MonoGameBattleScreenRenderer : BaseScreenRenderer
+public sealed class BattleScreenRenderer : BaseScreenRenderer
 {
-    public MonoGameBattleScreenRenderer(MonoGameRenderer baseRenderer)
+    public BattleScreenRenderer(Renderer baseRenderer)
         : base(baseRenderer)
     { }
 

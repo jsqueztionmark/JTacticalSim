@@ -9,7 +9,7 @@ using JTacticalSim.Component.Data;
 
 namespace JTacticalSim.GUI.Render;
 
-public sealed class MonoGameTitleScreenRenderer : BaseScreenRenderer
+public sealed class TitleScreenRenderer : BaseScreenRenderer
 {
     private enum TitlePhase { SelectGame, SelectScenario, EnterName }
 
@@ -25,9 +25,9 @@ public sealed class MonoGameTitleScreenRenderer : BaseScreenRenderer
     private string _newGameName = string.Empty;
     private string _validationMessage = string.Empty;
 
-    // Layout (1280x800 window)
+    // Layout
     private const int BoxWidth    = 500;
-    private const int BoxLeft     = (1280 - BoxWidth) / 2;
+    private int BoxLeft => ((_baseRenderer.GraphicsDevice?.Viewport.Width ?? 1600) - BoxWidth) / 2;
     private const int CreditsTop  = 60;
     private const int CreditsHeight = 96;
     private const int ListTop     = 185;
@@ -46,7 +46,7 @@ public sealed class MonoGameTitleScreenRenderer : BaseScreenRenderer
     private static readonly Color RowHilight = new Color(35, 55, 95);
     private static readonly Color TextError  = new Color(220, 60, 60);
 
-    public MonoGameTitleScreenRenderer(MonoGameRenderer baseRenderer)
+    public TitleScreenRenderer(Renderer baseRenderer)
         : base(baseRenderer)
     { }
 

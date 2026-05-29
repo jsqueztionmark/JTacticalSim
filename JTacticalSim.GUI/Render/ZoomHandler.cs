@@ -6,7 +6,7 @@ using JTacticalSim.Component.World;
 
 namespace JTacticalSim.GUI.Render;
 
-public sealed class MonoGameZoomHandler : BaseGameObject, IZoomHandler
+public sealed class ZoomHandler : BaseGameObject, IZoomHandler
 {
     private IBoard _board => TheGame().GameBoard;
     private List<ZoomInfo> _zoomLevels { get; set; }
@@ -14,7 +14,7 @@ public sealed class MonoGameZoomHandler : BaseGameObject, IZoomHandler
     public ZoomInfo CurrentZoom => _zoomLevels.SingleOrDefault(z => z.IsCurrent);
     public ZoomLevel MaxZoomLevel { get; private set; }
 
-    public MonoGameZoomHandler()
+    public ZoomHandler()
         : base(GameObjectType.HANDLER)
     {
         MaxZoomLevel = ZoomLevel.FOUR;
