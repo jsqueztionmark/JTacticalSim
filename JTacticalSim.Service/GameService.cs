@@ -345,7 +345,7 @@ namespace JTacticalSim.Service
 			else
 			{
 				attackers.ForEach(u => attackerAction(u));
-				defenders.ForEach(u => attackerAction(u));
+				defenders.ForEach(u => defenderAction(u));
 			}
 
 

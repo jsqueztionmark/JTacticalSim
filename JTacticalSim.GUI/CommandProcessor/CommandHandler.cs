@@ -185,6 +185,26 @@ internal class CommandHandler : InputCommandHandlerBase
                 }
                 break;
 
+            case "show-game-over":
+            case "sgo":
+                TheGame().StateSystem.ChangeState(API.StateType.GAME_OVER);
+                break;
+
+            case "show-battle-report":
+            case "sbr":
+                TheGame().Renderer.DisplayTaskExecutionReport(
+                    new System.Text.StringBuilder(
+                        "Type:     Local Combat\nAttacker: Germany\nDefender: USA\n\n" +
+                        "Round 1 - Air Defence\n  (no air defence skirmishes)\n\n" +
+                        "Round 2 - Full Combat\n  Armor 1st Panzer attacks Infantry 3rd Infantry  [Attacker wins]\n" +
+                        "  Artillery 5th Arty fires on Armor 2nd Armored  [Defender holds]\n\n" +
+                        "Result: Attackers Victorious"));
+                break;
+            case "show-battle-screen":
+            case "sbs":
+                TheGame().StateSystem.ChangeState(API.StateType.BATTLE);
+                break;
+
             default:
                 // Fall through to engine command dispatch
                 ParseCommandArgs(input);

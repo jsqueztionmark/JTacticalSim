@@ -13,6 +13,12 @@ Issues to address in future sessions. Add new entries under the relevant section
 - [x] **Map panel fit / alignment** — Resolved in session 2026-05-29.
 - [x] **Title screen vertical positioning** — Resolved in session 2026-05-29.
 
+## Engine — Battle / Command Availability
+
+- [x] **`CreateNewBattle` single-threaded path uses `attackerAction` for defenders** — In `GameService.CreateNewBattle`, the `else` (non-multithreaded) branch calls `attackerAction(u)` for both the attacker and defender lists instead of `defenderAction(u)` for defenders. `battle.Defenders` is never populated in single-threaded mode. Location: `JTacticalSim.Service/GameService.cs`.
+
+- [ ] **`UnitCanPerformTask` not used in node action availability check** — `CommandInterface.GetAvailableCommandsForNode()` shows Attack/battle commands based on unit presence and movement stats, but does not call `RulesService.UnitCanPerformTask` to verify the unit type is actually attack-capable. This allows the Attack action to appear for non-combat unit types (e.g. transports on top of the stack). Fix: filter available battle commands through `UnitCanPerformTask("Attack")` per unit before including them. Confirmed present in both ConsoleApp and GUI.
+
 ## MonoGame GUI — Input
 
 - [ ] **Diagonal movement unverified** — NumPad7/9/1/3 diagonal moves are wired but the engine's `GetNodeAt()` with diagonal offsets has not been exercised; node adjacency rules may reject them.

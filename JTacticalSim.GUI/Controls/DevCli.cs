@@ -133,6 +133,7 @@ public sealed class DevCli
             Keys.OemPeriod   => shift ? '>' : '.',
             Keys.OemComma    => shift ? '<' : ',',
             Keys.OemQuestion => shift ? '?' : '/',
+            Keys.OemQuotes   => shift ? '"' : '\'',
             _                => null,
         };
     }
