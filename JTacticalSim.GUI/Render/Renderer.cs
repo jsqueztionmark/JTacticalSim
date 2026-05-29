@@ -64,10 +64,9 @@ public class Renderer : BaseRenderer
     {
         var zooms = new List<ZoomInfo>
         {
-            new ZoomInfo { RowSpacing = 64, ColumnSpacing = 96, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = true,  Level = ZoomLevel.FOUR  },
-            new ZoomInfo { RowSpacing = 48, ColumnSpacing = 80, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.THREE },
-            new ZoomInfo { RowSpacing = 32, ColumnSpacing = 48, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.TWO   },
-            new ZoomInfo { RowSpacing = 16, ColumnSpacing = 16, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.ONE   },
+            new ZoomInfo { RowSpacing = 120, ColumnSpacing = 120, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = true,  Level = ZoomLevel.FOUR  },
+            new ZoomInfo { RowSpacing =  60, ColumnSpacing =  60, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.THREE },
+            new ZoomInfo { RowSpacing =  40, ColumnSpacing =  40, CurrentOrigin = new Coordinate(0,0,0), DrawHeight = 1, DrawWidth = 1, IsCurrent = false, Level = ZoomLevel.TWO   },
         };
         TheGame().ZoomHandler.LoadZooms(zooms);
         // Actual DrawWidth/DrawHeight are set by MainScreenRenderer.RecalcZoomDrawCounts()
@@ -76,7 +75,7 @@ public class Renderer : BaseRenderer
 
     public void RecalcZoomDrawCounts(int mapPixelWidth, int mapPixelHeight)
     {
-        foreach (var level in new[] { ZoomLevel.ONE, ZoomLevel.TWO, ZoomLevel.THREE, ZoomLevel.FOUR })
+        foreach (var level in new[] { ZoomLevel.TWO, ZoomLevel.THREE, ZoomLevel.FOUR })
         {
             var z = _zoomHandler.GetZoomLevelInfo(level);
             if (z == null) continue;

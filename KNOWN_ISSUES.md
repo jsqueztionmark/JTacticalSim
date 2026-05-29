@@ -8,7 +8,7 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 - [x] **Menu bar item bugs** — Visual/input bugs resolved in session 2026-05-29.
 - [x] **`OnNodeAction()` is a stub** — Implemented: popup anchored to selected node, items from `CommandInterface.GetAvailableCommandsForNode()`, Up/Down/Enter/Esc input, flips edge when near map boundary.
-- [ ] **`DisplayUserMessage` / `ConfirmAction` / `DisplayTaskExecutionReport` log to Console** — These three overrides in `MonoGameRenderer` write to `Console.WriteLine` as temporary stubs. Need an in-game overlay dialog (modal box rendered by SpriteBatch).
+- [x] **`DisplayUserMessage` / `ConfirmAction` / `DisplayTaskExecutionReport` log to Console** — Resolved: modal overlay system implemented.
 - [ ] **`SAVE_GAME` command untested via GUI** — Wired to the [M]ain Menu dropdown but save/load flow through MonoGame has not been exercised end-to-end.
 - [x] **Map panel fit / alignment** — Resolved in session 2026-05-29.
 - [x] **Title screen vertical positioning** — Resolved in session 2026-05-29.
@@ -25,7 +25,7 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 ## MonoGame GUI — Secondary Screens
 
-- [ ] **Battle screen** — `MonoGameBattleScreenRenderer` is a no-op stub.
+- [x] **Battle screen** — `MonoGameBattleScreenRenderer` implemented.
 - [ ] **Reinforcements screen** — Implemented (step wizard: UnitType → UnitClass → GroupType → Name, preview bar, PopupList controls). Needs end-to-end test pass.
 - [ ] **Quick Select screen** — Implemented (unit list grouped by branch, Unit Info + Location Info panels, Enter to go-to-unit). Needs end-to-end test pass.
 - [ ] **Help screen** — Implemented (two-column keyboard reference). Needs visual review.
@@ -38,4 +38,6 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 - [ ] **Minimap panel** — Not yet implemented. Should appear in the info panel area or as a separate panel.
 - [ ] **[M]ain Menu overlay** — Currently a dropdown; the console app renders a richer modal menu. Revisit once other stubs are filled in.
-- [ ] **Available Reinforcements panel** — Console app shows unplaced reinforcements in a panel below Location/Unit Info. Not yet in the MonoGame layout.
+
+- [ ] **Attached units in info panel unit list** — `IUnit.AttachedToUnit` / `GetDirectAttachedUnits()` is engine-wired (rules/AI use it for HQ bonus) but not yet surfaced in the GUI unit list. Should follow the same indent/child pattern as transported units, but needs a distinct visual indicator (symbol TBD — `->` is already used for transported; spritefont covers ASCII 32-126 only so Unicode arrows are off the table). `GetDirectAttachedUnits()` gives the units attached to a given HQ; `AttachedToUnit` tells which HQ a unit reports to.
+- [x] **Available Reinforcements panel** — Implemented: fixed-height panel at the bottom of the right info column; shows unit type + name with country colour dot; "(none)" when empty.

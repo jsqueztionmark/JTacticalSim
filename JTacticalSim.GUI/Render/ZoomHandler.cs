@@ -34,7 +34,7 @@ public sealed class ZoomHandler : BaseGameObject, IZoomHandler
     public bool CycleZoomLevel(CycleDirection direction)
     {
         var old = CurrentZoom;
-        if (direction == CycleDirection.IN && (int)CurrentZoom.Level > 1)
+        if (direction == CycleDirection.IN && (int)CurrentZoom.Level > 2)
         {
             CurrentZoom.IsCurrent = false;
             _zoomLevels.Single(z => z.Level == old.Level - 1).IsCurrent = true;
@@ -53,7 +53,6 @@ public sealed class ZoomHandler : BaseGameObject, IZoomHandler
     {
         _zoomLevels.ForEach(z =>
         {
-            if (z.Level <= ZoomLevel.ONE) return;
             z.CurrentOrigin.X = _board.SelectedNode.Location.X - hOffSet;
             z.CurrentOrigin.Y = _board.SelectedNode.Location.Y - vOffSet;
         });
@@ -63,7 +62,6 @@ public sealed class ZoomHandler : BaseGameObject, IZoomHandler
     {
         _zoomLevels.ForEach(z =>
         {
-            if (z.Level == ZoomLevel.ONE) return;
             if (_board.SelectedNode.Location.X > z.CurrentOrigin.X + z.DrawWidth - 1)  z.CurrentOrigin.X++;
             if (_board.SelectedNode.Location.Y > z.CurrentOrigin.Y + z.DrawHeight - 1) z.CurrentOrigin.Y++;
             if (_board.SelectedNode.Location.X < z.CurrentOrigin.X) z.CurrentOrigin.X--;
@@ -75,7 +73,6 @@ public sealed class ZoomHandler : BaseGameObject, IZoomHandler
     {
         _zoomLevels.ForEach(z =>
         {
-            if (z.Level == ZoomLevel.ONE) return;
             if (_board.SelectedNode.Location.X > z.CurrentOrigin.X + z.DrawWidth - 1)  z.CurrentOrigin.X += z.DrawWidth;
             if (_board.SelectedNode.Location.Y > z.CurrentOrigin.Y + z.DrawHeight - 1) z.CurrentOrigin.Y += z.DrawHeight;
             if (_board.SelectedNode.Location.X < z.CurrentOrigin.X) z.CurrentOrigin.X -= z.DrawWidth;

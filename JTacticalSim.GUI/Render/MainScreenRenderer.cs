@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Game;
+using JTacticalSim.API.InfoObjects;
 using JTacticalSim.GUI.Controls;
 
 namespace JTacticalSim.GUI.Render;
@@ -16,8 +17,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private const int PlayerBarH = 22;   // bottom: country / faction / RP / VP
     private const int MapLeft    = 4;
     private const int MapTop     = MenuBarH + 2;
-    private const int InfoPanelW = 380;
-    private const int LineH      = 18;
+    private const int InfoPanelW  = 380;
+    private const int ReinfPanelH = 140;   // reserved at bottom of right column for available reinforcements
+    private const int LineH       = 18;
 
     private int WindowW;
     private int WindowH;
@@ -32,7 +34,6 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private static readonly Color ColStatusBar   = new(20, 30, 50);
     private static readonly Color ColStatusText   = new(200, 210, 220);
     private static readonly Color ColMapBg        = new(10, 18, 10);
-    private static readonly Color ColGridLine     = new(30, 40, 30);
     private static readonly Color ColPanelBg      = new(12, 22, 42);
     private static readonly Color ColPanelBorder  = new(60, 100, 160);
     private static readonly Color ColCaption       = Color.White;
@@ -231,8 +232,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         var node    = TheGame().GameBoard.SelectedNode;
         int col     = node.Location.X - origin.X;
         int row     = node.Location.Y - origin.Y;
-        int nodePixX = MapLeft + col * zoom.ColumnSpacing;
-        int nodePixY = MapTop  + row * zoom.RowSpacing;
+        var (offX, offY) = MapGridOffset(zoom);
+        int nodePixX = MapLeft + offX + col * zoom.ColumnSpacing;
+        int nodePixY = MapTop  + offY + row * zoom.RowSpacing;
 
         int x = nodePixX + zoom.ColumnSpacing + 2;
         if (x + popupW > InfoPanelLeft - 4)
@@ -363,8 +365,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         int cellW = zoom.ColumnSpacing;
         int cellH = zoom.RowSpacing;
 
-        int px1 = MapLeft + col * cellW;
-        int py1 = MapTop + row * cellH;
+        var (offX, offY) = MapGridOffset(zoom);
+        int px1 = MapLeft + offX + col * cellW;
+        int py1 = MapTop  + offY + row * cellH;
 
         if (px1 + cellW > MapLeft + MapWidth || py1 + cellH > MapTop + MapHeight) return;
 
@@ -372,9 +375,6 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         RenderUnitsOnNode(node, zoomLevel, px1, py1, cellW, cellH);
         RenderNodeOverlays(node, px1, py1, cellW, cellH);
 
-        // grid lines
-        sb.Draw(px, new Rectangle(px1, py1, cellW, 1), ColGridLine);
-        sb.Draw(px, new Rectangle(px1, py1, 1, cellH), ColGridLine);
     }
 
     // ── Tile rendering ──────────────────────────────────────────────────────
@@ -392,16 +392,36 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         if (sb == null || px == null || tile == null) return;
 
         Color tileColor = GetTileColor(tile);
-        sb.Draw(px, new Rectangle(x + 1, y + 1, w - 1, h - 1), tileColor);
+        sb.Draw(px, new Rectangle(x, y, w, h), tileColor);
+
+        // Country ownership dot — top-left corner; skipped in POLITICAL mode (whole tile is already country-colored)
+        var mapMode = TheGame().MapModeHandler?.CurrentMapMode;
+        if (tile.Country != null && mapMode?.MapMode != MapMode.POLITICAL)
+        {
+            int dotSize = Math.Max(4, Math.Min(8, w / 12));
+            Color dotColor = ConsoleColorToXna(tile.Country.Color);
+            sb.Draw(px, new Rectangle(x + 3, y + 3, dotSize, dotSize), dotColor);
+        }
+
+        // Victory points — top-right corner
+        var fnt = _baseRenderer.Font;
+        if (tile.VictoryPoints > 0 && fnt != null)
+        {
+            float vpScale = 1.0f;
+            string vpLabel = tile.VictoryPoints.ToString();
+            var vpSize = fnt.MeasureString(vpLabel) * vpScale;
+            int vpX = x + w - (int)vpSize.X - 3;
+            int vpY = y + 2;
+            sb.DrawString(fnt, vpLabel, new Vector2(vpX, vpY), ColTextHi, 0f, Vector2.Zero, vpScale, SpriteEffects.None, 0f);
+        }
 
         // At higher zoom levels, render demographic text labels
-        var fnt = _baseRenderer.Font;
         if (zoomLevel >= 3 && fnt != null && w >= 48)
         {
             string label = GetTileLabel(tile);
             if (!string.IsNullOrEmpty(label))
             {
-                float scale = 0.55f;
+                float scale = 1.0f;
                 var textSize = fnt.MeasureString(label) * scale;
                 int tx = x + (w - (int)textSize.X) / 2;
                 int ty = y + h - (int)textSize.Y - 2;
@@ -474,48 +494,68 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         var stacks = node.DefaultTile.GetAllComponentStacks();
         if (stacks == null || stacks.Count == 0) return;
 
-        int tokenY = y + 2;
-        foreach (var stack in stacks)
+        var visible = stacks.Where(s => s != null && s.HasVisibleComponents).ToList();
+        if (visible.Count == 0) return;
+
+        if (cellW >= 48 && cellH >= 24)
         {
-            if (stack == null || !stack.HasVisibleComponents) continue;
+            // Large cells: labeled tokens stacked vertically, group centered in the cell
+            float scale = zoomLevel >= 4 ? 0.85f : 0.75f;
 
-            var topUnit = stack.GetFirstVisibleUnit();
-            if (topUnit == null) continue;
+            // Measure all tokens up front so we can center the block
+            var tokens = visible
+                .Select(stack =>
+                {
+                    var topUnit = stack.GetFirstVisibleUnit();
+                    if (topUnit == null) return null;
+                    int count = stack.GetAllUnits().Count;
+                    string label = GetUnitToken(topUnit, count, zoomLevel);
+                    var textSize = fnt.MeasureString(label) * scale;
+                    int tw = Math.Min(Math.Max((int)textSize.X + 4, 20), cellW - 4);
+                    int th = (int)textSize.Y + 2;
+                    return new { label, tw, th, color = GetUnitColor(topUnit) };
+                })
+                .Where(t => t != null)
+                .ToList();
 
-            int unitCount = stack.GetAllUnits().Count;
-            Color unitColor = GetUnitColor(topUnit);
+            int totalH = tokens.Sum(t => t.th) + (tokens.Count - 1);
+            int tokenY = y + Math.Max(2, (cellH - totalH) / 2);
 
-            if (cellW >= 48 && cellH >= 24)
+            foreach (var token in tokens)
             {
-                // Larger cells: draw a labeled token
-                string label = GetUnitToken(topUnit, unitCount, zoomLevel);
-                float scale = zoomLevel >= 4 ? 0.6f : 0.5f;
-                var textSize = fnt.MeasureString(label) * scale;
-                int tw = Math.Max((int)textSize.X + 4, 20);
-                int th = (int)textSize.Y + 2;
+                if (tokenY + token.th > y + cellH - 2) break;
 
-                int tx = x + 2;
-                if (tx + tw > x + cellW - 2) tw = cellW - 4;
+                int tx = x + (cellW - token.tw) / 2;
 
-                sb.Draw(px, new Rectangle(tx, tokenY, tw, th), ColUnitBg);
-                sb.Draw(px, new Rectangle(tx, tokenY, tw, 1), unitColor);
-                sb.Draw(px, new Rectangle(tx, tokenY + th - 1, tw, 1), unitColor);
-                sb.Draw(px, new Rectangle(tx, tokenY, 1, th), unitColor);
-                sb.Draw(px, new Rectangle(tx + tw - 1, tokenY, 1, th), unitColor);
+                sb.Draw(px, new Rectangle(tx, tokenY, token.tw, token.th), ColUnitBg);
+                sb.Draw(px, new Rectangle(tx, tokenY, token.tw, 1), token.color);
+                sb.Draw(px, new Rectangle(tx, tokenY + token.th - 1, token.tw, 1), token.color);
+                sb.Draw(px, new Rectangle(tx, tokenY, 1, token.th), token.color);
+                sb.Draw(px, new Rectangle(tx + token.tw - 1, tokenY, 1, token.th), token.color);
 
-                sb.DrawString(fnt, label, new Vector2(tx + 2, tokenY + 1), unitColor, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                sb.DrawString(fnt, token.label, new Vector2(tx + 2, tokenY + 1), token.color,
+                    0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
-                tokenY += th + 1;
+                tokenY += token.th + 1;
             }
-            else
+        }
+        else
+        {
+            // Small cells: one dot per stack, row centered in the cell
+            // Multiple factions appear side-by-side
+            int dotSize = Math.Max(4, cellW / 4);
+            int gap     = 1;
+            int totalW  = visible.Count * (dotSize + gap) - gap;
+            int dotX    = x + (cellW - totalW) / 2;
+            int dotY    = y + (cellH - dotSize) / 2;
+
+            foreach (var stack in visible)
             {
-                // Small cells: colored dot
-                int dotSize = Math.Max(4, cellW / 4);
-                sb.Draw(px, new Rectangle(x + 2, tokenY, dotSize, dotSize), unitColor);
-                tokenY += dotSize + 1;
+                var topUnit = stack.GetFirstVisibleUnit();
+                if (topUnit == null) continue;
+                sb.Draw(px, new Rectangle(dotX, dotY, dotSize, dotSize), GetUnitColor(topUnit));
+                dotX += dotSize + gap;
             }
-
-            if (tokenY > y + cellH - 4) break;
         }
     }
 
@@ -614,7 +654,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
 
     private void DrawInfoPanel(SpriteBatch sb, SpriteFont fnt, Texture2D px)
     {
-        DrawBox(sb, px, fnt, InfoPanelLeft, InfoPanelTop, InfoPanelW, InfoPanelH, "Tile / Unit Info");
+        int tileInfoH = InfoPanelH - ReinfPanelH - 4;
+        DrawBox(sb, px, fnt, InfoPanelLeft, InfoPanelTop, InfoPanelW, tileInfoH, "Tile / Unit Info");
+        DrawReinforcementsPanel(sb, fnt, px);
 
         var board = TheGame()?.GameBoard;
         if (board?.SelectedNode == null) return;
@@ -637,13 +679,16 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
 
         var selectedUnits = board.SelectedUnits;
 
+        int panelBottom = InfoPanelTop + InfoPanelH - ReinfPanelH - 12;
+
         foreach (var stack in stacks)
         {
             if (stack == null) continue;
             foreach (var unit in stack.GetAllUnits())
             {
                 if (unit == null) continue;
-                if (y + LineH > InfoPanelTop + InfoPanelH - 8) return;
+                if (unit.IsBeingTransported()) continue;   // rendered as child of its transport below
+                if (y + LineH > panelBottom) return;
 
                 bool isSelected = selectedUnits != null && selectedUnits.Any(su => su.ID == unit.ID);
                 Color col = isSelected ? ColTextHi : ColText;
@@ -651,16 +696,56 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
 
                 Color unitCol = GetUnitColor(unit);
                 sb.Draw(px, new Rectangle(InfoPanelLeft + 8, y + 4, 8, 8), unitCol);
-
-                string unitLabel = $"{marker}{unit.Name}";
-                DrawText(sb, fnt, unitLabel, InfoPanelLeft + 20, y, col);
+                DrawText(sb, fnt, $"{marker}{unit.Name}", InfoPanelLeft + 20, y, col);
                 y += LineH;
 
                 if (isSelected && y + LineH * 6 < InfoPanelTop + InfoPanelH - 8)
-                {
                     DisplayUnitDetail(unit, sb, fnt, ref y);
+
+                // Transported units — indented with arrow
+                foreach (var carried in unit.GetTransportedUnits())
+                {
+                    if (carried == null) continue;
+                    if (y + LineH > panelBottom) return;
+
+                    Color carriedCol = GetUnitColor(carried);
+                    //sb.Draw(px, new Rectangle(InfoPanelLeft + 20, y + 4, 6, 6), carriedCol);
+                    DrawText(sb, fnt, $"=>", InfoPanelLeft + 30, y, carriedCol);
+                    DrawText(sb, fnt, carried.Name, InfoPanelLeft + 55, y, ColTextDim);
+                    y += LineH;
                 }
             }
+        }
+    }
+
+    private void DrawReinforcementsPanel(SpriteBatch sb, SpriteFont fnt, Texture2D px)
+    {
+        int panelY = InfoPanelTop + InfoPanelH - ReinfPanelH;
+        DrawBox(sb, px, fnt, InfoPanelLeft, panelY, InfoPanelW, ReinfPanelH, "Available Reinforcements");
+
+        var player = TheGame()?.CurrentTurn?.Player;
+        if (player == null) return;
+
+        var units = player.UnplacedReinforcements;
+        int y = panelY + 24;
+        int bottom = panelY + ReinfPanelH - 4;
+
+        if (!units.Any())
+        {
+            DrawText(sb, fnt, "(none)", InfoPanelLeft + 8, y, ColTextDim);
+            return;
+        }
+
+        foreach (var unit in units)
+        {
+            if (y + LineH > bottom) break;
+
+            Color col = GetUnitColor(unit);
+            sb.Draw(px, new Rectangle(InfoPanelLeft + 8, y + 4, 8, 8), col);
+
+            string label = $"{unit.UnitInfo?.UnitType?.Name ?? "?"} {unit.Name}";
+            DrawText(sb, fnt, label, InfoPanelLeft + 20, y, ColText);
+            y += LineH;
         }
     }
 
@@ -1017,6 +1102,17 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         if (zh.CycleZoomLevel(direction))
         {
             _baseRenderer.RecalcZoomDrawCounts(MapWidth, MapHeight);
+
+            // Re-center the new zoom level on the selected node so the cursor is always visible.
+            var zoom  = zh.CurrentZoom;
+            var node  = TheGame().GameBoard.SelectedNode;
+            var attrs = TheGame().GameBoard.DefaultAttributes;
+
+            int ox = Math.Max(0, Math.Min(node.Location.X - zoom.DrawWidth  / 2, attrs.Width  - zoom.DrawWidth));
+            int oy = Math.Max(0, Math.Min(node.Location.Y - zoom.DrawHeight / 2, attrs.Height - zoom.DrawHeight));
+            zoom.CurrentOrigin.X = ox;
+            zoom.CurrentOrigin.Y = oy;
+
             TheGame().Renderer.SetCurrentViewableArea();
         }
     }
@@ -1038,6 +1134,11 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
+
+    // Centers the tile grid within the map panel — distributes dead pixels as equal margins.
+    private (int offsetX, int offsetY) MapGridOffset(ZoomInfo zoom) =>
+        ((MapWidth  - zoom.DrawWidth  * zoom.ColumnSpacing) / 2,
+         (MapHeight - zoom.DrawHeight * zoom.RowSpacing)    / 2);
 
     private static string DescribeTerrain(ITile tile)
     {
