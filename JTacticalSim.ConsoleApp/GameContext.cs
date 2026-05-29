@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Runtime.InteropServices;
 using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.Service;
 using JTacticalSim.Media.Sound;
 using ConsoleControls;
-using System.Collections.Generic;
 
 namespace JTacticalSim.ConsoleApp
 {

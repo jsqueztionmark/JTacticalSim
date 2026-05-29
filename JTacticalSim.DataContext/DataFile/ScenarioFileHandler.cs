@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.IO;
 using JTacticalSim.API.Component;
 using JTacticalSim.Utility;
 

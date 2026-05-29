@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Reflection;
-using System.ServiceModel;
-using LinqKit;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using JTacticalSim.API;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.API.Component;
@@ -18,7 +12,6 @@ using JTacticalSim.Utility;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public class RulesService : BaseGameService, IRulesService
 	{
 		static readonly object padlock = new object();
@@ -46,7 +39,7 @@ namespace JTacticalSim.Service
 
 	// Node/Tile
 
-		[OperationBehavior]
+		
 		public IResult<bool, ICoordinate> NodeIsFactionNode(ICoordinate location, IFaction faction)
 		{
 			var r = new OperationResult<bool, ICoordinate>();
@@ -59,7 +52,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, INode>> NodeIsValidForMove(IUnit unit, INode targetNode)
 		{
 			var r = new OperationResult<bool, Tuple<IUnit, INode>>{Status = ResultStatus.SUCCESS, Result = true};
@@ -101,7 +94,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, ITile> TileIsChokepoint(ITile tile)
 		{
 			var node = tile.GetNode();
@@ -156,7 +149,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IResult<bool, ITile> TileIsPassThroughRestrictedMovement(ITile tile, List<Tuple<ITile, ITile>> neighborPairs)
 		{
 			var r = new OperationResult<bool, ITile> { Status = ResultStatus.SUCCESS, Result = false };
@@ -209,7 +202,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IResult<bool, ITile> TileIsNarrowGeography(ITile tile, List<Tuple<ITile, ITile>> neighborPairs)
 		{
 			var r = new OperationResult<bool, ITile> { Status = ResultStatus.SUCCESS, Result = false};
@@ -251,7 +244,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, ITile>> TileIsAllowableForUnit(IUnit unit, ITile tile)
 		{
 			var r = new OperationResult<bool, Tuple<IUnit, ITile>>{Status = ResultStatus.SUCCESS, Result = true};
@@ -264,7 +257,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnitType, ITile>> TileIsAllowableForUnitType(IUnitType unitType, ITile tile)
 		{
 			var r = new OperationResult<bool, Tuple<IUnitType, ITile>>{Status = ResultStatus.SUCCESS, Result = true};
@@ -291,14 +284,14 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnitType, ITile>> TileHasMovementOverrideForUnit(IUnit unit, ITile tile, Direction direction)
 		{
 			var r = TileHasMovementOverrideForUnitType(unit.UnitInfo.UnitType, tile, direction);
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitHasGlobalMovementOverride(IUnit unit)
 		{
 			var r = new OperationResult<bool, IUnit>{Status = ResultStatus.SUCCESS, Result = false};
@@ -325,7 +318,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnitGeogType, ITile>> TileHasMovementOverrideForUnitGeogType(IUnitGeogType unitGeogType, ITile tile)
 		{
 			var r = new OperationResult<bool, Tuple<IUnitGeogType, ITile>>{Status = ResultStatus.SUCCESS, Result = false};
@@ -394,7 +387,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnitType, ITile>> TileHasMovementOverrideForUnitType(IUnitType unitType, ITile tile, Direction direction)
 		{
 			var r = new OperationResult<bool, Tuple<IUnitType, ITile>>{Status = ResultStatus.SUCCESS, Result = false};
@@ -464,7 +457,7 @@ namespace JTacticalSim.Service
 
 	// Unit
 
-		[OperationBehavior]
+		
 		public IResult<int, IUnit> GetAllowableDeployDistanceForTransport(IUnit transport)
 		{
 			var r = new OperationResult<int, IUnit> {Status = ResultStatus.SUCCESS};
@@ -482,7 +475,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int, IUnit> GetAllowableLoadDistanceForTransport(IUnit transport)
 		{
 			var r = new OperationResult<int, IUnit> {Status = ResultStatus.SUCCESS};
@@ -500,7 +493,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, string> UnitNameIsUnique(string name)
 		{
 			var r = new OperationResult<bool, string>();
@@ -508,7 +501,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<List<IUnit>, List<IUnit>>> UnitsCanDoBattleWithUnits(List<IUnit> units, List<IUnit> opponents, BattleType battleType)
 		{
 
@@ -525,7 +518,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, IUnit>> UnitCanDoBattleWithUnit(IUnit unit, IUnit opponent, BattleType battleType)
 		{
 			var r = new OperationResult<bool, Tuple<IUnit, IUnit>> { Status = ResultStatus.SUCCESS };
@@ -565,7 +558,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitCanDoBattle(IUnit unit)
 		{
 			var r = new OperationResult<bool, IUnit>();
@@ -576,7 +569,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitCanMoveOntoNode(IUnit unit, INode target)
 		{
 			var r = new OperationResult<bool, IUnit>();
@@ -589,7 +582,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitCanClaimNodeForFaction(IUnit unit)
 		{
 			//For now, unit must only not be an air unit
@@ -598,7 +591,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, IUnit>> UnitCanAttachToUnit(IUnit unit, IUnit attachToUnit)
 		{
 			var r = new OperationResult<bool, Tuple<IUnit, IUnit>>();
@@ -617,7 +610,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitIsSupplied(IUnit unit)
 		{
 			var r = new OperationResult<bool, IUnit> {Result = false, Status = ResultStatus.SUCCESS};
@@ -638,7 +631,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitHasMedicalSupport(IUnit unit)
 		{
 			// Should only be determined based on medical unit or demographic that provides medical AT current node including current unit
@@ -674,7 +667,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitIsUnitClass(IUnit unit, string className)
 		{
 			var r = new OperationResult<bool, IUnit> {Result = false, Status = ResultStatus.SUCCESS};
@@ -694,7 +687,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitIsUnitBaseType(IUnit unit, string baseTypeName)
 		{
 			var r = new OperationResult<bool, IUnit> {Result = false, Status = ResultStatus.SUCCESS};
@@ -722,7 +715,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, INode>> UnitIsDeployableToNode(IUnit unit, INode node)
 		{
 			// Node must be compatible with the unit
@@ -730,7 +723,7 @@ namespace JTacticalSim.Service
 			return TheGame().JTSServices.RulesService.NodeIsValidForMove(unit, node);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, INode>> UnitCanReinforceAtLocation(IUnit unit, INode node)
 		{
 			// Node must be compatible with the unit
@@ -797,7 +790,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, INode>> UnitCanRefuelAtLocation(IUnit unit, INode node)
 		{
 			// Unit is supplied - assumes fuel supply
@@ -866,7 +859,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 			
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, IUnit>> UnitCanTransportUnitTypeAndClass(IUnit transport, IUnit unit)
 		{
 			var r = new OperationResult<bool, Tuple<IUnit, IUnit>> {Result = false, Status = ResultStatus.SUCCESS};
@@ -878,7 +871,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<MoveInDirectionResult, Tuple<IUnit, INode>> UnitCanMoveInDirection(IUnit unit, ITile currentNodeTile, Direction direction)
 		{
 			var r = new OperationResult<MoveInDirectionResult, Tuple<IUnit, INode>>
@@ -951,7 +944,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<ITile, IFaction>> TileHasMaxUnitsForFaction(ITile tile, IFaction faction, int MaxUnits)
 		{
 			var r = new OperationResult<bool, Tuple<ITile, IFaction>> { Status = ResultStatus.SUCCESS, Result = false };
@@ -970,7 +963,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, ITile> TileWillExceedMaxUnitsForFaction(ITile tile, IEnumerable<IUnit> movingUnits, int maxUnits)
 		{
 			movingUnits = movingUnits.ToArray();
@@ -991,7 +984,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, ITile> TileCanSupportInfrastructureBuilding(ITile tile, IDemographic infrastructure)
 		{
 			// true if Tile does not have existing infrastructure of requested type in any of the allowed orientations
@@ -1020,7 +1013,7 @@ namespace JTacticalSim.Service
 			return result;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, Tuple<IUnit, IUnitTaskType>> UnitCanPerformTask(IUnit unit, IUnitTaskType taskType)
 		{
 			// Based on allowable task assignments for a UnitClass and UnitGroupType
@@ -1060,7 +1053,7 @@ namespace JTacticalSim.Service
 			}	
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IMoveableComponent> ComponentIsVisible(IMoveableComponent component)
 		{
 			var r = new OperationResult<bool, IMoveableComponent> {Result = false, Status = ResultStatus.SUCCESS};
@@ -1074,7 +1067,7 @@ namespace JTacticalSim.Service
 		/// <param name="unit"></param>
 		/// <param name="hiddenStealthThreshhold"></param>
 		/// <returns></returns>
-		[OperationBehavior]
+		
 		public IResult<bool, IUnit> UnitIsHiddenFromEnemy(IUnit unit, double hiddenStealthThreshhold)
 		{
 			var r = new OperationResult<bool, IUnit> {Result = false, Status = ResultStatus.SUCCESS};
@@ -1084,7 +1077,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IMoveableComponent> ComponentIsBeingTransported(IMoveableComponent component)
 		{
 			var r = new OperationResult<bool, IMoveableComponent> {Result = false, Status = ResultStatus.SUCCESS};
@@ -1092,7 +1085,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnitType> UnitTypeIsAllowedTypeForScenario(IUnitType unitType)
 		{
 			var r = new OperationResult<bool, IUnitType> {Result = false, Status = ResultStatus.SUCCESS};
@@ -1100,7 +1093,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IUnitGroupType> UnitGroupTypeIsAllowedForScenario(IUnitGroupType unitGroupType)
 		{
 			var r = new OperationResult<bool, IUnitGroupType> {Result = false, Status = ResultStatus.SUCCESS};
@@ -1111,7 +1104,7 @@ namespace JTacticalSim.Service
 
 	// Game
 
-		[OperationBehavior]
+		
 		public IResult<bool, IFaction> GameVictoryAchieved(IFaction faction)
 		{
 			var conditions = faction.VictoryConditions();
@@ -1180,7 +1173,7 @@ namespace JTacticalSim.Service
 		}
 
 
-		[OperationBehavior]
+		
 		public IResult<bool, TComponent> NameIsValid<TComponent>(string name)
 			where TComponent : class, IBaseComponent
 		{
@@ -1223,7 +1216,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, string> ScenarioTitleIsValid(string title)
 		{
 
@@ -1247,7 +1240,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, ICountry> CountryHasDependantComponents(ICountry country)
 		{
 			var r = new OperationResult<bool, ICountry>
@@ -1277,7 +1270,7 @@ namespace JTacticalSim.Service
 
 	// Battle
 
-		[OperationBehavior]
+		
 		public IResult<ISkirmish, ISkirmish> CheckSkirmishVictoryCondition(ISkirmish skirmish)
 		{
 			var r = new OperationResult<ISkirmish, ISkirmish> {Status = ResultStatus.SUCCESS, Result = skirmish};
@@ -1317,7 +1310,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IBattle, IBattle> CheckBattleVictoryCondition(IBattle battle)
 		{
 			// - One or both of the battle factions have no remaining units
@@ -1399,7 +1392,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<bool, IBattle> BattleCanContinue(IBattle battle)
 		{
 			var r = new OperationResult<bool, IBattle> {Status = ResultStatus.SUCCESS, Result = true};
@@ -1438,7 +1431,7 @@ namespace JTacticalSim.Service
 
 	// AI
 
-		[OperationBehavior]
+		
 		public IResult<StrategicAssessmentRating, StrategicAssessmentInfo> GetOverallRatingForStrategicAssessment(StrategicAssessmentInfo assessment)
 		{
 			var r = new OperationResult<StrategicAssessmentRating, StrategicAssessmentInfo> {Status = ResultStatus.SUCCESS};
@@ -1471,7 +1464,7 @@ namespace JTacticalSim.Service
 				}
 				else
 				{
-					props.ForEach(infoAction);
+					//props.ForEach(infoAction);
 				}
 
 				total = (total/props.Count());
@@ -1486,7 +1479,6 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationContract]
 		public IResult<bool, IMission> MissionCanceledByMove(IMission mission)
 		{
 			// Is te mission complete
@@ -1520,7 +1512,7 @@ namespace JTacticalSim.Service
 
 	#region Rules Calculations
 
-		[OperationBehavior]
+		
 		public IResult<double, IUnit> CalculateTotalUnitWeight(IUnit unit)
 		{
 			var r = new OperationResult<double, IUnit> {Status = ResultStatus.SUCCESS};
@@ -1552,7 +1544,7 @@ namespace JTacticalSim.Service
 			}
 		}
 
-		[OperationBehavior]
+		
 		public IResult<double, IUnit> CalculateUnitWeight(IUnit unit)
 		{
 			var r = new OperationResult<double, IUnit> {Status = ResultStatus.SUCCESS};
@@ -1563,7 +1555,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<double, IUnit> CalculateAllowableTransportWeight(IUnit unit)
 		{
 			var r = new OperationResult<double, IUnit>();
@@ -1574,7 +1566,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public double? CalculateMovementHeuristic(IPathableObject component)
 		{
 			double? retVal = 0;
@@ -1603,7 +1595,7 @@ namespace JTacticalSim.Service
 
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int, IFaction> CalculateTotalVictoryPoints(IFaction faction)
 		{
 			var r = new OperationResult<int, IFaction>();
@@ -1621,7 +1613,7 @@ namespace JTacticalSim.Service
 			return r;			
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int, IPlayer> CalculateReinforcementPointsForTurn(IPlayer player)
 		{
 			// Percentage of total board held by country
@@ -1652,7 +1644,7 @@ namespace JTacticalSim.Service
 			return r;			
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateUnitAttackValueForCurrentGeog(IUnit unit)
 		{
 			// Combat base value
@@ -1673,7 +1665,7 @@ namespace JTacticalSim.Service
 				return Math.Floor(retVal);		
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateUnitDefenceValueForCurrentGeog(IUnit unit)
 		{
 			// Combat base value
@@ -1694,7 +1686,7 @@ namespace JTacticalSim.Service
 			return Math.Floor(retVal);		
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateUnitStealthValueForCurrentGeog(IUnit unit)
 		{
 			// Combat base value
@@ -1710,7 +1702,7 @@ namespace JTacticalSim.Service
 			return retVal;
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateUnitStrength(IUnit unit)
 		{
 			// Based on:
@@ -1733,7 +1725,7 @@ namespace JTacticalSim.Service
 			return strength;
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateTargetDesirabilityForUnit(IUnit unit)
 		{
 			// bonus if unit has attached units (depletes HQ bonus for attached units)
@@ -1756,7 +1748,7 @@ namespace JTacticalSim.Service
 			return factor;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<double, IUnit> CalculateTotalRPCostForUnit(IUnit unit)
 		{
 			var r = new OperationResult<double, IUnit> { Status = ResultStatus.SUCCESS };
@@ -1774,7 +1766,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public double CalculateTotalRPByUnitTypeUnitClass(IUnitType ut, IUnitClass uc)
 		{
 			// We want to allow for partially created units to display total cost (reinforcements screen)
@@ -1784,13 +1776,13 @@ namespace JTacticalSim.Service
 			return Math.Ceiling(((utMod + ucMod) * BaseGamePointValues.CostBase));			
 		}
 
-		[OperationBehavior]
+		
 		public int CalculateThreatDistance(int factorValue, int baseValue)
 		{
 			return Convert.ToInt32(Math.Round((Convert.ToDouble(factorValue) - 1) * 10 / baseValue));		
 		}
 
-		[OperationBehavior]
+		
 		public IResult<double, INode> CalculateOffensiveStrategicImportance(INode node)
 		{
 			var r = CalculateGeneralStrategicImportance(node);
@@ -1801,7 +1793,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<double, INode> CalculateDefensiveStrategicImportance(INode node)
 		{
 			var r = CalculateGeneralStrategicImportance(node);
@@ -1812,7 +1804,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		private IResult<double, INode> CalculateGeneralStrategicImportance(INode node)
 		{
 			// Just stealth for now - add more criteria later.
@@ -1821,7 +1813,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int, int> CalculateCellCountFromRealWorldMeasurements(int modifier, int baseSize, int cellSize)
 		{
 			var r = new OperationResult<int, int> { Status = ResultStatus.SUCCESS };
@@ -1835,7 +1827,7 @@ namespace JTacticalSim.Service
 
 	// Utility
 
-		[OperationBehavior]
+		
 		public bool DemographicIsHybrid(IDemographic demographic)
 		{
 			return DataRepository.GetHybridDemographicsClasses().Contains(demographic.DemographicClass.ID);

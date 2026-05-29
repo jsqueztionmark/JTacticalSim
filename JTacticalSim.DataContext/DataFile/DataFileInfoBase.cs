@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.IO;
-using System.Configuration;
 using System.Xml.Linq;
 using JTacticalSim.API.Data;
 using JTacticalSim.API.Component;
@@ -89,17 +85,23 @@ namespace JTacticalSim.DataContext
 
 		protected DataFileInfoBase(IComponentSet componentSet)
 		{
-			var curDrive = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());
-
 			FilePathComponentSet = (componentSet != null) ? componentSet.Path : ConfigurationManager.AppSettings["default_component_set"];
-			FilePathRoot = "{0}{1}".F(curDrive, ConfigurationManager.AppSettings["datafilepathDefault"]);
-			FilePathComponentData = "{0}\\{1}".F(FilePathRoot, FilePathComponentSet);
-			FilePathGameSave = "{0}{1}".F(curDrive, ConfigurationManager.AppSettings["datafilepathGameSaveDefault"]);
-			FilePathScenario = "{0}{1}".F(curDrive, ConfigurationManager.AppSettings["datafilepathScenarioDefault"]);
+			FilePathRoot = ToAbsolutePath(ConfigurationManager.AppSettings["datafilepathDefault"]);
+			FilePathComponentData = Path.Combine(FilePathRoot, FilePathComponentSet);
+			FilePathGameSave = ToAbsolutePath(ConfigurationManager.AppSettings["datafilepathGameSaveDefault"]);
+			FilePathScenario = ToAbsolutePath(ConfigurationManager.AppSettings["datafilepathScenarioDefault"]);
 
-			_savedGameDataFilePath = "{0}\\010_SavedGames.xml".F(FilePathRoot);
-			_scenarioDataFilePath = "{0}\\005_Scenarios.xml".F(FilePathRoot);
-			_componentSetDataFilePath = "{0}\\002_ComponentSets.xml".F(FilePathRoot);
+			_savedGameDataFilePath = Path.Combine(FilePathRoot, "010_SavedGames.xml");
+			_scenarioDataFilePath = Path.Combine(FilePathRoot, "005_Scenarios.xml");
+			_componentSetDataFilePath = Path.Combine(FilePathRoot, "002_ComponentSets.xml");
+		}
+
+		private static string ToAbsolutePath(string configPath)
+		{
+			var normalized = configPath.Replace('\\', Path.DirectorySeparatorChar);
+			return Path.IsPathRooted(normalized)
+				? normalized
+				: Path.Combine(AppContext.BaseDirectory, normalized);
 		}
 	}
 }

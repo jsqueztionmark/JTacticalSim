@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>JTacticalSimGUI</AssemblyName>
+    <RootNamespace>JTacticalSim.GUI</RootNamespace>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.2.1105" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.2.1105" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JTacticalSim.Base\JTacticalSim.Base.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Component\JTacticalSim.Component.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Media\JTacticalSim.Media.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Service\JTacticalSim.Service.csproj" />
+    <ProjectReference Include="..\JTacticalSim.Utility\JTacticalSim.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+
+</Project>

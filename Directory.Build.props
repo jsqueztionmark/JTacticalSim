@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <!-- Disable git/SourceLink analysis — .gitmodules is a device file in this environment -->
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <UseSourceLink>false</UseSourceLink>
+    <DeterministicSourcePaths>false</DeterministicSourcePaths>
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Configuration" />
+  </ItemGroup>
+
+</Project>

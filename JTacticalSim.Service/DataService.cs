@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
@@ -12,7 +9,6 @@ using JTacticalSim.DataContext;
 
 namespace JTacticalSim.Service
 {
-	[ServiceBehavior]
 	public sealed class DataService : BaseGameService, IDataService
 	{
 		static readonly object padlock = new object();
@@ -39,7 +35,7 @@ namespace JTacticalSim.Service
 
 	// Game
 
-		[OperationBehavior]
+		
 	    public IResult<string, string> LoadSavedGameData(string gameDataDirectory, bool IsScenario)
 	    {
 	        using (var ctx = DataFactory.GetDataContext())
@@ -49,7 +45,7 @@ namespace JTacticalSim.Service
 	        }
 	    }
 
-		[OperationBehavior]
+		
 	    public IResult<string, string> LoadData(string gameFileDirectory, IComponentSet componentSet, bool IsScenario)
 	    {
 	        using (var ctx = DataFactory.GetDataContext())
@@ -59,7 +55,7 @@ namespace JTacticalSim.Service
 	        }
 	    }
 
-		[OperationBehavior]
+		
 	    public IResult<IGameFileCopyable, IGameFileCopyable> SaveData(IGameFileCopyable currentData)
 	    {	
 			using (var ctx = DataFactory.GetDataContext())
@@ -69,7 +65,7 @@ namespace JTacticalSim.Service
 	        }			
 	    }
 
-		[OperationBehavior]
+		
 		public IResult<IGameFileCopyable, IGameFileCopyable> SaveDataAs(IGameFileCopyable currentData, IGameFileCopyable newData)
 		{
 			using (var ctx = DataFactory.GetDataContext())
@@ -79,7 +75,7 @@ namespace JTacticalSim.Service
 	        }
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IGameFileCopyable, IGameFileCopyable> RemoveSavedData(IGameFileCopyable delData)
 		{
 			using (var ctx = DataFactory.GetDataContext())
@@ -89,7 +85,7 @@ namespace JTacticalSim.Service
 	        }
 		}
 
-		[OperationBehavior]
+		
 		public void ResetDataContext()
 		{
 			using (var ctx = DataFactory.GetDataContext())
@@ -98,7 +94,7 @@ namespace JTacticalSim.Service
 	        }
 		}
 
-		[OperationBehavior]
+		
 		public IBasePointValues GetBasePointValues()
 		{
 			return BaseGamePointValues;
@@ -106,51 +102,51 @@ namespace JTacticalSim.Service
 
 	// Unit
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitAssignments()
 		{
 			return DataRepository.GetUnitAssignments();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<Tuple<IUnit, IUnit>, Tuple<IUnit, IUnit>> SaveUnitAssignment(IUnit unit, IUnit assignToUnit)
 		{
 			return DataRepository.SaveUnitAssignment(unit, assignToUnit);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<IUnit, IUnit> RemoveUnitAssignmentsFromUnit(IUnit unit)
 		{
 			return DataRepository.RemoveUnitAssignmentsFromUnit(unit);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<Tuple<IUnit, IUnit>, Tuple<IUnit, IUnit>> RemoveUnitAssignment(IUnit unit, IUnit assignedToUnit)
 		{
 			return DataRepository.RemoveUnitAssignment(unit, assignedToUnit);
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitTransports()
 		{
 			return DataRepository.GetUnitTransports();
 		}
 
-		[OperationBehavior]
+		
 		public IResult<Tuple<IUnit, IUnit>, Tuple<IUnit, IUnit>> SaveUnitTransport(IUnit unit, IUnit transport)
 		{
 			return DataRepository.SaveUnitTransport(unit, transport);
 		}
 
-		[OperationBehavior]
+		
 		public IResult<Tuple<IUnit, IUnit>, Tuple<IUnit, IUnit>> RemoveUnitTransport(IUnit unit, IUnit transport)
 		{
 			return DataRepository.RemoveUnitTransport(unit, transport);
 		}
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitType> GetAllowedUnitTypes(ICountry country)
 		{
 			var unitTypeIDs = DataRepository.GetAllowedUnitTypes()
@@ -160,7 +156,7 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<IUnitGroupType> GetAllowedUnitGroupTypes()
 		{
 			var unitGroupTypeIDs = DataRepository.GetAllowedUnitGroupTypes().Select(type => Convert.ToInt32(type.UnitGroupType));
@@ -168,19 +164,16 @@ namespace JTacticalSim.Service
 			return r;
 		}
 
-		[OperationContract]
 		public IEnumerable<dynamic> GetFactionVictoryConditions()
 		{
 			return DataRepository.GetFactionVictoryConditions();
 		}
 
-		[OperationContract]
 		public IResult<Tuple<IFaction, IVictoryCondition>, Tuple<IFaction, IVictoryCondition>> SaveFactionVictoryConditions(IFaction faction, IVictoryCondition victoryCondition)
 		{
 			return DataRepository.SaveFactionVictoryConditions(faction, victoryCondition);
 		}
 
-		[OperationContract]
 		public IResult<Tuple<IFaction, IVictoryCondition>, Tuple<IFaction, IVictoryCondition>> RemoveFactionVictoryConditions(IFaction faction, IVictoryCondition victoryCondition)
 		{
 			return DataRepository.RemoveFactionVictoryConditions(faction, victoryCondition);
@@ -188,25 +181,25 @@ namespace JTacticalSim.Service
 
 
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitBaseTypeUnitGeogTypesLookup()
 		{
 			return DataRepository.GetUnitBaseTypeUnitGeogTypesLookup();
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitGeogTypeDemographicClassesLookup()
 		{
 			return DataRepository.GetUnitGeogTypeDemographicClassesLookup();
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitBaseTypeUnitClassesLookup()
 		{
 			return DataRepository.GetUnitBaseTypeUnitClassesLookup();
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<dynamic> GetUnitTaskUnitClassesLookup()
 		{
 			return DataRepository.GetUnitTaskTypeUnitClassesLookup();
@@ -215,7 +208,7 @@ namespace JTacticalSim.Service
 
 	#region Lookups
 
-		[OperationBehavior]
+		
 		public IEnumerable<int> LookupUnitGeogTypesByBaseTypes(IEnumerable<int> baseTypeids)
 		{
 			return DataRepository.GetUnitBaseTypeUnitGeogTypesLookup()
@@ -223,7 +216,7 @@ namespace JTacticalSim.Service
 						.Select(o => Convert.ToInt32(o.UnitGeogType as int?));		
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<int> LookupDemographicClassesByUnitGeogTypes(IEnumerable<int> unitGeogTypeids)
 		{
 			return DataRepository.GetUnitGeogTypeDemographicClassesLookup()
@@ -231,7 +224,7 @@ namespace JTacticalSim.Service
 							.Select(o => Convert.ToInt32(o.DemographicClass as int?));
 		}
 
-		[OperationBehavior]
+		
 		public IEnumerable<int> LookupAllowableUnitClassesByUnitBaseType(int unitBaseTypeid)
 		{
 			return DataRepository.GetUnitBaseTypeUnitClassesLookup()
@@ -239,7 +232,7 @@ namespace JTacticalSim.Service
 							.Select(o => Convert.ToInt32(o.UnitClass as int?));
 		}
 
-		[OperationBehavior]
+		
 		public IResult<int, int> LookupUnitTaskTypeStepOrderForMissionType(IUnitTaskType unitTaskType, IMissionType missionType)
 		{
 			var r = new OperationResult<int, int> {Status = ResultStatus.SUCCESS};
@@ -266,7 +259,7 @@ namespace JTacticalSim.Service
 
 		}
 
-		[OperationBehavior]
+		
 		public IResult<List<IUnitTaskType>, IUnitTaskType> LookupUnitTaskTypesForMissionType(IMissionType missionType)
 		{
 			var r = new OperationResult<List<IUnitTaskType>, IUnitTaskType> { Status = ResultStatus.SUCCESS };

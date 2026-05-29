@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
-using System.IO;
 using JTacticalSim.API;
 using JTacticalSim.API.Game.State;
 using JTacticalSim.API.Component;

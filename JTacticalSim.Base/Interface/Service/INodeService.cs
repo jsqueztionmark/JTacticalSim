@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ServiceModel;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Data;
 using JTacticalSim.API.Game;
@@ -10,19 +8,14 @@ using JTacticalSim.Utility;
 
 namespace JTacticalSim.API.Service
 {
-	[ServiceContract]
 	public interface INodeService
 	{
-		[OperationContract]
 		IResult<INode, INode> SaveNodes(List<INode> nodes);
 
-		[OperationContract]
 		IResult<INode, INode> RemoveNodes(List<INode> nodes);
 
-		[OperationContract]
 		IResult<INode, INode> UpdateNodes(List<INode> nodes);
 
-		[OperationContract]
 		IEnumerable<INode> GetAllNodes();
 
 		///// <summary>
@@ -32,10 +25,8 @@ namespace JTacticalSim.API.Service
 		//[OperationContract]
 		//IEnumerable<INode> GetAllNodesFromCache();
 
-		[OperationContract]
 		INode GetNodeAt(ICoordinate coordinate);
 
-		[OperationContract]
 		INode GetNodeAt(int x, int y, int z);
 
 		/// <summary>
@@ -45,7 +36,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="node"></param>
 		/// <param name="map"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IEnumerable<Tuple<INode, bool>> GetAllowableNeighborNodesForGrid(IUnit unit, INode node, IEnumerable<IPathableObject> map);
 
 		/// <summary>
@@ -57,7 +47,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="includeCurrent"></param>
 		/// <param name="includeExtendedNodes"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IEnumerable<INode> GetAllNodesWithinMaxDistance(IUnit unit,
 													bool includeCurrent,
 													bool includeExtendedNodes);
@@ -72,7 +61,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="includeCurrentNode"></param>
 		/// <param name="includeExtendedNodes"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IEnumerable<INode> GetAllNodesWithinDistance(INode node,
 													int distance,
 													bool includeCurrentNode,
@@ -84,7 +72,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="neighbor"></param>
 		/// <param name="source"></param>
 		/// <returns></returns>
-		[OperationContract]
 		Direction GetNodeDirectionFromNeighborSourceNode(INode neighbor, INode source);
 
 		/// <summary>
@@ -96,7 +83,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="distance"></param>
 		/// <param name="includeExtendedNodes"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IEnumerable<INode> GetAllNodesAtDistance(INode node, int distance, bool includeExtendedNodes);
 
 		/// <summary>
@@ -104,10 +90,8 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		List<IPathNode> GetAllowableMovementNodesForUnit(IUnit unit);
 
-		[OperationContract]
 		IEnumerable<INode> GetNodesAtDistance(INode node, int distance);
 
 		/// <summary>
@@ -115,7 +99,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="source"></param>
 		/// <returns></returns>
-		[OperationContract]
 		List<Tuple<ITile, ITile>> GetNeighborNodesOppositeTilePairs(INode source);
 	}
 }

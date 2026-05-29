@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Collections.Generic;
-using System.Linq;
 using System.Dynamic;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Game;
@@ -14,7 +12,6 @@ using JTacticalSim.Component.Game;
 using JTacticalSim.Component.World;
 using JTacticalSim.API.InfoObjects;
 using NUnit.Framework;
-using JTacticalSim.LINQPad.Plugins;
 using Moq;
 
 namespace JTacticalSim.Test.Component
@@ -484,7 +481,7 @@ namespace JTacticalSim.Test.Component
 			var tmp = TheGame.JTSServices.DataService.GetFactionVictoryConditions()
 				.SingleOrDefault(fvc => fvc.FactionID == faction.ID && fvc.ConditionType == victoryCondition.VictoryConditionType.ID);
 
-			Assert.IsNotNull(tmp);
+			Assert.IsNotNull((object)tmp);
 
 		// DELETE/REMOVE
 
@@ -498,7 +495,7 @@ namespace JTacticalSim.Test.Component
 			tmp = TheGame.JTSServices.DataService.GetFactionVictoryConditions()
 				.SingleOrDefault(fvc => fvc.FactionID == faction.ID && fvc.ConditionType == victoryCondition.VictoryConditionType.ID);
 
-			Assert.IsNull(tmp);
+			Assert.IsNull((object)tmp);
 		}
 
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`

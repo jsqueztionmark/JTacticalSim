@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Configuration;
 using JTacticalSim.API.Component;
 using JTacticalSim.GameState;
 using NUnit.Framework;
@@ -9,7 +7,6 @@ using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.API.Cache;
 using JTacticalSim.Service;
-using JTacticalSim.LINQPad.Plugins;
 using JTacticalSim.Cache;
 
 namespace JTacticalSim.Test

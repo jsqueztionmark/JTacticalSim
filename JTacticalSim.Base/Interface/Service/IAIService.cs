@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel;
 using System.Text;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
@@ -14,7 +11,6 @@ using JTacticalSim.Utility;
 
 namespace JTacticalSim.API.Service
 {
-	[ServiceContract]
 	public interface IAIService
 	{
 		/// <summary>
@@ -24,7 +20,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="units"></param>
 		/// <param name="destinationNode"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> DeployUnitsFromTransportToNode(IUnit transport, IEnumerable<IUnit> units, INode destinationNode);
 
 		/// <summary>
@@ -33,7 +28,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="transport"></param>
 		/// <param name="units"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> LoadUnitsToTransport(IUnit transport, List<IUnit> units);
 
 		/// <summary>
@@ -42,7 +36,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="parent"></param>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> AttachUnitToUnit(IUnit parent, IUnit unit);
 
 		/// <summary>
@@ -50,7 +43,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> DetachUnitFromUnit(IUnit unit);
 
 		/// <summary>
@@ -58,13 +50,11 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> AttemptRefuelUnit(IUnit unit);
 
 		/// <summary>
 		/// Used in various scenarios, e.g. plane runs out of fuel, when a unit crashes and is removed from the game
 		/// </summary>
-		[OperationContract]
 		IResult<IUnit, IUnit> HandleZeroFuelForUnit(IUnit unit);
 
 		/// <summary>
@@ -76,7 +66,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="faction"></param>
 		/// <param name="supplyDistance"></param>
 		/// <returns></returns>
-		[OperationContract]
 		RouteInfo FindSupplyPath(INode source, IFaction faction, int supplyDistance);
 
 		/// <summary>
@@ -88,7 +77,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="map"></param>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<RouteInfo, IMoveableComponent> FindPath(INode source, 
 												INode target, 
 												IEnumerable<IPathableObject> map, 
@@ -102,7 +90,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="target"></param>
 		/// <param name="maxDistance"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int?, INode> CalculateNodeCountToUnit(IUnit source, IUnit target, int maxDistance);
 
 		/// <summary>
@@ -112,7 +99,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="target"></param>
 		/// <param name="maxDistance"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<int?, INode> CalculateNodeCountToNode(INode source, INode target, int maxDistance);
 
 		 
@@ -123,7 +109,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="attacker"></param>
 		/// <param name="battleType"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> GetPrimeUnitTargetForUnit(List<IUnit> candidates, 
 															IUnit attacker, 
 															BattleType battleType);
@@ -134,7 +119,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="battle"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<List<ISkirmish>, ISkirmish> CreateFullCombatSkirmishes(IBattle battle);
 
 		/// <summary>
@@ -143,7 +127,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="battle"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<List<ISkirmish>, ISkirmish> CreateAirDefenceSkirmishes(IBattle battle);
 
 		/// <summary>
@@ -152,7 +135,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="battle"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<List<ISkirmish>, ISkirmish> CreateMissileDefenceSkirmishes(IBattle battle);
 
 		/// <summary>
@@ -161,7 +143,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="battle"></param>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IBattle, IBattle> ResolveNuclearBattle(IBattle battle, INode target);
 
 		/// <summary>
@@ -169,7 +150,6 @@ namespace JTacticalSim.API.Service
 		/// Uses the simultaneous die-roll for attack/defend a'la Axis and Allies
 		/// </summary>
 		/// <param name="skirmish"></param>
-		[OperationContract]
 		IResult<ISkirmish, ISkirmish> ResolveSkirmish(ISkirmish skirmish, BattleType battleType);
 
 
@@ -179,48 +159,37 @@ namespace JTacticalSim.API.Service
 		/// <param name="units"></param>
 		/// <param name="node"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<INode, INode> ClaimNodeForVictorFaction(List<IUnit> units, INode node);
 
 		/// <summary>
 		/// Performs automated operations on units at turn end
 		/// </summary>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> HandleSpecialTurnEndUnitManagement();
 
 		/// <summary>
 		/// Performs automated operations on units at turn start
 		/// </summary>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> HandleSpecialTurnStartUnitManagement();
 
 #region AI Strategy
 
-		[OperationContract]
 		IEnumerable<IUnitTaskType> GetUnitTaskTypes();
 
-		[OperationContract]
 		IResult<IUnitTaskType, IUnitTaskType> SaveUnitTaskTypes(List<IUnitTaskType> unitTaskTypes);
 
-		[OperationContract]
 		IResult<IUnitTaskType, IUnitTaskType> RemoveUnitTaskTypes(List<IUnitTaskType> unitTaskTypes);
 
-		[OperationContract]
 		IResult<IUnitTaskType, IUnitTaskType> UpdateUnitTaskTypes(List<IUnitTaskType> unitTaskTypes);
 
 
-		[OperationContract]
 		IEnumerable<IMissionType> GetMissionTypes();
 
-		[OperationContract]
 		IResult<IMissionType, IMissionType> SaveMissionTypes(List<IMissionType> MissionTypes);
 
-		[OperationContract]
 		IResult<IMissionType, IMissionType> RemoveMissionTypes(List<IMissionType> MissionTypes);
 
-		[OperationContract]
 		IResult<IMissionType, IMissionType> UpdateMissionTypes(List<IMissionType> MissionTypes);
 
 
@@ -259,7 +228,6 @@ namespace JTacticalSim.API.Service
 		/// Returns all tactics in the cache
 		/// </summary>
 		/// <returns></returns>
-		[OperationContract]
 		IEnumerable<ITactic> GetTactics();
 
 		/// <summary>
@@ -267,7 +235,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tactic"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> SaveTactic(ITactic tactic);
 
 		/// <summary>
@@ -275,7 +242,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tactic"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> RemoveTactic(ITactic tactic);
 
 		/// <summary>
@@ -283,7 +249,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tactic"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> UpdateTactic(ITactic tactic);
 
 		/// <summary>
@@ -293,7 +258,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="player"></param>
 		/// <param name="stance"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> CreateNewTactic(IEnumerable<IMission> missions, IPlayer player, StrategicalStance stance);
 
 		/// <summary>
@@ -301,7 +265,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tile"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<StrategicAssessmentInfo, ITile> DetermineTileStrategicValue(ITile tile, GameboardStrategicValueAttributesInfo attributes);
 
 		/// <summary>
@@ -316,7 +279,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="mission"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> GetCurrentTacticForMission(IMission mission);
 
 		///// <summary>
@@ -332,7 +294,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="tactics"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<ITactic, ITactic> ExecuteStrategies(List<ITactic> tactics);
 
 
@@ -343,7 +304,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="missionType"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IMission, IMission> CreateMission(IMissionType missionType);
 
 		/// <summary>
@@ -352,7 +312,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="missionType"></param>
 		/// <param name="unitTask"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IMission, IMission> CreateMission(IMissionType missionType, IUnitTask unitTask);
 
 		/// <summary>
@@ -360,7 +319,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IMission, IMission> CancelMission(IMission mission);
 
 		/// <summary>
@@ -368,7 +326,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="unit"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IMission, IUnit> GetCurrentAssignedMissionForUnit(IUnit unit);
 
 		/// <summary>
@@ -378,7 +335,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="demographic"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> BuildInfrastructure(IUnit unit, ITile tile, IDemographic demographic);
 
 		/// <summary>
@@ -388,7 +344,6 @@ namespace JTacticalSim.API.Service
 		/// <param name="tile"></param>
 		/// <param name="demographic"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IUnit, IUnit> DestroyInfrastructure(IUnit unit, ITile tile, IDemographic demographic, Direction direction);
 
 		/// <summary>
@@ -396,7 +351,6 @@ namespace JTacticalSim.API.Service
 		/// </summary>
 		/// <param name="argument"></param>
 		/// <returns></returns>
-		[OperationContract]
 		IResult<IEnumerable<object>, TaskExecutionArgument> GetExecutionArgumentObjects(TaskExecutionArgument argument);
 
 	#endregion

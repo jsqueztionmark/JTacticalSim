@@ -23,6 +23,7 @@ namespace JTacticalSim.Service
 				return _instance;
 			}
 		}
+		
 
 		// *********************************************************
 		// Services -- to be abstracted to a service provider

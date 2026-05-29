@@ -8,7 +8,6 @@
  */
 #endregion
 
-using System;
 using System.Drawing;
 using JTacticalSim.API;
 using JTacticalSim.Utility;

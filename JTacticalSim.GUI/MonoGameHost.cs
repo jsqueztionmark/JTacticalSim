@@ -1,0 +1,70 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using JTacticalSim.API.Game;
+using JTacticalSim.GUI.Render;
+using XnaGame = Microsoft.Xna.Framework.Game;
+
+namespace JTacticalSim.GUI;
+
+public class MonoGameHost : XnaGame
+{
+    private readonly GraphicsDeviceManager _graphics;
+    private SpriteBatch _spriteBatch;
+    private SpriteFont _font;
+
+    public MonoGameHost(GameContext ctx)
+    {
+        _graphics = new GraphicsDeviceManager(this);
+        Content.RootDirectory = "Content";
+        IsMouseVisible = true;
+        _graphics.PreferredBackBufferWidth = 1280;
+        _graphics.PreferredBackBufferHeight = 800;
+    }
+
+    protected override void Initialize()
+    {
+        Window.Title = "JTacticalSim";
+        base.Initialize();
+    }
+
+    protected override void LoadContent()
+    {
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        try
+        {
+            _font = Content.Load<SpriteFont>("Fonts/DefaultFont");
+        }
+        catch
+        {
+            // Font not yet built; rendering will be text-free until content pipeline is set up
+        }
+
+        var pixel = new Texture2D(GraphicsDevice, 1, 1);
+        pixel.SetData(new[] { Color.White });
+
+        var renderer = (MonoGameRenderer)Game().Renderer;
+        renderer.SpriteBatch = _spriteBatch;
+        renderer.Font = _font;
+        renderer.GraphicsDevice = GraphicsDevice;
+        renderer.Pixel = pixel;
+        // renderer.LoadContent() is called by the engine via Game.Start() after a game is loaded
+    }
+
+    protected override void Update(GameTime gameTime)
+    {
+        Game().StateSystem.Update(gameTime.ElapsedGameTime.TotalMilliseconds);
+        base.Update(gameTime);
+    }
+
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.Black);
+        _spriteBatch.Begin();
+        Game().StateSystem.Render();
+        _spriteBatch.End();
+        base.Draw(gameTime);
+    }
+
+    private static IGame Game() => JTacticalSim.Game.Instance;
+}

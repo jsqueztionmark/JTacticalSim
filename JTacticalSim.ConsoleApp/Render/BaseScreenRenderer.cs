@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ConsoleControls;
+using Screen = ConsoleControls.Screen;
 using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.Media.Sound;

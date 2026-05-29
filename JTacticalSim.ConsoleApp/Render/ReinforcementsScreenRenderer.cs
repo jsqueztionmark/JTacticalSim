@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using System.Text;
-using System.Threading;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Game;
@@ -11,6 +8,8 @@ using JTacticalSim.API.InfoObjects;
 using JTacticalSim.Component;
 using JTacticalSim.Utility;
 using ConsoleControls;
+using Screen = ConsoleControls.Screen;
+using TextBox = ConsoleControls.TextBox;
 
 namespace JTacticalSim.ConsoleApp
 {

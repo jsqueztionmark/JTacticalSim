@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using System.Linq;
 using System.Media;
-using System.Threading;
-using System.Windows.Threading;
+using System.Runtime.Versioning;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.Media.Sound;
@@ -13,31 +7,29 @@ using JTacticalSim.Utility;
 
 namespace JTacticalSim.Media.Sound
 {
-	internal class WavSoundHandler : DispatcherObject, ISoundHandler
+	[SupportedOSPlatform("windows")]
+	internal class WavSoundHandler : ISoundHandler
 	{
 		public event EventHandler FileLoaded;
 		public event EventHandler PlayFinished;
 		private SoundPlayer _soundPlayer;
 
-		public WavSoundHandler()
-		{
-			_soundPlayer = new SoundPlayer();
-		}
+		public WavSoundHandler() { }
+
+		private SoundPlayer Player => _soundPlayer ??= OperatingSystem.IsWindows() ? new SoundPlayer() : null;
 
 		public void PlaySoundAsync(FileStream fs)
 		{
-			Action play = () =>	
-			{
-				var thread = new Thread(PlaySoundThread);
-				thread.SetApartmentState(ApartmentState.STA);
-				thread.IsBackground = true;
-				thread.Start(fs);
-			};
-			Dispatcher.Invoke(play); 
+			if (Player == null) return;
+			var thread = new Thread(PlaySoundThread);
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.IsBackground = true;
+			thread.Start(fs);
 		}
 
 		public void PlaySound(FileStream fs)
 		{
+			if (Player == null) return;
 			PlaySoundThread(fs);
 		}
 
@@ -48,7 +40,7 @@ namespace JTacticalSim.Media.Sound
 
 		public void StopPlayback()
 		{
-			_soundPlayer.Stop();
+			Player?.Stop();
 			On_PlayFinished(this, new EventArgs());
 		}
 
@@ -56,16 +48,18 @@ namespace JTacticalSim.Media.Sound
 		{
 			var r = new OperationResult<FileStream, FileStream>();
 
-			var curDir = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());
-
 			try
 			{
-				var fileDir = "{0}{1}\\{2}\\{3}\\".F(curDir, 
-													ConfigurationManager.AppSettings["mediafilepathDefault"], 
-													Game.Instance.LoadedScenario.ComponentSet.Name, 
-													ConfigurationManager.AppSettings["soundsourcetype"]);
-	
-				var fs = new FileStream("{0}{1}.wav".F(fileDir, name), FileMode.Open, FileAccess.Read);
+				var mediaRoot = ConfigurationManager.AppSettings["mediafilepathDefault"]
+					.Replace('\\', Path.DirectorySeparatorChar);
+				if (!Path.IsPathRooted(mediaRoot))
+					mediaRoot = Path.Combine(AppContext.BaseDirectory, mediaRoot);
+
+				var fileDir = Path.Combine(mediaRoot,
+					Game.Instance.LoadedScenario.ComponentSet.Name,
+					ConfigurationManager.AppSettings["soundsourcetype"]);
+
+				var fs = new FileStream(Path.Combine(fileDir, name + ".wav"), FileMode.Open, FileAccess.Read);
 
 				r.Result = fs;
 				r.SuccessfulObjects.Add(fs);
@@ -77,24 +71,22 @@ namespace JTacticalSim.Media.Sound
 				r.Messages.Add("Could not load sound file '{0}' from the configured media directory.".F(name));
 				r.ex = ex;
 			}
-			
-			
+
 			return r;
 		}
 
 		private void PlaySoundThread(Object obj)
 		{
-			// Since SoundPlayer has no play end event, we'll run this on another thread
-			// and run synchronously so we can fire our own event.
 			var fs = obj as FileStream;
+			if (fs == null) throw new Exception("Object type must be FileStream");
 
-			if (fs == null)
-				throw new Exception("Object type must be FileStream");
+			var player = Player;
+			if (player == null) return;
 
-			_soundPlayer.Stream = fs;
-			_soundPlayer.LoadCompleted += On_FileLoaded;
-			_soundPlayer.LoadAsync();
-			_soundPlayer.PlaySync();
+			player.Stream = fs;
+			player.LoadCompleted += On_FileLoaded;
+			player.LoadAsync();
+			player.PlaySync();
 			On_PlayFinished(this, new EventArgs());
 		}
 

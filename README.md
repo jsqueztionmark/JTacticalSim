@@ -27,3 +27,8 @@ Features:
 - multi-player/multi-faction
 
 
+-- console setup:
+    Window: at least 200X90 (buffer)
+    Font: Lucida Console (or equivalent), 10pt
+
+

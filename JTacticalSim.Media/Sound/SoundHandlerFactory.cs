@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using JTacticalSim.API;
 using JTacticalSim.API.Media.Sound;
 
@@ -24,6 +25,7 @@ namespace JTacticalSim.Media.Sound
 		}
 
 
+		[SuppressMessage("Interoperability", "CA1416", Justification = "WavSoundHandler guards all Windows-only calls at runtime")]
 		public ISoundHandler GetSoundHandler(SoundSourceType sourceType)
 		{
 			switch (sourceType)

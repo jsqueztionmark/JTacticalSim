@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using JTacticalSim.API.Game;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.Utility;

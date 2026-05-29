@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.API.Component;
-using System.IO;
 using System.Globalization;
 using System.Text;
 using JTacticalSim.ConsoleApp.CommandLineUtil;
@@ -33,7 +30,6 @@ namespace JTacticalSim.ConsoleApp
 				Console.SetWindowSize(winWidth, winHeight);
                 Console.SetBufferSize(winWidth, winHeight);
 				Console.CursorVisible = false;
-				ConsoleUtils.CenterConsole();
 			}
 			catch
 			{ }

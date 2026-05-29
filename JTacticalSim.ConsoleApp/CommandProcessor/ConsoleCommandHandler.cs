@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Transactions;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
@@ -11,6 +8,7 @@ using JTacticalSim.Component;
 using JTacticalSim.Component.GameBoard;
 using JTacticalSim.Utility;
 using ConsoleControls;
+using TextBox = ConsoleControls.TextBox;
 
 // ReSharper disable CheckNamespace
 namespace JTacticalSim.ConsoleApp

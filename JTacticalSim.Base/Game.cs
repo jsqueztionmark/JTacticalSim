@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 using JTacticalSim.API.Game.State;
 using JTacticalSim.API;
 using JTacticalSim.API.Component;
@@ -127,8 +122,11 @@ namespace JTacticalSim
 		/// </summary>
 		private void LoadSavedGameData(bool isScenario)
 		{
-			var curDrive = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory());
-			var filePath = "{0}{1}".F(curDrive, ConfigurationManager.AppSettings["datafilepathDefault"]);
+			var configPath = ConfigurationManager.AppSettings["datafilepathDefault"]
+				.Replace('\\', Path.DirectorySeparatorChar);
+			var filePath = Path.IsPathRooted(configPath)
+				? configPath
+				: Path.Combine(AppContext.BaseDirectory, configPath);
 			JTSServices.DataService.LoadSavedGameData(filePath, isScenario);
 		}
 

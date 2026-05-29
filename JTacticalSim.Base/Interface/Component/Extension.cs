@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Drawing;
 using JTacticalSim.API.Component;
 using JTacticalSim.API.AI;
 using JTacticalSim.API.Game;
