@@ -47,7 +47,7 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     // terrain
     private static readonly Color ColLand          = new(40, 90, 30);
     private static readonly Color ColWater         = new(30, 60, 140);
-    private static readonly Color ColMountain      = new(120, 110, 100);
+    private static readonly Color ColMountain      = new(120, 110, 100);    
     private static readonly Color ColHill          = new(80, 100, 65);
     private static readonly Color ColForest        = new(20, 70, 20);
     private static readonly Color ColMarsh         = new(50, 80, 60);
@@ -118,6 +118,10 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     public void LoadContent()   { }
     public void UnloadContent() { }
     public void Reset()         { _initialized = false; }
+
+    /// <summary>Map panel bounds in screen pixels. Empty until first EnsureData() call.</summary>
+    public Rectangle MapBounds =>
+        _initialized ? new Rectangle(MapLeft, MapTop, MapWidth, MapHeight) : Rectangle.Empty;
 
     private void EnsureData()
     {

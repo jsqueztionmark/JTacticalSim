@@ -9,7 +9,8 @@ namespace JTacticalSim.GUI.CommandProcessor;
 
 internal class CommandHandler : InputCommandHandlerBase
 {
-    private KeyboardState _previousKeyState;
+    private KeyboardState    _previousKeyState;
+    private ICommandInterface _pendingCi;
 
     public CommandHandler()
     {
@@ -27,9 +28,8 @@ internal class CommandHandler : InputCommandHandlerBase
 
     protected override void Handle_TITLE_MENU_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        var renderer = Renderer();
-        renderer.TitleScreenRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().TitleScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
@@ -37,6 +37,24 @@ internal class CommandHandler : InputCommandHandlerBase
     {
         var current  = Keyboard.GetState();
         var renderer = Renderer();
+
+        if (HandleOverlay(current))         { _previousKeyState = current; return; }
+        if (HandleDevCli(current, ci))      { _previousKeyState = current; return; }
+
+        // Tab opens the dev CLI
+        if (JustPressed(current, _previousKeyState, Keys.Tab))
+        {
+            var cli = renderer.DevCli;
+            cli.Open(renderer.GraphicsDevice.Viewport.Width,
+                     renderer.GraphicsDevice.Viewport.Height);
+            // Subscribe fresh each open to avoid double-firing on reopen
+            cli.CommandSubmitted -= OnDevCliCommandWrapper;
+            cli.CommandSubmitted += OnDevCliCommandWrapper;
+            _pendingCi = ci;
+            _previousKeyState = current;
+            return;
+        }
+
         renderer.MainScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
@@ -48,41 +66,43 @@ internal class CommandHandler : InputCommandHandlerBase
 
     protected override void Handle_BATTLE_Input(ICommandInterface ci)
     {
-        // Battle screen is driven by the engine; no player keypress routing needed
+        var current = Keyboard.GetState();
+        HandleOverlay(current);
+        _previousKeyState = current;
     }
 
     protected override void Handle_REINFORCE_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        Renderer().ReinforcementsScreenRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().ReinforcementsScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
     protected override void Handle_QUICK_SELECT_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        Renderer().QuickSelectRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().QuickSelectRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
     protected override void Handle_GAME_OVER_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        Renderer().GameOverScreenRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().GameOverScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
     protected override void Handle_HELP_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        Renderer().HelpScreenRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().HelpScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
     protected override void Handle_SCENARIO_INFO_Input(ICommandInterface ci)
     {
-        var current  = Keyboard.GetState();
-        Renderer().ScenarioInfoScreenRenderer.HandleInput(current, _previousKeyState);
+        var current = Keyboard.GetState();
+        if (!HandleOverlay(current)) Renderer().ScenarioInfoScreenRenderer.HandleInput(current, _previousKeyState);
         _previousKeyState = current;
     }
 
@@ -112,7 +132,69 @@ internal class CommandHandler : InputCommandHandlerBase
     protected override void On_SaveAsGameTitleEscapePressed(object sender, EventArgs e) { }
     protected override void On_SaveAsGameTitleEntered(object sender, EventArgs e)   { }
 
-    // ── Helper ───────────────────────────────────────────────────────────────
+    // ── Helpers ──────────────────────────────────────────────────────────────
+
+    /// <summary>Routes input to the modal overlay if it is visible. Returns true if consumed.</summary>
+    private bool HandleOverlay(KeyboardState current)
+    {
+        var overlay = Renderer().Overlay;
+        if (!overlay.IsVisible) return false;
+        overlay.HandleInput(current, _previousKeyState);
+        return true;
+    }
+
+    /// <summary>Routes input to the dev CLI if open. Returns true if consumed.</summary>
+    private bool HandleDevCli(KeyboardState current, ICommandInterface ci)
+    {
+        var cli = Renderer().DevCli;
+        if (!cli.IsOpen) return false;
+        cli.HandleInput(current, _previousKeyState);
+        return true;
+    }
+
+    // ── Dev CLI command execution ─────────────────────────────────────────────
+
+    private void OnDevCliCommandWrapper(string input) => OnDevCliCommand(input, _pendingCi);
+
+    private void OnDevCliCommand(string input, ICommandInterface ci)
+    {
+        var parts    = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        var command  = parts.Length > 0 ? parts[0].ToLowerInvariant() : string.Empty;
+        var switches = System.Array.FindAll(parts, p => p.StartsWith("--"));
+        var args     = System.Array.FindAll(parts, p => !p.StartsWith("--") && p != command);
+        string msg   = args.Length > 0 ? string.Join(" ", args) : "Test message from dev CLI.";
+
+        switch (command)
+        {
+            case "show-modal-overlay":
+            case "smo":
+                string sw = switches.Length > 0 ? switches[0].ToLowerInvariant() : "--info";
+                switch (sw)
+                {
+                    case "--error":
+                        TheGame().Renderer.DisplayUserMessage(API.MessageDisplayType.ERROR,   msg, null); break;
+                    case "--warning":
+                        TheGame().Renderer.DisplayUserMessage(API.MessageDisplayType.WARNING, msg, null); break;
+                    case "--confirm":
+                        TheGame().Renderer.ConfirmAction(msg); break;
+                    case "--report":
+                        TheGame().Renderer.DisplayTaskExecutionReport(
+                            new System.Text.StringBuilder(msg)); break;
+                    default:
+                        TheGame().Renderer.DisplayUserMessage(API.MessageDisplayType.INFO,    msg, null); break;
+                }
+                break;
+
+            default:
+                // Fall through to engine command dispatch
+                ParseCommandArgs(input);
+                RunCommand(ci);
+                break;
+        }
+    }
+
+    private static bool JustPressed(KeyboardState cur, KeyboardState prev, Keys key)
+        => cur.IsKeyDown(key) && !prev.IsKeyDown(key);
 
     private JTacticalSim.GUI.Render.Renderer Renderer()
         => (JTacticalSim.GUI.Render.Renderer)TheGame().Renderer;

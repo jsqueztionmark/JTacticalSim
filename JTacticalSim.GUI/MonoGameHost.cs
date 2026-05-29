@@ -64,6 +64,11 @@ public class MonoGameHost : XnaGame
         var renderer = (Renderer)Game().Renderer;
         renderer.IsInDrawPhase = true;
         Game().StateSystem.Render();
+        // Modal overlay and dev CLI always draw on top of whatever state is rendering
+        renderer.Overlay.Draw(_spriteBatch, _font, renderer.Pixel,
+                              GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height,
+                              renderer.MainScreenRenderer.MapBounds);
+        renderer.DevCli.Draw(_spriteBatch, _font, renderer.Pixel);
         renderer.IsInDrawPhase = false;
         _spriteBatch.End();
         base.Draw(gameTime);

@@ -6,6 +6,7 @@ using JTacticalSim.API.AI;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.API.Game;
 using JTacticalSim.Component.World;
+using JTacticalSim.GUI.Controls;
 
 namespace JTacticalSim.GUI.Render;
 
@@ -15,6 +16,13 @@ public class Renderer : BaseRenderer
     public SpriteFont Font { get; set; }
     public GraphicsDevice GraphicsDevice { get; set; }
     public Texture2D Pixel { get; set; }
+
+    public ModalOverlay Overlay { get; } = new();
+    public DevCli DevCli       { get; } = new();
+
+    // Two-pass confirm: first call shows the overlay and returns false;
+    // after the user answers Y/N the stored result is returned on the retry.
+    private bool? _pendingConfirmResult;
 
     private IBoard _board => TheGame().GameBoard;
     private IZoomHandler _zoomHandler => TheGame().ZoomHandler;
@@ -202,20 +210,35 @@ public class Renderer : BaseRenderer
 
     public override void DisplayUserMessage(MessageDisplayType messageType, string message, Exception ex)
     {
-        // TODO: overlay dialog
-        System.Console.WriteLine($"[{messageType}] {message}{(ex != null ? $"\n{ex.Message}" : "")}");
+        Overlay.ShowMessage(messageType, message, ex);
     }
 
     public override void DisplayTaskExecutionReport(StringBuilder report)
     {
-        // TODO: overlay dialog
-        System.Console.WriteLine(report.ToString());
+        if (string.IsNullOrWhiteSpace(report?.ToString())) return;
+        Overlay.ShowReport("Current Missions Report", report.ToString());
     }
 
     public override bool ConfirmAction(string message)
     {
-        // TODO: yes/no overlay dialog; defaults to false until implemented
-        System.Console.WriteLine($"[Confirm] {message}");
+        // If the overlay just answered this question, consume and return the result.
+        if (_pendingConfirmResult.HasValue)
+        {
+            bool result = _pendingConfirmResult.Value;
+            _pendingConfirmResult = null;
+            return result;
+        }
+
+        // First call: show the overlay, cancel the current action so the user
+        // can read the warning. The engine will retry when they re-trigger.
+        Overlay.ShowConfirm(message);
+        Overlay.Dismissed += OnConfirmDismissed;
         return false;
+    }
+
+    private void OnConfirmDismissed()
+    {
+        Overlay.Dismissed -= OnConfirmDismissed;
+        _pendingConfirmResult = Overlay.Result;
     }
 }
