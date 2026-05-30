@@ -47,14 +47,14 @@ internal sealed class MonoGameSoundHandler : ISoundHandler
 
     public void PlaySoundAsync(FileStream fs)
     {
-        PlayInternal(fs);
+        PlayInternal(fs, loop: false);
         // MonoGame audio is inherently non-blocking; fire event immediately
         PlayFinished?.Invoke(this, EventArgs.Empty);
     }
 
     public void PlaySound(FileStream fs)
     {
-        PlayInternal(fs);
+        PlayInternal(fs, loop: false);
 
         // Poll until playback ends for the synchronous overload
         while (_currentInstance?.State == SoundState.Playing)
@@ -75,7 +75,7 @@ internal sealed class MonoGameSoundHandler : ISoundHandler
         PlayFinished?.Invoke(this, EventArgs.Empty);
     }
 
-    private void PlayInternal(FileStream fs)
+    private void PlayInternal(FileStream fs, bool loop = false)
     {
         StopCurrent();
 
@@ -85,6 +85,7 @@ internal sealed class MonoGameSoundHandler : ISoundHandler
             fs.Dispose();
             FileLoaded?.Invoke(this, EventArgs.Empty);
             _currentInstance = _currentEffect.CreateInstance();
+            _currentInstance.IsLooped = loop;
             _currentInstance.Play();
         }
         catch (Exception)

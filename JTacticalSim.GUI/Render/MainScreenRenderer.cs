@@ -81,13 +81,17 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private readonly PopupList<Commands> _menuPopup;
 
     // ── Movement animation ───────────────────────────────────────────────────
-    private bool        _isAnimating;
-    private List<IUnit> _animatingUnits;
-    private List<INode> _animationRoute;   // [source, n1, ..., target] in forward order
-    private int         _waypointIndex;    // index of the segment start currently lerping
-    private float       _segmentElapsed;   // seconds elapsed in the current segment
-    private Vector2     _animatedPosition;
-    private const float SegmentDuration = 0.20f; // seconds per node hop
+    private enum AnimationPhase { PreDelay, Moving, PostDelay }
+    private bool           _isAnimating;
+    private AnimationPhase _animationPhase;
+    private List<IUnit>    _animatingUnits;
+    private List<INode>    _animationRoute;   // [source, n1, ..., target] in forward order
+    private int            _waypointIndex;    // index of the segment start currently lerping
+    private float          _phaseElapsed;     // seconds elapsed in the current phase / segment
+    private Vector2        _animatedPosition;
+    private const float SegmentDuration  = 0.40f; // seconds per node hop
+    private const float PreDelaySeconds  = 1.0f;  // sound starts, unit holds at source
+    private const float PostDelaySeconds = 1.0f;  // unit holds at destination, then sound stops
 
     private static readonly (string Label, Commands Command)[] MainMenuItems =
     {
@@ -652,36 +656,62 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     public void BeginMoveAnimation(List<IUnit> units, List<INode> route)
     {
         if (route == null || route.Count < 2 || units == null || units.Count == 0) return;
-        _animatingUnits  = units;
-        _animationRoute  = route;
-        _waypointIndex   = 0;
-        _segmentElapsed  = 0f;
+        _animatingUnits   = units;
+        _animationRoute   = route;
+        _waypointIndex    = 0;
+        _phaseElapsed     = 0f;
+        _animationPhase   = AnimationPhase.PreDelay;
         _animatedPosition = GetNodeScreenCenter(route[0]);
-        _isAnimating     = true;
+        _isAnimating      = true;
+
+        // Sound starts immediately — unit holds at source for PreDelaySeconds
+        foreach (var u in _animatingUnits)
+            u.PlaySoundAsync(SoundType.MOVE);
     }
 
     public void UpdateAnimation(GameTime gameTime)
     {
         if (!_isAnimating || _animationRoute == null) return;
 
-        _segmentElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
-        float t = Math.Min(_segmentElapsed / SegmentDuration, 1.0f);
+        float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        _phaseElapsed += dt;
 
-        var start = GetNodeScreenCenter(_animationRoute[_waypointIndex]);
-        var end   = GetNodeScreenCenter(_animationRoute[_waypointIndex + 1]);
-        _animatedPosition = Vector2.Lerp(start, end, t);
-
-        if (_segmentElapsed >= SegmentDuration)
+        switch (_animationPhase)
         {
-            _waypointIndex++;
-            _segmentElapsed = 0f;
+            case AnimationPhase.PreDelay:
+                // Hold at source; begin moving when delay expires
+                if (_phaseElapsed >= PreDelaySeconds)
+                {
+                    _animationPhase = AnimationPhase.Moving;
+                    _phaseElapsed   = 0f;
+                }
+                break;
 
-            // Fire move sound at each node arrival
-            foreach (var u in _animatingUnits)
-                u.PlaySoundAsync(SoundType.MOVE);
+            case AnimationPhase.Moving:
+                float t = Math.Min(_phaseElapsed / SegmentDuration, 1.0f);
+                var start = GetNodeScreenCenter(_animationRoute[_waypointIndex]);
+                var end   = GetNodeScreenCenter(_animationRoute[_waypointIndex + 1]);
+                _animatedPosition = Vector2.Lerp(start, end, t);
 
-            if (_waypointIndex >= _animationRoute.Count - 1)
-                FinishAnimation();
+                if (_phaseElapsed >= SegmentDuration)
+                {
+                    _waypointIndex++;
+                    _phaseElapsed = 0f;
+
+                    if (_waypointIndex >= _animationRoute.Count - 1)
+                    {
+                        // Snap to destination and enter post-delay
+                        _animatedPosition = GetNodeScreenCenter(_animationRoute[^1]);
+                        _animationPhase   = AnimationPhase.PostDelay;
+                    }
+                }
+                break;
+
+            case AnimationPhase.PostDelay:
+                // Hold at destination; stop sound and finish when delay expires
+                if (_phaseElapsed >= PostDelaySeconds)
+                    FinishAnimation();
+                break;
         }
     }
 
@@ -695,6 +725,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
 
     private void FinishAnimation()
     {
+        foreach (var u in _animatingUnits ?? new List<IUnit>())
+            u.StopSoundPlayback();
+        TheGame().GameBoard.ClearCurrentRoute();
         _isAnimating    = false;
         _animatingUnits = null;
         _animationRoute = null;
