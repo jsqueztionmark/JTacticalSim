@@ -21,7 +21,7 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 ## MonoGame GUI — Input
 
-- [ ] **Diagonal movement unverified** — NumPad7/9/1/3 diagonal moves are wired but the engine's `GetNodeAt()` with diagonal offsets has not been exercised; node adjacency rules may reject them.
+- [x] **Diagonal movement unverified** — Verified working.
 
 ## MonoGame GUI — Secondary Screens
 
@@ -36,7 +36,7 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 - [ ] **Unit card graphics** — `TextDisplayZ1–Z4` values are Unicode block/box characters designed for the console grid. Rather than trying to render them as spritefont text (font glyph support uncertain; looks wrong in pixel context), replace with per-unit-type sprite icons that scale with zoom level. Hook point is `RenderUnitsOnNode()` in `MonoGameMainScreenRenderer.cs`.
 
-- [ ] **Minimap panel** — Not yet implemented. Should appear in the info panel area or as a separate panel.
+- [ ] **Minimap overlay** — Deferred. Zoom levels (Z2–Z4) cover the overview need. Revisit as an optional overlay once core UX is complete.
 - [ ] **[M]ain Menu overlay** — Currently a dropdown; the console app renders a richer modal menu. Revisit once other stubs are filled in.
 
 - [ ] **Attached units in info panel unit list** — `IUnit.AttachedToUnit` / `GetDirectAttachedUnits()` is engine-wired (rules/AI use it for HQ bonus) but not yet surfaced in the GUI unit list. Should follow the same indent/child pattern as transported units, but needs a distinct visual indicator (symbol TBD — `->` is already used for transported; spritefont covers ASCII 32-126 only so Unicode arrows are off the table). `GetDirectAttachedUnits()` gives the units attached to a given HQ; `AttachedToUnit` tells which HQ a unit reports to.

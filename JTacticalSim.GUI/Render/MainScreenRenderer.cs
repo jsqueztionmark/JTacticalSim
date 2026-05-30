@@ -6,6 +6,7 @@ using JTacticalSim.API.Component;
 using JTacticalSim.API.Game;
 using JTacticalSim.API.InfoObjects;
 using JTacticalSim.GUI.Controls;
+using JTacticalSim.Utility;
 
 namespace JTacticalSim.GUI.Render;
 
@@ -391,15 +392,26 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         var px = _baseRenderer.Pixel;
         if (sb == null || px == null || tile == null) return;
 
-        Color tileColor = GetTileColor(tile);
-        sb.Draw(px, new Rectangle(x, y, w, h), tileColor);
+        // Draw each quadrant separately — supports mixed terrain on shoreline tiles
+        var (tl, tr, bl, br) = GetTileQuadrantColors(tile);
+        int hw = w / 2, hh = h / 2;
+        sb.Draw(px, new Rectangle(x,      y,      hw,     hh),     tl);
+        sb.Draw(px, new Rectangle(x + hw, y,      w - hw, hh),     tr);
+        sb.Draw(px, new Rectangle(x,      y + hh, hw,     h - hh), bl);
+        sb.Draw(px, new Rectangle(x + hw, y + hh, w - hw, h - hh), br);
+
+        // Demographic sprites — bases, cities, airports, etc. (drawn before roads so roads appear on top)
+        TileDemographicRenderer.DrawDemographicSprites(tile, sb, px, x, y, w, h, zoomLevel);
+
+        // Infrastructure overlay — roads, bridges, dams, tracks, creeks
+        TileDemographicRenderer.DrawInfrastructureOverlay(tile, sb, px, x, y, w, h);
 
         // Country ownership dot — top-left corner; skipped in POLITICAL mode (whole tile is already country-colored)
         var mapMode = TheGame().MapModeHandler?.CurrentMapMode;
         if (tile.Country != null && mapMode?.MapMode != MapMode.POLITICAL)
         {
             int dotSize = Math.Max(4, Math.Min(8, w / 12));
-            Color dotColor = ConsoleColorToXna(tile.Country.Color);
+            Color dotColor = PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.Color);
             sb.Draw(px, new Rectangle(x + 3, y + 3, dotSize, dotSize), dotColor);
         }
 
@@ -430,33 +442,50 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         }
     }
 
-    private Color GetTileColor(ITile tile)
+    // Returns (TopLeft, TopRight, BottomLeft, BottomRight) colors based on shoreline flags.
+    // Mirrors the console app's BuildQuadrantDrawInfoForNode logic exactly.
+    private (Color tl, Color tr, Color bl, Color br) GetTileQuadrantColors(ITile tile)
+    {
+        var h    = tile.ConsoleRenderHelper;
+        Color lc = GetLandColor(tile);
+        Color wc = ColWater;
+
+        if (h == null) return (lc, lc, lc, lc);
+        if (h.IsNuclearWasteland) return (ColNuke, ColNuke, ColNuke, ColNuke);
+
+        if (h.HasShoreLineNorth)     return (lc, lc, wc, wc);
+        if (h.HasShoreLineSouth)     return (wc, wc, lc, lc);
+        if (h.HasShoreLineWest)      return (lc, wc, lc, wc);
+        if (h.HasShoreLineEast)      return (wc, lc, wc, lc);
+        if (h.HasShoreLineSouthWest) return (wc, wc, lc, wc);
+        if (h.HasShoreLineSouthEast) return (wc, wc, wc, lc);
+        if (h.HasShoreLineNorthWest) return (lc, wc, wc, wc);
+        if (h.HasShoreLineNorthEast) return (wc, lc, wc, wc);
+
+        if (h.IsRiver || h.IsSea || h.HasLakes) return (wc, wc, wc, wc);
+        return (lc, lc, lc, lc);
+    }
+
+    // Terrain color for land quadrants. Roads/bridges/tracks are now overlay lines, not backgrounds.
+    private Color GetLandColor(ITile tile)
     {
         var mapMode = TheGame().MapModeHandler?.CurrentMapMode;
-
         if (mapMode?.MapMode == MapMode.POLITICAL && tile.Country != null)
-            return ConsoleColorToXna(tile.Country.Color);
-
+            return PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.Color);
         if (mapMode?.MapMode == MapMode.HIGH_CONTRAST)
             return ColHighContrast;
 
         var h = tile.ConsoleRenderHelper;
         if (h == null) return ColLand;
 
-        if (h.IsNuclearWasteland)  return ColNuke;
-        if (h.IsSea || h.IsRiver) return ColWater;
-        if (h.HasLakes)           return ColWater;
         if (h.HasMountains || h.HasMountain) return ColMountain;
-        if (h.HasHills)           return ColHill;
+        if (h.HasHills)                      return ColHill;
         if (h.HasForests || h.HasWoodlands || h.HasTrees) return ColForest;
-        if (h.HasMarsh)           return ColMarsh;
-        if (h.HasCities || h.HasTown) return ColUrban;
-        if (h.HasIndustrial)      return ColUrban;
+        if (h.HasMarsh)                      return ColMarsh;
+        if (h.HasCities || h.HasTown)        return ColUrban;
+        if (h.HasIndustrial)                 return ColUrban;
         if (h.HasMilitaryBase || h.HasCommandPost) return ColMilBase;
-        if (h.HasAirports)        return ColAirport;
-        if (h.HasBridge)          return ColBridge;
-        if (h.HasRoad || h.HasTracks) return ColRoad;
-
+        if (h.HasAirports)                   return ColAirport;
         return ColLand;
     }
 
@@ -655,14 +684,22 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private void DrawInfoPanel(SpriteBatch sb, SpriteFont fnt, Texture2D px)
     {
         int tileInfoH = InfoPanelH - ReinfPanelH - 4;
-        DrawBox(sb, px, fnt, InfoPanelLeft, InfoPanelTop, InfoPanelW, tileInfoH, "Tile / Unit Info");
+        DrawBox(sb, px, fnt, InfoPanelLeft, InfoPanelTop, InfoPanelW, tileInfoH, "Location/Unit Info");
         DrawReinforcementsPanel(sb, fnt, px);
 
         var board = TheGame()?.GameBoard;
         if (board?.SelectedNode == null) return;
 
-        int y = InfoPanelTop + 24;
+        int y = InfoPanelTop + 36;   // space below title
         var node = board.SelectedNode;
+
+        // Tile name (urban area, base, named road/river etc.) — prominent header in light yellow
+        var tileName = node.DefaultTile?.Name;
+        if (!string.IsNullOrEmpty(tileName))
+        {
+            DrawText(sb, fnt, tileName, InfoPanelLeft + 8, y, new Color(255, 235, 100));
+            y += LineH + 12;
+        }
 
         DisplayNodeInfo(node, sb, fnt, px, ref y);
 
@@ -757,9 +794,6 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private void DisplayNodeInfo(INode node, SpriteBatch sb, SpriteFont fnt, Texture2D px, ref int y)
     {
         string name = node.DefaultTile?.Country?.Name ?? "Unknown";
-        DrawText(sb, fnt, node.DisplayName ?? $"({node.Location.X},{node.Location.Y})", InfoPanelLeft + 8, y, ColCaption);
-        y += LineH;
-
         DrawText(sb, fnt, $"Location: {node.Location.X}, {node.Location.Y}, {node.Location.Z}", InfoPanelLeft + 8, y, ColText);
         y += LineH;
 
@@ -856,7 +890,7 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         int x       = 8;
 
         // Country name (colored by country)
-        Color countryColor = country != null ? ConsoleColorToXna(country.TextDisplayColor) : ColPlayerText;
+        Color countryColor = country != null ? PrimitiveDrawSprites.ConsoleColorToXna(country.TextDisplayColor) : ColPlayerText;
         string countryName = country?.Name ?? "???";
         sb.DrawString(fnt, countryName, new Vector2(x, textY), countryColor);
         x += (int)fnt.MeasureString(countryName).X + 24;
@@ -1163,30 +1197,6 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         if (h.IsNuclearWasteland) parts.Add("Nuclear Wasteland");
 
         return parts.Count > 0 ? string.Join(", ", parts) : "Open";
-    }
-
-    private static Color ConsoleColorToXna(System.ConsoleColor cc)
-    {
-        return cc switch
-        {
-            System.ConsoleColor.Black       => new Color(20, 20, 20),
-            System.ConsoleColor.DarkBlue    => new Color(0, 0, 139),
-            System.ConsoleColor.DarkGreen   => new Color(0, 100, 0),
-            System.ConsoleColor.DarkCyan    => new Color(0, 139, 139),
-            System.ConsoleColor.DarkRed     => new Color(139, 0, 0),
-            System.ConsoleColor.DarkMagenta => new Color(139, 0, 139),
-            System.ConsoleColor.DarkYellow  => new Color(180, 160, 0),
-            System.ConsoleColor.Gray        => new Color(169, 169, 169),
-            System.ConsoleColor.DarkGray    => new Color(105, 105, 105),
-            System.ConsoleColor.Blue        => new Color(50, 80, 180),
-            System.ConsoleColor.Green       => new Color(0, 180, 0),
-            System.ConsoleColor.Cyan        => new Color(0, 200, 200),
-            System.ConsoleColor.Red         => new Color(220, 50, 50),
-            System.ConsoleColor.Magenta     => new Color(200, 0, 200),
-            System.ConsoleColor.Yellow      => new Color(220, 220, 50),
-            System.ConsoleColor.White       => new Color(240, 240, 240),
-            _                               => new Color(120, 120, 120),
-        };
     }
 
     private void DrawBox(SpriteBatch sb, Texture2D px, SpriteFont fnt,
