@@ -13,7 +13,8 @@ namespace JTacticalSim.GUI.Render;
 public class Renderer : BaseRenderer
 {
     public SpriteBatch SpriteBatch { get; set; }
-    public SpriteFont Font { get; set; }
+    public SpriteFont Font    { get; set; }
+    public SpriteFont MapFont { get; set; }
     public GraphicsDevice GraphicsDevice { get; set; }
     public Texture2D Pixel { get; set; }
 

@@ -11,6 +11,7 @@ public class MonoGameHost : XnaGame
     private readonly GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private SpriteFont _font;
+    private SpriteFont _mapFont;
 
     public MonoGameHost(GameContext ctx)
     {
@@ -31,21 +32,16 @@ public class MonoGameHost : XnaGame
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        try
-        {
-            _font = Content.Load<SpriteFont>("Fonts/DefaultFont");
-        }
-        catch
-        {
-            // Font not yet built; rendering will be text-free until content pipeline is set up
-        }
+        try { _font    = Content.Load<SpriteFont>("Fonts/DefaultFont"); } catch { }
+        try { _mapFont = Content.Load<SpriteFont>("Fonts/MapFont");     } catch { }
 
         var pixel = new Texture2D(GraphicsDevice, 1, 1);
         pixel.SetData(new[] { Color.White });
 
         var renderer = (Renderer)Game().Renderer;
         renderer.SpriteBatch = _spriteBatch;
-        renderer.Font = _font;
+        renderer.Font        = _font;
+        renderer.MapFont     = _mapFont;
         renderer.GraphicsDevice = GraphicsDevice;
         renderer.Pixel = pixel;
         // renderer.LoadContent() is called by the engine via Game.Start() after a game is loaded

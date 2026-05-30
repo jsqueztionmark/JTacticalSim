@@ -400,11 +400,32 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         sb.Draw(px, new Rectangle(x,      y + hh, hw,     h - hh), bl);
         sb.Draw(px, new Rectangle(x + hw, y + hh, w - hw, h - hh), br);
 
-        // Demographic sprites — bases, cities, airports, etc. (drawn before roads so roads appear on top)
+        // Geographic/flora character overlays (MapFont) — between base fills and infrastructure
+        TileDemographicRenderer.DrawGeographicOverlay(tile, sb, _baseRenderer.MapFont, x, y, w, h, zoomLevel);
+
+        // Terrain sprites below roads (mountain peak, nuclear)
         TileDemographicRenderer.DrawDemographicSprites(tile, sb, px, x, y, w, h, zoomLevel);
 
         // Infrastructure overlay — roads, bridges, dams, tracks, creeks
         TileDemographicRenderer.DrawInfrastructureOverlay(tile, sb, px, x, y, w, h);
+
+        // Co-location offset: when airport and settlement share a tile, shift each to opposite corners
+        var rh2 = tile?.ConsoleRenderHelper;
+        bool coLocated = rh2 != null && rh2.HasAirports &&
+                         (rh2.HasCities || rh2.HasTown || rh2.HasIndustrial);
+        int offX = coLocated ? w / 8 : 0;
+        int offY = coLocated ? h / 8 : 0;
+
+        // Airport below urban sprites; shifted down-right when co-located, smaller to stay in bounds
+        TileDemographicRenderer.DrawAirportSprite(tile, sb, px,
+            x + offX, y + offY, w - offX, h - offY, zoomLevel);
+
+        // Settlement sprites over airport; shifted up-left when co-located
+        TileDemographicRenderer.DrawUrbanSprites(tile, sb, px,
+            x - offX, y - offY, w, h, zoomLevel);
+
+        // Military base and CP on top of everything
+        TileDemographicRenderer.DrawFacilitySprites(tile, sb, px, x, y, w, h, zoomLevel);
 
         // Country ownership dot — top-left corner; skipped in POLITICAL mode (whole tile is already country-colored)
         var mapMode = TheGame().MapModeHandler?.CurrentMapMode;
@@ -427,19 +448,6 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
             sb.DrawString(fnt, vpLabel, new Vector2(vpX, vpY), ColTextHi, 0f, Vector2.Zero, vpScale, SpriteEffects.None, 0f);
         }
 
-        // At higher zoom levels, render demographic text labels
-        if (zoomLevel >= 3 && fnt != null && w >= 48)
-        {
-            string label = GetTileLabel(tile);
-            if (!string.IsNullOrEmpty(label))
-            {
-                float scale = 1.0f;
-                var textSize = fnt.MeasureString(label) * scale;
-                int tx = x + (w - (int)textSize.X) / 2;
-                int ty = y + h - (int)textSize.Y - 2;
-                sb.DrawString(fnt, label, new Vector2(tx, ty), ColTextDim, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            }
-        }
     }
 
     // Returns (TopLeft, TopRight, BottomLeft, BottomRight) colors based on shoreline flags.

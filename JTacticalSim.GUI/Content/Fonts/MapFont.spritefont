@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics">
+  <Asset Type="Graphics:FontDescription">
+    <FontName>DejaVu Sans Mono</FontName>
+    <Size>10</Size>
+    <Spacing>0</Spacing>
+    <UseKerning>false</UseKerning>
+    <Style>Regular</Style>
+    <CharacterRegions>
+      <!-- ASCII printable -->
+      <CharacterRegion>
+        <Start>&#32;</Start>
+        <End>&#126;</End>
+      </CharacterRegion>
+      <!-- Latin-1 Supplement: ¨ ¬ ± « » etc. -->
+      <CharacterRegion>
+        <Start>&#160;</Start>
+        <End>&#255;</End>
+      </CharacterRegion>
+      <!-- General Punctuation: … ‡ -->
+      <CharacterRegion>
+        <Start>&#8224;</Start>
+        <End>&#8230;</End>
+      </CharacterRegion>
+      <!-- Mathematical Operators: ∞ ≥ -->
+      <CharacterRegion>
+        <Start>&#8734;</Start>
+        <End>&#8807;</End>
+      </CharacterRegion>
+      <!-- Miscellaneous Technical: ⌂ -->
+      <CharacterRegion>
+        <Start>&#8962;</Start>
+        <End>&#8962;</End>
+      </CharacterRegion>
+      <!-- Box Drawing: ─ │ ├ ┴ ║ ═ ╬ ╥ ╡ ╦ ╣ ╨ etc. -->
+      <CharacterRegion>
+        <Start>&#9472;</Start>
+        <End>&#9580;</End>
+      </CharacterRegion>
+      <!-- Block Elements: ▒ ▓ █ ▐ etc. -->
+      <CharacterRegion>
+        <Start>&#9600;</Start>
+        <End>&#9631;</End>
+      </CharacterRegion>
+      <!-- Geometric Shapes: ■ ▲ ► -->
+      <CharacterRegion>
+        <Start>&#9632;</Start>
+        <End>&#9658;</End>
+      </CharacterRegion>
+      <!-- Miscellaneous Symbols: ☺ ☻ ☼ ♀ ♠ ♣ -->
+      <CharacterRegion>
+        <Start>&#9786;</Start>
+        <End>&#9827;</End>
+      </CharacterRegion>
+    </CharacterRegions>
+  </Asset>
+</XnaContent>

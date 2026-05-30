@@ -1,3 +1,4 @@
+using JTacticalSim.API;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using JTacticalSim.API.Component;
@@ -9,13 +10,150 @@ public static class TileDemographicRenderer
 {
     private static readonly Color ColWater = new(30, 60, 140);
 
+    // ── Shoreline ─────────────────────────────────────────────────────────────
+
+    public static void DrawShoreline(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h)
+    {
+        var rh = tile?.ConsoleRenderHelper;
+        if (rh == null) return;
+
+        bool any = rh.HasShoreLineNorth || rh.HasShoreLineSouth ||
+                   rh.HasShoreLineEast  || rh.HasShoreLineWest  ||
+                   rh.HasShoreLineNorthWest || rh.HasShoreLineNorthEast ||
+                   rh.HasShoreLineSouthWest || rh.HasShoreLineSouthEast;
+        if (!any) return;
+
+        var sand = new Color(205, 185, 135);
+        const int t = 3;
+        int mx = x + w / 2, my = y + h / 2;
+
+        // Sand straddles the tile edge it's drawn on (t/2 each side)
+        void HLine(int x1, int y1, int len) => sb.Draw(px, new Rectangle(x1, y1 - t / 2, len, t), sand);
+        void VLine(int x1, int y1, int len) => sb.Draw(px, new Rectangle(x1 - t / 2, y1, t, len), sand);
+
+        // Cardinal — full line along the tile edge that faces water
+        if (rh.HasShoreLineNorth) HLine(x,     y,     w);   // water above
+        if (rh.HasShoreLineSouth) HLine(x,     y + h, w);   // water below
+        if (rh.HasShoreLineEast)  VLine(x + w, y,     h);   // water to the right
+        if (rh.HasShoreLineWest)  VLine(x,     y,     h);   // water to the left
+
+        // Corner — L at the tile edges bounding the single land quadrant
+        if (rh.HasShoreLineNorthWest) { HLine(x,     y,     mx - x);     VLine(x,     y,     my - y);     }
+        if (rh.HasShoreLineNorthEast) { HLine(mx,    y,     x + w - mx); VLine(x + w, y,     my - y);     }
+        if (rh.HasShoreLineSouthWest) { HLine(x,     y + h, mx - x);     VLine(x,     my,    y + h - my); }
+        if (rh.HasShoreLineSouthEast) { HLine(mx,    y + h, x + w - mx); VLine(x + w, my,    y + h - my); }
+    }
+
+    // ── Geographic / flora character overlay (MapFont) ───────────────────────
+    // Rendered between base quadrant fills and infrastructure, matching console render stack:
+    // flora → geography terrain → creeks → roads/bridges → bases → airports → large mountain → nuclear
+
+    public static void DrawGeographicOverlay(ITile tile, SpriteBatch sb, SpriteFont mapFont,
+                                             int x, int y, int w, int h, int zoomLevel)
+    {
+        if (mapFont == null) return;
+        var rh = tile?.ConsoleRenderHelper;
+        if (rh == null) return;
+
+        var zoom = (ZoomLevel)zoomLevel;
+        int spc  = Math.Max(8, w / 6);
+        var land = GetLandQuadrants(tile);
+
+        bool hasMountains = rh.HasMountains || rh.HasMountain;
+
+        // Flora — suppressed on mountain tiles (hills keep flora)
+        if (!hasMountains)
+        {
+            int denseSpc = Math.Max(6, w / 8);   // denser spacing for forested
+            if (rh.HasForests)   TileChars(tile.Flora, "Forested", sb, mapFont, x, y, w, h, zoom, new Color(20,  110, 20),  denseSpc, land, 1.5f);
+            if (rh.HasTrees)     TileChars(tile.Flora, "Trees",    sb, mapFont, x, y, w, h, zoom, new Color(160, 85,  30),  spc,      land, 1.5f);
+            if (rh.HasWoodlands) TileChars(tile.Flora, "Woodland", sb, mapFont, x, y, w, h, zoom, new Color(25,  100, 25), spc, land, 1.5f);
+            if (rh.HasMarsh)     TileChars(tile.Flora, "Marsh",    sb, mapFont, x, y, w, h, zoom, new Color(80,  105, 72), spc, land, 1.5f);
+        }
+
+        // Geography terrain — hills/mountains rendered larger
+        if (rh.HasHills)     TileChars(tile.AllGeography, "Hills",     sb, mapFont, x, y, w, h, zoom, new Color(115, 132, 92),  spc, land, 2.0f);
+        if (rh.HasMountains) TileChars(tile.AllGeography, "Mountains", sb, mapFont, x, y, w, h, zoom, new Color(160, 152, 142), spc, land, 2.2f);
+        if (rh.HasLakes)     TileChars(tile.AllGeography, "Lake",      sb, mapFont, x, y, w, h, zoom, new Color(18,  48,  138), spc, (false, false, false, false), 1.5f);
+    }
+
+    // Mirrors GetTileQuadrantColors land/water logic — tells TileChars which quadrants to draw on
+    private static (bool tl, bool tr, bool bl, bool br) GetLandQuadrants(ITile tile)
+    {
+        var h = tile?.ConsoleRenderHelper;
+        if (h == null) return (true, true, true, true);
+        if (h.HasShoreLineNorth)     return (true,  true,  false, false);
+        if (h.HasShoreLineSouth)     return (false, false, true,  true);
+        if (h.HasShoreLineWest)      return (true,  false, true,  false);
+        if (h.HasShoreLineEast)      return (false, true,  false, true);
+        if (h.HasShoreLineSouthWest) return (false, false, true,  false);
+        if (h.HasShoreLineSouthEast) return (false, false, false, true);
+        if (h.HasShoreLineNorthWest) return (true,  false, false, false);
+        if (h.HasShoreLineNorthEast) return (false, true,  false, false);
+        if (h.IsRiver || h.IsSea || h.HasLakes) return (false, false, false, false);
+        return (true, true, true, true);
+    }
+
+    private static void TileChars(IEnumerable<IDemographic> demographics, string className,
+                                   SpriteBatch sb, SpriteFont fnt,
+                                   int x, int y, int w, int h,
+                                   ZoomLevel zoom, Color color, int spacing,
+                                   (bool tl, bool tr, bool bl, bool br) landQ,
+                                   float scale = 1.5f)
+    {
+        var demo = demographics?.FirstOrDefault(d => d.IsDemographicClass(className));
+        if (demo == null) return;
+
+        string display = demo.DemographicClass.GetTextDisplayForZoom(zoom);
+        if (string.IsNullOrEmpty(display)) return;
+
+        var    parts  = display.Split(',');
+        string chA    = parts[0].Trim();
+        string chB    = parts.Length > 1 ? parts[1].Trim() : chA;
+        if (string.IsNullOrEmpty(chA)) return;
+
+        var sizeA = fnt.MeasureString(chA) * scale;
+
+        int midX = x + w / 2;
+        int midY = y + h / 2;
+        int cols = Math.Max(1, w / spacing);
+        int rows = Math.Max(1, h / spacing);
+
+        for (int row = 0; row < rows; row++)
+        {
+            float xOff = row % 2 == 1 ? spacing / 2f : 0f;
+            for (int col = 0; col < cols; col++)
+            {
+                float cx = x + col * spacing + xOff;
+                float cy = y + row * spacing;
+
+                // Quadrant bounds check — skip if this position is on a water quadrant
+                bool isLeft = cx < midX;
+                bool isTop  = cy < midY;
+                bool isLand = isTop  &&  isLeft  ? landQ.tl
+                            : isTop  && !isLeft  ? landQ.tr
+                            : !isTop &&  isLeft  ? landQ.bl
+                            :                      landQ.br;
+                if (!isLand) continue;
+
+                if (cx + sizeA.X > x + w || cy + sizeA.Y > y + h) continue;
+
+                string ch = (row + col) % 2 == 0 ? chA : chB;
+                if (string.IsNullOrEmpty(ch)) continue;
+
+                sb.DrawString(fnt, ch, new Vector2(cx, cy), color,
+                              0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+        }
+    }
+
     // ── Infrastructure overlay ────────────────────────────────────────────────
 
     public static void DrawInfrastructureOverlay(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h)
     {
         var center = new Vector2(x + w / 2f, y + h / 2f);
 
-        // Creeks first — drawn under roads; offset laterally when co-located
+        // Creeks first — drawn under roads, centered on tile so segments meet cleanly
         var geo = tile?.AllGeography;
         if (geo != null)
         {
@@ -24,11 +162,7 @@ public static class TileDemographicRenderer
                 if (demo?.Orientation == null || !demo.Orientation.Any()) continue;
                 if (!demo.IsDemographicClass("Creek")) continue;
                 foreach (var dir in demo.Orientation)
-                {
-                    var perp = CreekPerpendicularOffset(dir, 4f);
-                    var edge = DirectionToEdgePoint(dir, x, y, w, h);
-                    PrimitiveDrawSprites.DrawLine(sb, px, center + perp, edge + perp, ColWater, 2);
-                }
+                    PrimitiveDrawSprites.DrawLine(sb, px, center, DirectionToEdgePoint(dir, x, y, w, h), ColWater, 2);
             }
         }
 
@@ -63,17 +197,9 @@ public static class TileDemographicRenderer
         }
     }
 
-    private static Vector2 CreekPerpendicularOffset(Direction dir, float amount) => dir switch
-    {
-        Direction.NORTH or Direction.SOUTH             => new Vector2(amount, 0),
-        Direction.EAST  or Direction.WEST              => new Vector2(0, amount),
-        Direction.NORTHWEST or Direction.SOUTHEAST     => new Vector2(amount * 0.7f,  amount * 0.7f),
-        Direction.NORTHEAST or Direction.SOUTHWEST     => new Vector2(amount * 0.7f, -amount * 0.7f),
-        _                                              => Vector2.Zero,
-    };
-
     // ── Demographic sprites ───────────────────────────────────────────────────
 
+    // Pre-road terrain sprites (mountain peak, nuclear)
     public static void DrawDemographicSprites(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h, int zoomLevel)
     {
         var rh = tile?.ConsoleRenderHelper;
@@ -84,25 +210,37 @@ public static class TileDemographicRenderer
 
         if (rh.HasMountain && zoomLevel >= 3)
             DrawMountainPeak(sb, px, x, y, w, h);
+    }
+
+    // Airport — rendered below urban sprites; caller applies co-location offset
+    public static void DrawAirportSprite(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h, int zoomLevel)
+    {
+        var rh = tile?.ConsoleRenderHelper;
+        if (rh == null || !rh.HasAirports || zoomLevel < 3) return;
+        var demo = tile.Infrastructure.SingleOrDefault(d => d.IsDemographicClass("Airport"));
+        if (demo != null) DrawAirport(sb, px, x, y, w, h, demo.Orientation);
+    }
+
+    // Top-layer facility sprites — rendered over everything (military base, CP only)
+    public static void DrawFacilitySprites(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h, int zoomLevel)
+    {
+        var rh = tile?.ConsoleRenderHelper;
+        if (rh == null) return;
 
         if (rh.HasMilitaryBase && zoomLevel >= 2)
             DrawMilitaryBase(sb, px, x, y, w, h);
 
         if (rh.HasCommandPost && zoomLevel >= 2)
             DrawCommandPost(sb, px, x, y, w, h);
+    }
 
-        if (rh.HasAirports && zoomLevel >= 3)
-        {
-            var demo = tile.Infrastructure.SingleOrDefault(d => d.IsDemographicClass("Airport"));
-            if (demo != null) DrawAirport(sb, px, x, y, w, h, demo.Orientation);
-        }
-
-        if (rh.HasCities)
-            DrawUrban(sb, px, x, y, w, h);
-
-        if (rh.HasIndustrial)
-            DrawIndustrial(sb, px, x, y, w, h);
-
+    // Called after infrastructure overlay so settlement sprites render over roads
+    public static void DrawUrbanSprites(ITile tile, SpriteBatch sb, Texture2D px, int x, int y, int w, int h, int zoomLevel)
+    {
+        var rh = tile?.ConsoleRenderHelper;
+        if (rh == null) return;
+        if (rh.HasCities)    DrawUrban(sb, px, x, y, w, h);
+        if (rh.HasIndustrial) DrawIndustrial(sb, px, x, y, w, h);
         if (rh.HasTown && zoomLevel >= 3)
         {
             var demo = tile.Infrastructure.SingleOrDefault(d => d.IsDemographicClass("Town"));
@@ -205,21 +343,54 @@ public static class TileDemographicRenderer
         }
     }
 
+    private static void DrawBuilding(SpriteBatch sb, Texture2D px, int bx, int by, int bw, int bh, Color fill, Color accent)
+    {
+        sb.Draw(px, new Rectangle(bx + 1,     by,          bw - 2, bh),     fill);
+        sb.Draw(px, new Rectangle(bx,         by,          bw,     1),      Color.Black);
+        sb.Draw(px, new Rectangle(bx,         by + bh - 1, bw,     1),      Color.Black);
+        sb.Draw(px, new Rectangle(bx,         by,          1,      bh),     Color.Black);
+        sb.Draw(px, new Rectangle(bx + bw - 1, by,         1,      bh),     Color.Black);
+        if (bh > 8)
+            sb.Draw(px, new Rectangle(bx + 2, by + bh / 3, bw - 4, 1), accent);
+
+        // Window dots — 2×2 blue, two rows
+        var win = new Color(120, 175, 230);
+        int numWin     = Math.Max(1, (bw - 4) / 5);
+        int winSpacing = (bw - 2) / (numWin + 1);
+        foreach (int wy in new[] { by + bh / 4, by + bh / 2 })
+            for (int c = 1; c <= numWin; c++)
+                sb.Draw(px, new Rectangle(bx + c * winSpacing, wy, 2, 2), win);
+    }
+
     private static void DrawUrban(SpriteBatch sb, Texture2D px, int x, int y, int w, int h)
     {
-        var building = new Color(72, 68, 62);
-        var accent   = new Color(135, 42, 42);
+        var back   = new Color(68, 63, 57);
+        var front  = new Color(88, 82, 76);
+        var accent = new Color(130, 40, 40);
 
-        int baseY = y + h - h / 5;
-        int[] widths  = { w / 9,  w / 11, w / 8  };
-        int[] heights = { h / 3,  h * 2 / 5, h / 4 };
-        int[] offsets = { w / 5,  w / 2,  w * 3 / 4 };
+        int col = w / 5;   // five columns
 
-        for (int i = 0; i < 3; i++)
+        // Back row — 5 taller buildings, one per column
+        int backBaseY = y + h * 2 / 3;
+        int[] backH   = { h*2/5, h/3, h*2/5, h*3/8, h/3 };
+        int[] backW   = { w/8,   w/7, w/9,   w/7,   w/8 };
+
+        for (int i = 0; i < 5; i++)
         {
-            int bx = x + offsets[i] - widths[i] / 2;
-            sb.Draw(px, new Rectangle(bx, baseY - heights[i], widths[i], heights[i]), building);
-            sb.Draw(px, new Rectangle(bx, baseY - 3,          widths[i], 2),          accent);
+            int bx = x + col * i + (col - backW[i]) / 2;
+            DrawBuilding(sb, px, bx, backBaseY - backH[i], backW[i], backH[i], back, accent);
+        }
+
+        // Front row — 4 shorter buildings, offset half a column to the right
+        int frontBaseY = y + h * 5 / 6;
+        int[] frontH   = { h/5,  h*3/10, h/5,  h*3/10 };
+        int[] frontW   = { w/9,  w/8,    w/7,  w/8    };
+
+        for (int i = 0; i < 4; i++)
+        {
+            int bx = x + col * i + col / 2 + (col - frontW[i]) / 2;
+            if (bx + frontW[i] > x + w) break;
+            DrawBuilding(sb, px, bx, frontBaseY - frontH[i], frontW[i], frontH[i], front, accent);
         }
     }
 
@@ -230,30 +401,73 @@ public static class TileDemographicRenderer
         int cx    = x + w / 2;
         int ch    = h / 5;
         int cw    = Math.Max(3, w / 14);
-        int baseY = y + h - h / 5;
-        sb.Draw(px, new Rectangle(cx - cw / 2, baseY - h / 3 - ch, cw, ch), new Color(90, 88, 84));
+        int baseY = y + h * 2 / 3;   // align chimney with back row base
+        sb.Draw(px, new Rectangle(cx - cw / 2, baseY - h * 2 / 5 - ch, cw, ch), new Color(90, 88, 84));
     }
 
     private static void DrawTown(SpriteBatch sb, Texture2D px, int x, int y, int w, int h, List<Direction> orientation)
     {
         _ = orientation;
 
-        int hw = Math.Max(8, w / 7), hh = Math.Max(5, h / 9), rh = Math.Max(3, hh / 2);
-        var wall  = new Color(190, 172, 130);
-        var roofA = new Color(145, 65, 52);
-        var roofB = new Color(120, 85, 65);
+        int u   = Math.Max(10, w / 6);
+        int gap = 3;
 
-        void House(int hx, int hy, Color rc)
+        var wallA = new Color(190, 172, 130);
+        var wallB = new Color(175, 155, 110);
+        var win   = new Color(120, 175, 230);
+
+        // 5 houses: widths, heights (nearly square), wall colours, roof colours
+        int[]   hW    = { u,     u+3,   u-1,  u+2,   u-1 };
+        int[]   hH    = { u,     u+2,   u-1,  u+1,   u   };
+        Color[] walls = { wallA, wallB, wallA, wallA, wallB };
+        Color[] roofs = {
+            new Color(140, 60, 48),
+            new Color(115, 82, 62),
+            new Color(140, 60, 48),
+            new Color(128, 72, 55),
+            new Color(115, 82, 62),
+        };
+
+        void RoofTriangle(int rx, int baseY, int rw, int rh, Color rc)
         {
-            sb.Draw(px, new Rectangle(hx,        hy,        hw,      hh),    wall);
-            sb.Draw(px, new Rectangle(hx,        hy - rh,   hw,      rh / 2), rc);
-            sb.Draw(px, new Rectangle(hx + hw/5, hy - rh/2, hw*3/5, rh/2),   rc);
+            int steps = Math.Max(2, Math.Min(6, rh));
+            int stepH = Math.Max(1, rh / steps);
+            for (int s = 0; s < steps; s++)
+            {
+                int rowW = Math.Max(2, rw * (steps - s) / steps);
+                int rowY = baseY - (s + 1) * stepH;
+                sb.Draw(px, new Rectangle(rx + (rw - rowW) / 2, rowY, rowW, stepH), rc);
+            }
         }
 
-        House(x + w/5   - hw/2, y + h/3   - hh/2, roofA);
-        House(x + w*3/5 - hw/2, y + h/4   - hh/2, roofB);
-        House(x + w/4   - hw/2, y + h*2/3 - hh/2, roofB);
-        House(x + w*3/5 - hw/2, y + h*3/5 - hh/2, roofA);
+        void House(int hx, int baseY, int hw, int hht, Color wc, Color rc)
+        {
+            int roofH = Math.Max(4, hht * 2 / 5);
+            sb.Draw(px, new Rectangle(hx,          baseY - hht, hw, hht), wc);
+            sb.Draw(px, new Rectangle(hx,          baseY - hht, hw, 1),   Color.Black);
+            sb.Draw(px, new Rectangle(hx,          baseY - 1,   hw, 1),   Color.Black);
+            sb.Draw(px, new Rectangle(hx,          baseY - hht, 1, hht),  Color.Black);
+            sb.Draw(px, new Rectangle(hx + hw - 1, baseY - hht, 1, hht),  Color.Black);
+            if (hht > 8 && hw > 6)
+                sb.Draw(px, new Rectangle(hx + hw / 2 - 1, baseY - hht + hht / 3, 2, 2), win);
+            RoofTriangle(hx, baseY - hht, hw, roofH, rc);
+        }
+
+        // Back row: 3 houses centered
+        int backTotalW = hW[0] + hW[1] + hW[2] + gap * 2;
+        int backX      = x + (w - backTotalW) / 2;
+        int backBaseY  = y + h * 55 / 100;
+
+        int cx = backX;
+        for (int i = 0; i < 3; i++) { House(cx, backBaseY, hW[i], hH[i], walls[i], roofs[i]); cx += hW[i] + gap; }
+
+        // Front row: 2 houses, offset half a house-width to the right
+        int frontTotalW = hW[3] + hW[4] + gap;
+        int frontX      = x + (w - frontTotalW) / 2 + hW[0] / 2;
+        int frontBaseY  = y + h * 75 / 100;
+
+        cx = frontX;
+        for (int i = 3; i < 5; i++) { House(cx, frontBaseY, hW[i], hH[i], walls[i], roofs[i]); cx += hW[i] + gap; }
     }
 
     private static void DrawNuclearSymbol(SpriteBatch sb, Texture2D px, int x, int y, int w, int h)
