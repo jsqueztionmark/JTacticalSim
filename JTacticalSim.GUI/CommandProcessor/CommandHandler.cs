@@ -111,6 +111,21 @@ internal class CommandHandler : InputCommandHandlerBase
 
     // ── Console-era interaction stubs (replaced by MonoGame input/UI) ────────
 
+    public override void MoveUnitsToSelectedNode()
+    {
+        // Capture full path [source, n1, ..., target] before the move commits engine state
+        var routeNodes = TheGame().GameBoard.CurrentRoute?.Nodes?.Reverse()
+            .Select(pn => pn.GetNode())
+            .Where(n => n != null)
+            .ToList();
+        var movingUnits = TheGame().GameBoard.SelectedUnits.ToList();
+
+        base.MoveUnitsToSelectedNode();
+
+        if (routeNodes != null && routeNodes.Count > 1 && movingUnits.Count > 0)
+            Renderer().MainScreenRenderer.BeginMoveAnimation(movingUnits, routeNodes);
+    }
+
     protected override string HandleCMDInput(string message) => string.Empty;
     protected override Command GetNodeAction() => null;
     protected override Command GetMainMenuAction() => null;

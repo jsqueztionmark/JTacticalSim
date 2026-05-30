@@ -80,6 +80,15 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     private readonly PopupList<Commands> _nodeActionPopup;
     private readonly PopupList<Commands> _menuPopup;
 
+    // ── Movement animation ───────────────────────────────────────────────────
+    private bool        _isAnimating;
+    private List<IUnit> _animatingUnits;
+    private List<INode> _animationRoute;   // [source, n1, ..., target] in forward order
+    private int         _waypointIndex;    // index of the segment start currently lerping
+    private float       _segmentElapsed;   // seconds elapsed in the current segment
+    private Vector2     _animatedPosition;
+    private const float SegmentDuration = 0.20f; // seconds per node hop
+
     private static readonly (string Label, Commands Command)[] MainMenuItems =
     {
         ("Title Screen",    Commands.DISPLAY_TITLE_SCREEN),
@@ -325,6 +334,10 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
             if (node == null) continue;
             RenderNode(node, zoomLevel);
         }
+
+        // Draw animating unit tokens on top of the map at the interpolated position
+        if (_isAnimating)
+            DrawAnimatedUnits(sb, px, zoomLevel);
     }
 
     public void RenderFullMap(bool clear)
@@ -554,6 +567,16 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         var visible = stacks.Where(s => s != null && s.HasVisibleComponents).ToList();
         if (visible.Count == 0) return;
 
+        // During animation, skip stacks whose top unit is being drawn at the interpolated position
+        if (_isAnimating && _animatingUnits != null && _animatingUnits.Count > 0)
+        {
+            visible = visible.Where(s => {
+                var top = s.GetFirstVisibleUnit();
+                return top == null || !_animatingUnits.Contains(top);
+            }).ToList();
+            if (visible.Count == 0) return;
+        }
+
         if (cellW >= 48 && cellH >= 24)
         {
             // Large cells: labeled tokens stacked vertically, group centered in the cell
@@ -622,6 +645,116 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         var node = unit.GetNode();
         if (node != null)
             RenderNode(node, zoomLevel);
+    }
+
+    // ── Movement animation ───────────────────────────────────────────────────
+
+    public void BeginMoveAnimation(List<IUnit> units, List<INode> route)
+    {
+        if (route == null || route.Count < 2 || units == null || units.Count == 0) return;
+        _animatingUnits  = units;
+        _animationRoute  = route;
+        _waypointIndex   = 0;
+        _segmentElapsed  = 0f;
+        _animatedPosition = GetNodeScreenCenter(route[0]);
+        _isAnimating     = true;
+    }
+
+    public void UpdateAnimation(GameTime gameTime)
+    {
+        if (!_isAnimating || _animationRoute == null) return;
+
+        _segmentElapsed += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        float t = Math.Min(_segmentElapsed / SegmentDuration, 1.0f);
+
+        var start = GetNodeScreenCenter(_animationRoute[_waypointIndex]);
+        var end   = GetNodeScreenCenter(_animationRoute[_waypointIndex + 1]);
+        _animatedPosition = Vector2.Lerp(start, end, t);
+
+        if (_segmentElapsed >= SegmentDuration)
+        {
+            _waypointIndex++;
+            _segmentElapsed = 0f;
+
+            // Fire move sound at each node arrival
+            foreach (var u in _animatingUnits)
+                u.PlaySoundAsync(SoundType.MOVE);
+
+            if (_waypointIndex >= _animationRoute.Count - 1)
+                FinishAnimation();
+        }
+    }
+
+    public void InterruptAnimation()
+    {
+        if (!_isAnimating) return;
+        foreach (var u in _animatingUnits ?? new List<IUnit>())
+            u.StopSoundPlayback();
+        FinishAnimation();
+    }
+
+    private void FinishAnimation()
+    {
+        _isAnimating    = false;
+        _animatingUnits = null;
+        _animationRoute = null;
+    }
+
+    private Vector2 GetNodeScreenCenter(INode node)
+    {
+        if (node == null) return Vector2.Zero;
+        var zoom   = TheGame().ZoomHandler.CurrentZoom;
+        var origin = zoom.CurrentOrigin;
+        var (offX, offY) = MapGridOffset(zoom);
+        int col  = node.Location.X - origin.X;
+        int row  = node.Location.Y - origin.Y;
+        int cellW = zoom.ColumnSpacing;
+        int cellH = zoom.RowSpacing;
+        return new Vector2(MapLeft + offX + col * cellW + cellW / 2f,
+                           MapTop  + offY + row * cellH + cellH / 2f);
+    }
+
+    private void DrawAnimatedUnits(SpriteBatch sb, Texture2D px, int zoomLevel)
+    {
+        if (!_isAnimating || _animatingUnits == null || _animatingUnits.Count == 0) return;
+        var mfnt = _baseRenderer.MapFont;
+        if (sb == null || px == null || mfnt == null) return;
+
+        var topUnit = _animatingUnits.FirstOrDefault(u => u != null);
+        if (topUnit == null) return;
+
+        var zoom  = TheGame().ZoomHandler.CurrentZoom;
+        int cellW = zoom.ColumnSpacing;
+        int cellH = zoom.RowSpacing;
+        int x = (int)_animatedPosition.X - cellW / 2;
+        int y = (int)_animatedPosition.Y - cellH / 2;
+
+        if (cellW >= 48 && cellH >= 24)
+        {
+            float scale  = zoomLevel >= 4 ? 1.0f : 0.85f;
+            string label = GetUnitToken(topUnit, _animatingUnits.Count, zoomLevel);
+            var textSize = mfnt.MeasureString(label) * scale;
+            int tw = Math.Min(Math.Max((int)textSize.X + 10, 24), cellW - 4);
+            int th = (int)textSize.Y + 6;
+            int tx = x + (cellW - tw) / 2;
+            int ty = y + (cellH - th) / 2;
+            var color = GetUnitColor(topUnit);
+
+            sb.Draw(px, new Rectangle(tx, ty, tw, th), ColUnitBg);
+            sb.Draw(px, new Rectangle(tx, ty,           tw, 1),  color);
+            sb.Draw(px, new Rectangle(tx, ty + th - 1,  tw, 1),  color);
+            sb.Draw(px, new Rectangle(tx, ty,           1,  th), color);
+            sb.Draw(px, new Rectangle(tx + tw - 1, ty,  1,  th), color);
+            sb.DrawString(mfnt, label, new Vector2(tx + 5, ty + 3), color,
+                0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+        }
+        else
+        {
+            int dotSize = Math.Max(4, cellW / 4);
+            int tx = x + (cellW - dotSize) / 2;
+            int ty = y + (cellH - dotSize) / 2;
+            sb.Draw(px, new Rectangle(tx, ty, dotSize, dotSize), GetUnitColor(topUnit));
+        }
     }
 
     public int RenderUnitStackInfo(IUnitStack stack)
@@ -996,6 +1129,14 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     public void HandleInput(KeyboardState current, KeyboardState previous)
     {
         EnsureData();
+
+        // Block all input during movement animation; Escape snaps to destination
+        if (_isAnimating)
+        {
+            if (current.IsKeyDown(Keys.Escape) && !previous.IsKeyDown(Keys.Escape))
+                InterruptAnimation();
+            return;
+        }
 
         // Node action popup takes priority
         if (_nodeActionPopup.IsOpen)

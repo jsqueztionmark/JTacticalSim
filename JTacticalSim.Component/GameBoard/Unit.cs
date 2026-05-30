@@ -930,8 +930,6 @@ namespace JTacticalSim.Component.GameBoard
 
 			if (!e.TargetNode.Equals(TheGame().GameBoard.CurrentRoute.Target))
 				TheGame().BattleHandler.ForceMovementBattleEngagement(e.TargetNode);
-
-			Thread.Sleep(500);
 		}
 
 #endregion

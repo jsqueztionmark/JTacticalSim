@@ -50,6 +50,7 @@ public class MonoGameHost : XnaGame
     protected override void Update(GameTime gameTime)
     {
         Game().StateSystem.Update(gameTime.ElapsedGameTime.TotalMilliseconds);
+        ((Renderer)Game().Renderer).MainScreenRenderer.UpdateAnimation(gameTime);
         base.Update(gameTime);
     }
 
