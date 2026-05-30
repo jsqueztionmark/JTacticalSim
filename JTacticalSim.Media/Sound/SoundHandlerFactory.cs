@@ -24,10 +24,21 @@ namespace JTacticalSim.Media.Sound
 			}
 		}
 
+		// Allows the GUI layer to register a platform-specific handler factory without
+		// creating a circular dependency (JTacticalSim.Media cannot reference JTacticalSim.GUI).
+		private Func<ISoundHandler> _handlerFactory;
+
+		public void RegisterHandlerFactory(Func<ISoundHandler> factory)
+		{
+			_handlerFactory = factory;
+		}
 
 		[SuppressMessage("Interoperability", "CA1416", Justification = "WavSoundHandler guards all Windows-only calls at runtime")]
 		public ISoundHandler GetSoundHandler(SoundSourceType sourceType)
 		{
+			if (_handlerFactory != null)
+				return _handlerFactory();
+
 			switch (sourceType)
 			{
 				case SoundSourceType.WAV:

@@ -30,10 +30,14 @@ public class GameContext : BaseGameObject
 
     public void InitializeGame(bool startUp = false)
     {
+        // Register MonoGameSoundHandler for all SoundSystem instances — including
+        // per-component ones created by GameComponentBase (unit classes, unit types, etc.)
+        SoundHandlerFactory.Instance.RegisterHandlerFactory(() => new MonoGameSoundHandler());
+
         TheGame().NullGame();
         TheGame().Create(new ServiceDependencies(),
                          new Renderer(),
-                         new SoundSystem(new MonoGameSoundHandler()),
+                         new SoundSystem(),
                          new CommandProcessor.CommandProcessor());
 
         TheGame().StateSystem.GameStateChanged += On_GameStateChangedHandler;
