@@ -2,6 +2,7 @@ using JTacticalSim.API;
 using JTacticalSim.API.Game;
 using JTacticalSim.GUI.Render;
 using JTacticalSim.GUI.CommandProcessor;
+using JTacticalSim.GUI.Sound;
 using JTacticalSim.Media.Sound;
 using JTacticalSim.Service;
 
@@ -32,7 +33,7 @@ public class GameContext : BaseGameObject
         TheGame().NullGame();
         TheGame().Create(new ServiceDependencies(),
                          new Renderer(),
-                         new SoundSystem(),
+                         new SoundSystem(new MonoGameSoundHandler()),
                          new CommandProcessor.CommandProcessor());
 
         TheGame().StateSystem.GameStateChanged += On_GameStateChangedHandler;

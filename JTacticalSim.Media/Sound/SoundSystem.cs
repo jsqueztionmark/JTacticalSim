@@ -19,6 +19,13 @@ namespace JTacticalSim.Media.Sound
 			_handler.PlayFinished += On_PlayFinished;
 		}
 
+		public SoundSystem(ISoundHandler handler)
+		{
+			_soundStore = new Dictionary<SoundType, string>();
+			_handler = handler;
+			_handler.PlayFinished += On_PlayFinished;
+		}
+
 		public IResult<SoundType, Tuple<SoundType, string>> AddSound(SoundType soundType, string name)
 		{
 			var r = new OperationResult<SoundType, Tuple<SoundType, string>>();
