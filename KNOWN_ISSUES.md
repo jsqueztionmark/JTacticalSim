@@ -17,7 +17,7 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 - [x] **`CreateNewBattle` single-threaded path uses `attackerAction` for defenders** — In `GameService.CreateNewBattle`, the `else` (non-multithreaded) branch calls `attackerAction(u)` for both the attacker and defender lists instead of `defenderAction(u)` for defenders. `battle.Defenders` is never populated in single-threaded mode. Location: `JTacticalSim.Service/GameService.cs`.
 
-- [ ] **`UnitCanPerformTask` not used in node action availability check** — `CommandInterface.GetAvailableCommandsForNode()` shows Attack/battle commands based on unit presence and movement stats, but does not call `RulesService.UnitCanPerformTask` to verify the unit type is actually attack-capable. This allows the Attack action to appear for non-combat unit types (e.g. transports on top of the stack). Fix: filter available battle commands through `UnitCanPerformTask("Attack")` per unit before including them. Confirmed present in both ConsoleApp and GUI.
+- [x] **`UnitCanPerformTask` not used in node action availability check** — Fixed. `DO_BATTLE`, `BARRAGE`, and `NUKE` criteria blocks in `CommandInterface.GetAvailableCommandsForNode()` now gate on `ValidateTask("Attack").Result`, matching the pattern already used by `BUILD_INFRASTRUCTURE` / `DESTROY_INFRASTRUCTURE`. ConsoleApp unaffected (calls the same shared static method). Tests added in `CommandInterfaceTests.cs`.
 
 ## MonoGame GUI — Input
 

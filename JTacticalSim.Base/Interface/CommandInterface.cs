@@ -670,7 +670,9 @@ namespace JTacticalSim.API.Game
 			}
 			// Criteria:
 			// The target node must have friendly and unfriendly units and the friendly units must be able to do battle this turn
+			// and must be capable of performing the Attack task (excludes transports, HQs, etc.)
 			if (theGame.GameBoard.SelectedNode.GetAllUnits().Any(u1 => u1.IsFriendly() && u1.CanDoBattleThisTurn() &&
+			                                                          u1.ValidateTask("Attack").Result &&
 			                                                          node.GetAllUnits()
 			                                                                   .Any(u2 => !u2.IsFriendly())))
 			{
@@ -680,12 +682,14 @@ namespace JTacticalSim.API.Game
 			// Must be selected friendly units that can do battle this turn and have remote fire capability
 			// Must have remote fire points available
 			// and the selected node must have enemy units
-			if (theGame.GameBoard.SelectedUnits.Any(u =>    u.IsRemoteBattleCapable() && 
+			// and the unit must be capable of performing the Attack task
+			if (theGame.GameBoard.SelectedUnits.Any(u =>    u.IsRemoteBattleCapable() &&
 															u.CurrentMoveStats.RemoteFirePoints > 0 &&
-                                                            u.CanDoBattleThisTurn() && 
+                                                            u.CanDoBattleThisTurn() &&
+                                                            u.ValidateTask("Attack").Result &&
                                                             !u.GetNode().Equals(node) &&
-                                                            u.RemoteAttackDistance >= theGame.JTSServices.AIService.CalculateNodeCountToNode(u.GetNode(), 
-                                                                                                                                            node, 
+                                                            u.RemoteAttackDistance >= theGame.JTSServices.AIService.CalculateNodeCountToNode(u.GetNode(),
+                                                                                                                                            node,
                                                                                                                                             u.RemoteAttackDistance).Result))
 			{
 				retVal.Add(allCommandsForCurrentState.SingleOrDefault(cmd => cmd.CommandIdentifier == Commands.BARRAGE));
@@ -694,15 +698,17 @@ namespace JTacticalSim.API.Game
 			// Must be a single selected friendly unit that has a nuclear capability and remote fire capability
 			// Current player must have at least 1 remaining nuclear charge
 			// Must have remote fire points available
+			// and the unit must be capable of performing the Attack task
 			if (theGame.GameBoard.SelectedUnits.Count == 1 &&
 				theGame.CurrentTurn.Player.TrackedValues.NuclearCharges > 0 &&
-				theGame.GameBoard.SelectedUnits.Any(u =>    u.IsRemoteBattleCapable() && 
+				theGame.GameBoard.SelectedUnits.Any(u =>    u.IsRemoteBattleCapable() &&
 															u.IsNuclearCapable() &&
 															u.CurrentMoveStats.RemoteFirePoints > 0 &&
-                                                            u.CanDoBattleThisTurn() && 
+                                                            u.CanDoBattleThisTurn() &&
+                                                            u.ValidateTask("Attack").Result &&
                                                             !u.GetNode().Equals(node) &&
-                                                            u.RemoteAttackDistance >= theGame.JTSServices.AIService.CalculateNodeCountToNode(u.GetNode(), 
-                                                                                                                                            node, 
+                                                            u.RemoteAttackDistance >= theGame.JTSServices.AIService.CalculateNodeCountToNode(u.GetNode(),
+                                                                                                                                            node,
                                                                                                                                             u.RemoteAttackDistance).Result))
 			{
 				retVal.Add(allCommandsForCurrentState.SingleOrDefault(cmd => cmd.CommandIdentifier == Commands.NUKE));
