@@ -427,25 +427,44 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         // Military base and CP on top of everything
         TileDemographicRenderer.DrawFacilitySprites(tile, sb, px, x, y, w, h, zoomLevel);
 
-        // Country ownership dot — top-left corner; skipped in POLITICAL mode (whole tile is already country-colored)
+        // Country flag + VP badge — top-left corner; skipped in POLITICAL mode
         var mapMode = TheGame().MapModeHandler?.CurrentMapMode;
-        if (tile.Country != null && mapMode?.MapMode != MapMode.POLITICAL)
-        {
-            int dotSize = Math.Max(4, Math.Min(8, w / 12));
-            Color dotColor = PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.Color);
-            sb.Draw(px, new Rectangle(x + 3, y + 3, dotSize, dotSize), dotColor);
-        }
+        var mfnt    = _baseRenderer.MapFont;
+        bool inPolitical = mapMode?.MapMode == MapMode.POLITICAL;
 
-        // Victory points — top-right corner
-        var fnt = _baseRenderer.Font;
-        if (tile.VictoryPoints > 0 && fnt != null)
+        if (mfnt != null && w >= 12)
         {
-            float vpScale = 1.0f;
-            string vpLabel = tile.VictoryPoints.ToString();
-            var vpSize = fnt.MeasureString(vpLabel) * vpScale;
-            int vpX = x + w - (int)vpSize.X - 3;
-            int vpY = y + 2;
-            sb.DrawString(fnt, vpLabel, new Vector2(vpX, vpY), ColTextHi, 0f, Vector2.Zero, vpScale, SpriteEffects.None, 0f);
+            float scale = zoomLevel >= 4 ? 1.0f : 0.6f;
+            int fx = x + 1, fy = y + 1, elementH = 0;
+
+            if (tile.Country != null && !inPolitical)
+            {
+                Color bgColor = PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.FlagBGColor);
+                Color colorA  = PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.FlagColorA);
+                Color colorB  = PrimitiveDrawSprites.ConsoleColorToXna(tile.Country.FlagColorB);
+                string textA  = tile.Country.FlagDisplayTextA ?? "■";
+                string textB  = tile.Country.FlagDisplayTextB ?? "≡";
+
+                var sizeA  = mfnt.MeasureString(textA) * scale;
+                var sizeB  = mfnt.MeasureString(textB) * scale;
+                int flagW  = (int)(sizeA.X + sizeB.X) + 2;
+                elementH   = (int)Math.Max(sizeA.Y, sizeB.Y) + 1;
+
+                sb.Draw(px, new Rectangle(fx, fy, flagW, elementH), bgColor);
+                sb.DrawString(mfnt, textA, new Vector2(fx + 1, fy), colorA, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                sb.DrawString(mfnt, textB, new Vector2(fx + 1 + (int)sizeA.X, fy), colorB, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                fx += flagW + 1;
+            }
+
+            if (tile.VictoryPoints > 0)
+            {
+                string vpStr = tile.VictoryPoints.ToString();
+                var    vpSz  = mfnt.MeasureString(vpStr) * scale;
+                int    vpW   = (int)vpSz.X + 3;
+                int    vpH   = elementH > 0 ? elementH : (int)vpSz.Y + 1;
+                sb.Draw(px, new Rectangle(fx, fy, vpW, vpH), Color.DarkRed);
+                sb.DrawString(mfnt, vpStr, new Vector2(fx + 1, fy), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
         }
 
     }
@@ -524,9 +543,10 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
     {
         if (node.DefaultTile == null) return;
 
-        var sb  = _baseRenderer.SpriteBatch;
-        var fnt = _baseRenderer.Font;
-        var px  = _baseRenderer.Pixel;
+        var sb   = _baseRenderer.SpriteBatch;
+        var fnt  = _baseRenderer.Font;
+        var mfnt = _baseRenderer.MapFont;
+        var px   = _baseRenderer.Pixel;
 
         var stacks = node.DefaultTile.GetAllComponentStacks();
         if (stacks == null || stacks.Count == 0) return;
@@ -537,7 +557,7 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
         if (cellW >= 48 && cellH >= 24)
         {
             // Large cells: labeled tokens stacked vertically, group centered in the cell
-            float scale = zoomLevel >= 4 ? 0.85f : 0.75f;
+            float scale = zoomLevel >= 4 ? 1.0f : 0.85f;
 
             // Measure all tokens up front so we can center the block
             var tokens = visible
@@ -547,9 +567,9 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
                     if (topUnit == null) return null;
                     int count = stack.GetAllUnits().Count;
                     string label = GetUnitToken(topUnit, count, zoomLevel);
-                    var textSize = fnt.MeasureString(label) * scale;
-                    int tw = Math.Min(Math.Max((int)textSize.X + 4, 20), cellW - 4);
-                    int th = (int)textSize.Y + 2;
+                    var textSize = mfnt.MeasureString(label) * scale;
+                    int tw = Math.Min(Math.Max((int)textSize.X + 10, 24), cellW - 4);
+                    int th = (int)textSize.Y + 6;
                     return new { label, tw, th, color = GetUnitColor(topUnit) };
                 })
                 .Where(t => t != null)
@@ -570,7 +590,7 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
                 sb.Draw(px, new Rectangle(tx, tokenY, 1, token.th), token.color);
                 sb.Draw(px, new Rectangle(tx + token.tw - 1, tokenY, 1, token.th), token.color);
 
-                sb.DrawString(fnt, token.label, new Vector2(tx + 2, tokenY + 1), token.color,
+                sb.DrawString(mfnt, token.label, new Vector2(tx + 5, tokenY + 3), token.color,
                     0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
                 tokenY += token.th + 1;
@@ -611,14 +631,20 @@ public sealed class MainScreenRenderer : BaseScreenRenderer
 
     private static string GetUnitToken(IUnit unit, int count, int zoomLevel)
     {
-        string name = unit.Name ?? "?";
+        var info      = unit.UnitInfo;
+        string suffix = count > 1 ? $"               {count}" : "";
+
         if (zoomLevel >= 4)
         {
-            string abbrev = name.Length > 8 ? name[..8] : name;
-            return count > 1 ? $"{abbrev} x{count}" : abbrev;
+            string groupType = info?.UnitGroupType?.TextDisplayZ4 ?? "";
+            string unitClass = info?.UnitClass?.TextDisplayZ4;
+            string unitType  = info?.UnitType?.TextDisplayZ4 ?? "";
+            if (string.IsNullOrWhiteSpace(unitClass)) unitClass = " ";
+            return $"{groupType} {unitClass} {unitType}{suffix}";
         }
-        string shortName = name.Length > 4 ? name[..4] : name;
-        return count > 1 ? $"{shortName}x{count}" : shortName;
+
+        string typeZ3 = info?.UnitType?.TextDisplayZ3 ?? info?.UnitType?.TextDisplayZ4 ?? "?";
+        return $"{typeZ3}{suffix}";
     }
 
     private Color GetUnitColor(IUnit unit)

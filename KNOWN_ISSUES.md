@@ -36,6 +36,8 @@ Issues to address in future sessions. Add new entries under the relevant section
 
 - [ ] **Unit card graphics** — `TextDisplayZ1–Z4` values are Unicode block/box characters designed for the console grid. Rather than trying to render them as spritefont text (font glyph support uncertain; looks wrong in pixel context), replace with per-unit-type sprite icons that scale with zoom level. Hook point is `RenderUnitsOnNode()` in `MonoGameMainScreenRenderer.cs`.
 
+- [ ] **Shoreline sand strip** — `DrawShoreline` implemented in `TileDemographicRenderer` but disabled. The `HasShoreLineXxx` flag orientation semantics need verification against the actual data before the render positions can be finalised. Call site removed from `RenderTile`; re-enable when ready.
+
 - [ ] **Minimap overlay** — Deferred. Zoom levels (Z2–Z4) cover the overview need. Revisit as an optional overlay once core UX is complete.
 - [ ] **[M]ain Menu overlay** — Currently a dropdown; the console app renders a richer modal menu. Revisit once other stubs are filled in.
 
